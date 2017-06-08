@@ -96,7 +96,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div id="qLoverlay"></div>
 <!--/For Main Page only! (queryloader2.js helper)-->
 
-<header class="b-header b-container">
+<header class="b-header b-container" id="headerNew">
 	<a href="#" class="b-logo__link">
 	    <img src="./img/logo.svg" alt="OH.UA лого" class="b-logo">
     </a>
@@ -106,13 +106,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <span class="b-adress_header">Украина, г. Киев, ул. Пушкинская, 9</span>
     <a href="mailto:sales@oh.ua" class="b-header__link b-header__link_email">
         <span class="fa fa-envelope-open-o" aria-hidden="true"></span>
-        &nbsp;&nbsp;sales@oh.ua
+        <span class="b-link__text">sales@oh.ua</span>
     </a>
-    <a href="tel:0442903669" class="b-header__link b-header__link_phone">
-        <span class="b-icon_phone"></span>
-        &nbsp;&nbsp;(044) 290 36 69
-    </a>
-    <button class="b-btn_lang b-btn_menu js-btn_lang">RU</button>
+    <div class="b-call">
+        <a href="tel:0442903669" class="b-header__link b-header__link_phone">
+            <span class="b-icon_phone"></span>
+            <span class="b-link__text">(098) 733 67 18</span>
+        </a>
+        <button class="b-btn_callback js-btn_callback">Обратный звонок</button>
+    </div>
+    <button class="b-btn_lang b-btn_menu" id="langBtn">RU</button>
 </header>
 <div itemscope itemtype="http://schema.org/Article">
 <!--<nav class="page-scroll">
@@ -635,66 +638,82 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	</div>
 </div>
 
-<footer>
-	<div class="content">
-		<div class="container">
-			<div class="row collapse">
-				<div class="one-third column">
-					<a href="#" class="callback">
-						<span class="dotted">ОБРАТНЫЙ ЗВОНОК</span>
-					</a>
-				</div>
-				<nav class="two-thirds column">
-	<ul class="bottom-nav">
-		<li><a data-href="https://oh.ua/about/">О сервисе</a></li>
-		<li><a data-href="https://oh.ua/news/">Новости</a></li>
-		<li><a href="https://oh.ua/contacts/">Контакты</a></li>
-		<li><a data-href="https://oh.ua/cooperation/">Сотрудничество</a></li>
-		<li><a data-href="https://oh.ua/kasko/">КАСКО</a></li>
-		<li><a data-href="https://oh.ua/osago/">ОСАГО</a></li>
-		<li><a data-href="https://oh.ua/greencard/">Зеленая карта</a></li>
-		<li><a data-href="https://oh.ua/travel/">Туризм</a></li>
-		<li><a data-href="https://oh.ua/dgo/">ДГО</a></li>
-		
-	</ul>
-</nav>
-
-			</div>
-			<div class="row collapse">
-				<div class="one-third column">
-					<div class="phone">
-						<img src="https://oh.ua/project/templates/oh.ua/images/phone.svg" alt="" /> 
-						<a data-href="tel:+380987336718" class="phone-number ringo-phone">(098) 733 6718</a>
-					</div>
-					<div class="site-platfoorm">
-						<div>
-							<div class="ya-share2" style="display:inline-block;margin-right:10px;" data-services="vkontakte,facebook,gplus,twitter"></div>
-						</div>
-						Работает на платформе <noindex><a rel="nofollow" data-href="http://about.ewa.ua/" target="_blank"><img src="https://oh.ua/project/templates/oh.ua/images/logo-ewa.png" width="88" height="28" /></a></noindex>
-					</div>
-				</div>
-				<nav class="two-thirds column">
-					<ul class="list-inline pull-left social-buttons">
-						<li><a href="https://www.facebook.com/ohua.online" target="_blank"><i class="icon-facebook"></i></a></li>
-						<li><a href="https://plus.google.com/+OhUa-osago-strahovka" target="_blank" rel="publisher"><i class="icon-gplus"></i></a></li>
-						<li><a href="https://vk.com/ohua.online" target="_blank"><i class="icon-vk"></i></a></li>
-					</ul>
-					<ul class="list-inline pull-right bottom-links">
-						<li><img src="https://oh.ua/project/templates/oh.ua/images/logo-visa.png" width="46" height="16" alt="" /></li>
-						<li><img src="https://oh.ua/project/templates/oh.ua/images/logo-mastercard.png" width="46" height="28" alt="" /></li>
-						<li><img src="https://oh.ua/project/templates/oh.ua/images/logo-liqpay.png" width="66" height="28" alt="" /></li>
-						<li><img src="https://oh.ua/project/templates/oh.ua/images/logo-privat24.png" width="82" height="16" alt="" /></li>
-					</ul>
-				</nav>
-			</div>
-		</div><!--/container-->
-	</div><!--/content-->
-	<div class="sole">
-		<div class="container">
-			<span>© 2015. Oh.UA. Все права защищены.</span>
-			<img style="float:right;" src="https://oh.ua/project/templates/oh.ua/images/logo-thawte.png" width="45" height="26" alt="" />
-		</div>
-	</div><!--/sole-->
+<footer class="b-footer">
+    <div class="b-footer__up">
+        <div class="b-footer__part b-footer__part_left">
+            <div class="b-part_footer">
+                <ul class="b-linkslist_footer">
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer b-header__link b-callback_footer js-btn_callback">
+                            <span class="fa fa-phone" aria-hidden="true"></span>
+                            <span class="b-link__text">Обратный звонок</span>
+                        </a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="tel:0442903669" class="b-link_footer b-header__link b-header__link_phone">
+                            <span class="b-icon_phone"></span>
+                            <span class="b-link__text">(098) 733 67 18</span>
+                        </a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="mailto:sales@oh.ua" class="b-link_footer b-header__link b-header__link_email">
+                            <span class="fa fa-envelope-open-o" aria-hidden="true"></span>
+                            <span class="b-link__text">sales@oh.ua</span>
+                        </a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer"><span class="b-link__text">Звонок оператору</span></a>
+                    </li>
+                </ul>
+                <ul class="b-linkslist_footer">
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer">О компании</a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer">Контакты</a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer">Оплата и доставка</a>
+                    </li>
+                </ul>
+                <span class="b-adress_header">Украина, г. Киев, ул. Пушкинская, 9</span>
+            </div>
+        </div>
+        <div class="b-footer__part b-footer__part_right">
+            <div class="b-part_footer">
+                <ul class="b-linkslist_footer">
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer">Сотрудничество</a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer">Акции</a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer">Автострахование</a>
+                    </li>
+                </ul>
+                <ul class="b-linkslist_footer">
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer">Новости</a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer">Часто задаваемые вопросы (FAQ)</a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer">Рейтинг страховых компаний</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="b-footer__down">
+        <p class="b-footer__pay">
+           Мы принимаем:<br>
+           <span class="fa fa-cc-visa" aria-hidden="true"></span>
+           <span class="fa fa-cc-mastercard" aria-hidden="true"></span>
+           <span class="fa fa-cc-paypal" aria-hidden="true"></span>
+        </p>
+    </div>
 </footer>
 
 <!-- Start SiteHeart code -->
@@ -732,6 +751,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://oh.ua/project/templates/oh.ua/js/phone_mask.js"></script>
 <script type="text/javascript" src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="//yastatic.net/share2/share.js" charset="utf-8"></script>
+<script type="text/javascript" src="./js/jquery.sticky-kit.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="./js/custom.js" charset="utf-8"></script>
 
 </body>
 </html>
