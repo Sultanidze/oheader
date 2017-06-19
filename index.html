@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="ru"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="ru"> <!--<![endif]-->
@@ -14,9 +13,10 @@
 	<link rel="alternate" href="https://oh.ua/ua/" hreflang="uk-ua" />
 	<link rel="alternate" href="https://oh.ua/" hreflang="ru" />
 	<link rel="apple-touch-icon" href="https://oh.ua/project/templates/oh.ua/images/apple-touch-icon.png">
-	<link rel="stylesheet" href="/css/style.css">
+<!--	<link rel="stylesheet" href="https://oh.ua/project/templates/oh.ua/css/style.css">-->
+	<link rel="stylesheet" href="./css/style.css">
 	
-	<link rel="stylesheet" href="/css/styleNew.css">
+	<link rel="stylesheet" href="./css/styleNew.css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	
 	<link rel="stylesheet" media="all" href="https://oh.ua/project/templates/oh.ua/css/hover.css">
@@ -100,8 +100,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<a href="#" class="b-logo__link">
 	    <img src="./img/logo.svg" alt="OH.UA лого" class="b-logo">
     </a>
-    <button class="b-btn_menu">
-        <span>Меню</span>
+    <button class="b-btn_menu" id="menuBtn">
+        <span class="b-menu__icon">
+            <span class="b-icon_bars"></span>
+            <span class="fa fa-times" aria-hidden="true"></span>
+        </span>
+        <span class="b-btn__text">Меню</span>
     </button>
     <span class="b-adress_header">Украина, г. Киев, ул. Пушкинская, 9</span>
     <a href="mailto:sales@oh.ua" class="b-header__link b-header__link_email">
@@ -113,9 +117,84 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <span class="b-icon_phone"></span>
             <span class="b-link__text">(098) 733 67 18</span>
         </a>
-        <button class="b-btn_callback js-btn_callback">Обратный звонок</button>
+        <a class="b-header__link b-btn_callback js-btn_callback callback">Обратный звонок</a>
     </div>
-    <button class="b-btn_lang b-btn_menu" id="langBtn">RU</button>
+    <div class="b-btn_lang b-btn_menu" id="langBtn">
+        <span>RU</span>
+        <ul class="b-dropdown_lang">
+            <li><a href="https://oh.ua/ua/" class="set-lang b-link_lang">UA</a></li>
+        </ul>
+    </div>
+    <div class="b-menu" id="mainMenu">
+        <div class="b-modal__btn_close js-menu__close">
+            <span class="fa fa-times" aria-hidden="true"></span>
+        </div>
+        <ul class="b-menu__list">
+            <li class="b-menu__item">
+                <a href="#" class="b-menu__heading"><span>ОСАГО</span></a>
+                <span class="b-heading_submenu">Регион:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">ОСАГО в Харькове</a></li>
+                    <li><a href="#" class="b-submenu__link">ОСАГО в Днепре</a></li>
+                    <li><a href="#" class="b-submenu__link">ОСАГО в Запорожье</a></li>
+                    <li><a href="#" class="b-submenu__link">ОСАГО в Одессе</a></li>
+                    <li><a href="#" class="b-submenu__link">ОСАГО в Черкассах</a></li>
+                    <li><a href="#" class="b-submenu__link b-submenu__link_more">Другие регионы</a></li>
+                </ul>
+                <span class="b-heading_submenu">Доп услуги:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">Электронный полис ОСАГО</a></li>
+                    <li><a href="#" class="b-submenu__link">ОСАГО с доставкой</a></li>
+                </ul>
+            </li>
+            <li class="b-menu__item">
+                <a href="#" class="b-menu__heading"><span>КАСКО</span></a>
+                <span class="b-heading_submenu">Регион:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">КАСКО в Харькове</a></li>
+                    <li><a href="#" class="b-submenu__link">КАСКО в Днепре</a></li>
+                    <li><a href="#" class="b-submenu__link">КАСКО в Запорожье</a></li>
+                    <li><a href="#" class="b-submenu__link">КАСКО в Одессе</a></li>
+                    <li><a href="#" class="b-submenu__link">КАСКО в Черкассах</a></li>
+                    <li><a href="#" class="b-submenu__link b-submenu__link_more">Другие регионы</a></li>
+                </ul>
+                <span class="b-heading_submenu">Доп услуги:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">Проверить полис КАСКО</a></li>
+                </ul>
+            </li>
+            <li class="b-menu__item">
+                <a href="#" class="b-menu__heading"><span>Туристическое страхование</span></a>
+                <span class="b-heading_submenu">Регион:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">Туристическое страхование в Харькове</a></li>
+                    <li><a href="#" class="b-submenu__link">Туристическое страхование в Днепре</a></li>
+                    <li><a href="#" class="b-submenu__link">Туристическое страхование в Запорожье</a></li>
+                    <li><a href="#" class="b-submenu__link">Туристическое страхование в Одессе</a></li>
+                    <li><a href="#" class="b-submenu__link">Туристическое страхование в Черкассах</a></li>
+                    <li><a href="#" class="b-submenu__link b-submenu__link_more">Другие регионы</a></li>
+                </ul>
+                <span class="b-heading_submenu">Доп услуги:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">Страхование для визы</a></li>
+                    <li><a href="#" class="b-submenu__link">Страхование для рабочей визы</a></li>
+                </ul>
+            </li>
+            <li class="b-menu__item">
+                <a href="#" class="b-menu__heading"><span>Зеленая карта</span></a>
+                <span class="b-heading_submenu">Регион:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">Зеленая карта в Харькове</a></li>
+                    <li><a href="#" class="b-submenu__link">Зеленая карта в Днепре</a></li>
+                    <li><a href="#" class="b-submenu__link">Зеленая карта в Запорожье</a></li>
+                    <li><a href="#" class="b-submenu__link">Зеленая карта в Одессе</a></li>
+                    <li><a href="#" class="b-submenu__link">Зеленая карта в Черкассах</a></li>
+                    <li><a href="#" class="b-submenu__link b-submenu__link_more">Другие регионы</a></li>
+                </ul>
+            </li>
+        </ul>
+        <a class="b-header__link b-btn_callback js-btn_callback callback">Обратный звонок</a>
+    </div>
 </header>
 <div itemscope itemtype="http://schema.org/Article">
 <!--<nav class="page-scroll">
@@ -751,7 +830,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://oh.ua/project/templates/oh.ua/js/phone_mask.js"></script>
 <script type="text/javascript" src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
 <script type="text/javascript" src="//yastatic.net/share2/share.js" charset="utf-8"></script>
-<script type="text/javascript" src="./js/jquery.sticky-kit.min.js" charset="utf-8"></script>
+
 <script type="text/javascript" src="./js/custom.js" charset="utf-8"></script>
 
 </body>
