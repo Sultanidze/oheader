@@ -434,6 +434,15 @@ a.callback:hover{
 .b-link_footer:hover{
     color: #fff;
 }
+a.b-callback_footer{
+    position: static;
+    height: auto;
+    text-decoration: none;
+    color: #fff;
+}
+a.b-callback_footer:hover{
+    color: #fff;
+}
 .b-linkitem_footer .b-header__link_email{
     font-size: 16px;
     font-weight: 400;
@@ -508,7 +517,7 @@ a.callback:hover{
 }
 .b-category__list_links{
     list-style: none;
-    margin: 0;
+    margin: 0 0 20px;
     padding-left: 10px;
     border-left: 1px solid #f2c90c;
 }
