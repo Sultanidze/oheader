@@ -459,9 +459,73 @@ a.callback:hover{
     font-weight: 400;
     font-family: 'Roboto Condensed', sans-serif;
 }
+
 .b-footer__up_mobile{
     display: none;
+    background: url(../img/footer-bg.jpg) center/cover no-repeat;
 }
+.b-footer__up_mobile:after{
+    content: '';
+    display: block;
+    height: 1px;
+}
+.b-footer__list_categories{
+    list-style: none;
+    margin: 0;
+}
+.b-footer__category{
+    margin: 0;
+    padding-left: 18px;
+    padding-right: 18px;
+    border-bottom: 1px dashed #686566;
+}
+.b-footer__category:last-child{
+    border-bottom: none;
+}
+.b-category__heading{
+    display: block;
+    line-height: 50px;
+    font-size: 18px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #fff;
+    cursor: pointer;
+}
+.b-category__heading:after{
+        content: "\f107";
+        float: right;
+        color: #f2c90c;
+        font-family: FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+}
+.b-footer__category.opened>.b-category__heading:after{
+    content: '\f106';
+}
+.b-accordion_content{
+    display: none;
+}
+.b-category__list_links{
+    list-style: none;
+    margin: 0;
+    padding-left: 10px;
+    border-left: 1px solid #f2c90c;
+}
+.b-category__item{
+    margin-bottom: 15px;
+}
+.b-category__link{
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+}
+.b-category__link:hover{
+    color: #f2c90c;
+}
+
 .b-footer__down{
     border-top: 1px solid #a7a5a6;
     position: relative;
@@ -557,6 +621,11 @@ a.callback:hover{
         margin-left: 26px;
     }
     .b-footer__part_right .b-linkslist_footer {
+        margin-left: 7%;
+    }
+}
+@media (max-width: 870px){
+    .b-footer__part_right .b-linkslist_footer {
         margin-left: 2.4%;
     }
 }
@@ -626,7 +695,13 @@ a.callback:hover{
     }
     .b-menu a.callback{
         display: none;
-    }    
+    }
+    .b-footer{
+        margin-top: 30px;
+    }
+    .b-footer__up{
+        display: none;
+    }
     .b-footer__up_mobile{
         display: block;
     }

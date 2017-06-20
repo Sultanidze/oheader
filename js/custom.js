@@ -42,4 +42,9 @@ $(document).ready(function(){
 
 	$mainMenu.find(".js-menu__close").on("click", closeMenu);
 	
+	// mobile Footer accordion
+	$("footer").find(".js-accordion__trigger").on("click", function(){
+		$(this).siblings(".js-accordion__content").slideToggle(200);
+		$(this).parent().toggleClass("opened");
+	});
 });
