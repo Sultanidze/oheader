@@ -246,9 +246,8 @@ a.callback:hover{
     color: #6f37a1;
 }
 .b-menu{
-    display: none;
     position: absolute;
-    top: 100%;
+    top: -9999px;
     left: 0;
     right: 0;
     background-color: #fff;
