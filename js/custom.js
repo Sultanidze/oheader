@@ -70,8 +70,21 @@ $(document).ready(function(){
 	$mainMenu.find(".js-menu__close").on("click", closeMenu);
 	
 	// mobile Footer accordion
-	$("footer").find(".js-accordion__trigger").on("click", function(){
-		$(this).siblings(".js-accordion__content").slideToggle(200);
-		$(this).parent().toggleClass("opened");
+	var $accordionTriggers = $("footer").find(".js-accordion__trigger");
+	var $accordionContents = $("footer").find(".js-accordion__content");
+	$accordionTriggers.on("click", function(){
+		var  $trigger = $(this)
+			,$content = $trigger.siblings(".js-accordion__content")
+			;
+		// close all opened accordion items except of clicked
+		$accordionContents.each(function(){
+			if (($(this)[0] !== $content[0])&&($(this).parent().hasClass("opened"))){
+				console.log("sdfsdff")
+				$(this).slideUp(200);
+				$(this).parent().removeClass("opened");
+			}
+		});
+		$content.slideToggle(200);
+		$trigger.parent().toggleClass("opened");
 	});
 });
