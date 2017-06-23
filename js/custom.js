@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	// stick header in top of window
-	$("#headerNew").stick_in_parent();
+	$("#headerWrapper").stick_in_parent();
 
 	// menu hiding/appearance
 	var  $mainMenu = $("#mainMenu")
@@ -56,7 +56,7 @@ $(document).ready(function(){
 	};
 
 	// open/close menue on mouseenter event
-	$menuBtn.on("mouseenter", function(){
+	$menuBtn.on("mouseenter click", function(){
 		if ($mainMenu.hasClass("opened")){
 			closeMenu();
 		} else {

@@ -1,9 +1,263 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400|Roboto:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto+Condensed:300,400|Roboto:300,400,500,700');
 /*
 font-family: 'Roboto', sans-serif;
 font-family: 'Roboto Condensed', sans-serif;
 font-family: 'Playfair Display', serif;
 */
+
+/*======= SOME OF PREVIOUS STYLES =======*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block
+}
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0
+}
+
+[hidden],
+template {
+    display: none
+}
+
+a {
+    background-color: transparent
+}
+
+a:active,
+a:hover {
+    outline: 0
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0
+}
+
+small {
+    font-size: 80%
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline
+}
+
+sup {
+    top: -0.5em
+}
+sub {
+    bottom: -0.25em
+}
+img {
+    border: 0
+}
+svg:not(:root) {
+    overflow: hidden
+}
+figure {
+    margin: 1em 40px
+}
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0
+}
+pre {
+    overflow: auto
+}
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0
+}
+button {
+    overflow: visible
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0
+}
+
+input {
+    line-height: normal
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em
+}
+
+textarea {
+    overflow: auto
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td,
+th {
+    padding: 0
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0
+}
+
+textarea {
+    resize: vertical
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    font-size: 62.5%
+}
+
+body {
+    font-size: 1.4em;
+    line-height: 1.28571;
+    font-weight: 400;
+    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+    color: #707070
+}
+
+p {
+    margin-top: 0
+}
+
+ol,
+ul {
+    padding-left: 0;
+    margin-top: 0
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    margin: 15px 0 15px 30px;
+    margin: 1.5rem 0 1.5rem 3rem
+}
+
+li {
+    margin-bottom: 10px;
+    margin-bottom: 1rem
+}
+a, button, input[type="button"], input[type="submit"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea, select, textarea {
+    -webkit-transition-property: border-color, color, background-color;
+    -moz-transition-property: border-color, color, background-color;
+    transition-property: border-color, color, background-color;
+    -webkit-transition-duration: 0.1s;
+    -moz-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+    -webkit-transition-timing-function: ease-in;
+    -moz-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+}
+
+/* - PRELOADER - */
+#qLoverlay {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111
+}
+/* - PRELOADER END - */
+/*======= SOME OF PREVIOUS STYLES END =======*/
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -20,23 +274,54 @@ font-family: 'Playfair Display', serif;
 .bold{
     font-weight: 700;
 }
+.c-paragraph{
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #000;
+}
+html{
+    font-family: 'Roboto', sans-serif;
+}
 body{
     margin: 0;
     min-height: 100%;
-/*    padding-top: 43px;*/
     padding-bottom: 0;
 }
 .b-container_wide{
     margin: 0 auto;
     max-width: 1366px;
-/*
-    padding-left: 36px;
-    padding-right: 36px;
-*/
 }
 .b-container{
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: 1270px;
+}
+.bg-highlited{
+    background-color: #f7f7f7;
+}
+.bg-corporate_light{
+    background-color: #f2c90c;
+}
+.bg-corporate_dark{
+/*    background-color: #653294;*/
+    
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7a3db0+0,7b3db1+0,653294+100 */
+    background: #7a3db0; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, #7a3db0 0%, #7b3db1 0%, #653294 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, #7a3db0 0%,#7b3db1 0%,#653294 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, #7a3db0 0%,#7b3db1 0%,#653294 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a3db0', endColorstr='#653294',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/*======= HEADER =======*/
+#headerWrapper{
+    -webkit-transition: -webkit-background-color 400ms;
+    -o-transition: -o-background-color 400ms;
+    transition: background-color 400ms;
+}
+#headerWrapper.is_stuck{
+    background-color: #f7f7f7;
+    z-index: 100;
 }
 .b-header{
     position: relative;
@@ -70,22 +355,20 @@ body{
     margin-right: 65px;
 }
 .b-logo{
+    vertical-align: middle;
     padding-top: 15px;
     height: auto;
     width: 112px;
-    
     -webkit-filter: drop-shadow(0 0 4px #bbb);
     filter: drop-shadow(0 0 4px #bbb);
 }
 .b-btn_menu{
-/*    display: block;*/
     margin-right: auto;
     margin-bottom: 0;
     height: 15px;
     border: none;
     background-color: transparent;
     padding: 0;
-/*    padding-left: 20px;*/
     text-transform: uppercase;
     color: #231f20;
     line-height: 14px;
@@ -104,7 +387,6 @@ body{
     position: absolute;
     top: 0;
     right: 0;
-/*    display: inline-block;*/
     width: 20px;
     height: 15px;
     background-image: url(../img/bars.svg);
@@ -128,7 +410,6 @@ body{
 }
 .b-adress_header{
     margin-right: auto;
-/*    margin-left: auto;*/
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
@@ -163,13 +444,13 @@ body{
 }
 .b-call{
     position: relative;
-    
+    line-height: 1.27851;
 }
 .b-header__link_phone{
+/*    line-height: 1.27851;*/
 }
 .b-icon_phone{
     display: inline-block;
-/*    vertical-align: -16%;*/
     vertical-align: -3px;
     width: 16px;
     height: 16px;
@@ -208,6 +489,7 @@ body{
 .b-dropdown_lang{
     visibility: hidden;
     opacity: 0;
+    margin-top: 0;
     margin-bottom: 0;
     position: absolute;
     top: 100%;
@@ -226,6 +508,7 @@ body{
 }
 .b-btn_callback, a.callback{
     position: absolute;
+    display: inline-block;
     top: 100%;
     right: 3px;
     bottom: 28px;
@@ -250,6 +533,7 @@ a.callback:hover{
     top: -9999px;
     left: 0;
     right: 0;
+    z-index: 100;
     background-color: #fff;
     -webkit-box-shadow: 0px 8px 35px 2px rgba(0,0,0,0.1);
     box-shadow: 0px 8px 35px 2px rgba(0,0,0,0.1);
@@ -286,12 +570,6 @@ a.callback:hover{
     border-right: none;
     flex-grow: 1;
 }
-/*
-.b-menu__item:last-child{
-    border-right: none;
-    flex-grow: 1;
-}
-*/
 .b-menu__item_callback{
     display: none;
 }
@@ -344,7 +622,63 @@ a.callback:hover{
 .b-submenu__link_more:hover{
     color: #f2c90c;
 }
+/*======= HEADER END=======*/
 
+/*======= SERVICE №1 =======*/
+.b-section_top{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    min-height: 480px;
+}
+.b-section_top h1{
+    max-width: 9em;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #231f20;
+}
+.b-section_top h1 .c-num{
+    display: inline-block;
+    -webkit-transform: scale(1.1, 1.4) translateY(-0.5rem);
+    -ms-transform: scale(1.1, 1.4) translateY(-0.5rem);
+    -o-transform: scale(1.1, 1.4) translateY(-0.5rem);
+    transform: scale(1.1, 1.4) translateY(-0.5rem);
+}
+.b-section_top p{
+    max-width: 15em;
+    font-size: 18px;
+}
+.b-section_top .b-aside + .b-aside{
+    margin-left: 47px;
+    position: relative;
+}
+.b-aside_narrower{
+    flex-basis: 410px;
+}
+.b-aside_wider{
+    flex-basis: 490px;
+}
+.b-tiles_square{
+    margin-top: 20px;
+    -webkit-box-shadow: 0px 8px 35px 2px rgba(0,0,0,0.5);
+    box-shadow: 0px 8px 35px 2px rgba(0,0,0,0.5);
+}
+.b-tiles_square .s-decoration{
+    position: absolute;
+    left: 0;
+    bottom: -40px;
+    z-index: -1;
+    height: 360px;
+    width: 700px;
+}
+/*======= SERVICE №1 END=======*/
+
+/*======= FOOTER =======*/
 .b-footer{
     position: static;
     height: auto;
@@ -376,7 +710,6 @@ a.callback:hover{
     min-height: 232px;
     padding-top: 48px;
     padding-right: 15px;
-/*    padding-left: 80px;*/
 }
 .b-part_footer{
     max-width: 520px;
@@ -399,19 +732,12 @@ a.callback:hover{
 }
 .b-footer__part_left .b-linkslist_footer:first-child{
     margin-left: -26px;
-/*    margin-right: 135px;*/
     margin-right: 26%;
 }
 .b-footer__part_left .b-linkslist_footer:first-child~.b-linkslist_footer{
     margin-left: 26px;
 }
-/*
-.b-footer__part_right .b-linkslist_footer:first-child{
-    margin-right: 85px;
-}
-*/
 .b-footer__part_right .b-linkslist_footer{
-/*    margin-left: 85px;*/
     margin-left: 16%;
 }
 .b-linkitem_footer{
@@ -559,7 +885,7 @@ a.b-callback_footer:hover{
     margin-top: 7px;
     font-size: 30px;
 }
-
+/*======= FOOTER END =======*/
 
 @media (min-width: 1200px){
     body{
