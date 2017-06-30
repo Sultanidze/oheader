@@ -251,7 +251,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div class="b-section__subheading">02</div>
                 </div>
                 <ul class="b-howItWorks__stages">
-                    <li class="b-howItWorks__stage">
+                    <li class="b-howItWorks__stage b-howItWorks__stage_active">
                         <object type="image/svg+xml" data="./img/filesbox.svg" class="o-filesBox">Ваш браузер устарел</object>
                         <div class="b-howItWorks__heading">
                             ВЫБЕРИТЕ СТРАХОВКУ
@@ -261,7 +261,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <li class="b-howItWorks__stage">
                         <object type="image/svg+xml" data="./img/letter.svg" class="o-letter">Ваш браузер устарел</object>
                         <div class="b-howItWorks__heading">
-                            УКАЖИТЕ ДАННЫЕ ДЛЯ РАСЧЕТА
+                            УКАЖИТЕ ДАННЫЕ ДЛЯ РАСЧЕТАЯ
                         </div>
                         <p>Ответьте на простые вопросы и получите расчет в лучших компаниях через 3 секунды.</p>
                     </li>
@@ -336,21 +336,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
     </div>
     <div class="b-container b-container_mid">
-        <section class="b-section_rating">
+        <section class="b-section_rating" id="rating">
             <div class="b-section__heading">
                 РЕЙТИНГ КОМПАНИЙ 
-                <div class="b-section__subheading" id="rating">04</div>
+                <div class="b-section__subheading">04</div>
             </div>
-            <button class="b-btn_rating b-rating__link b-btn_active js-btn__rating_clients">Клиентов oh.ua </button>
-            <button class="b-btn_rating b-rating__link js-btn__rating_assets">Рейтинг по активам</button>
+            <div class="b-container_sliderRating">
+                <button class="b-btn_rating b-rating__link b-btn_active js-btn__rating_clients">Клиентов oh.ua </button>
+                <button class="b-btn_rating b-rating__link js-btn__rating_assets">Рейтинг по активам</button>
+            </div>
             <div class="b-block_rating js-rating_clients">
-                <div class="b-container_slider">
-                    <div class="b-rating__slider js-slider">
+                <div class="b-container_sliderRating">
+                    <div class="b-slider b-slider_rating js-slider">
                         <div class="b-slider__wrap">
-                            <div class="b-slider__string js-slider_string">
+                            <div class="b-slider__string js-slider__string_rating">
                                 <div class="b-string__slide b-string__slide_rating s-corporate_dark">
                                     <img src="./img/unica.png" alt="" class="b-proposition__logo">
                                     <span class="b-company__name">СК УНИКА</span>
+                                    <span class="b-company__rating b-company__rating_propos" data-rating="2">
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                    </span>
+                                    <p>Хорошее урегулирование<br>Высокая надежность</p>
+                                    <a data-href="#" class="b-btn_wArrow b-btn_white b-btn_right">
+                                        <span class="b-text_btn">Подробнее</span>
+                                    </a>
+                                </div>
+                                <div class="b-string__slide b-string__slide_rating s-corporate_dark">
+                                    <img src="./img/vusq.png" alt="" class="b-proposition__logo">
+                                    <span class="b-company__name">СК VUSO</span>
+                                    <span class="b-company__rating b-company__rating_propos" data-rating="2">
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                    </span>
+                                    <p>Хорошее урегулирование<br>Высокая надежность</p>
+                                    <a data-href="#" class="b-btn_wArrow b-btn_white b-btn_right">
+                                        <span class="b-text_btn">Подробнее</span>
+                                    </a>
+                                </div>
+                                <div class="b-string__slide b-string__slide_rating s-corporate_dark">
+                                    <img src="./img/providna.png" alt="" class="b-proposition__logo">
+                                    <span class="b-company__name">СК ПРОВІДНА</span>
                                     <span class="b-company__rating b-company__rating_propos" data-rating="2">
                                         <span class="fa fa-star-o" aria-hidden="true"></span>
                                         <span class="fa fa-star-o" aria-hidden="true"></span>
@@ -379,8 +411,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                     </a>
                                 </div>
                                 <div class="b-string__slide b-string__slide_rating s-corporate_dark">
-                                    <img src="./img/unica.png" alt="" class="b-proposition__logo">
-                                    <span class="b-company__name">СК УНИКА</span>
+                                    <img src="./img/vusq.png" alt="" class="b-proposition__logo">
+                                    <span class="b-company__name">СК VUSO</span>
+                                    <span class="b-company__rating b-company__rating_propos" data-rating="2">
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                        <span class="fa fa-star-o" aria-hidden="true"></span>
+                                    </span>
+                                    <p>Хорошее урегулирование<br>Высокая надежность</p>
+                                    <a data-href="#" class="b-btn_wArrow b-btn_white b-btn_right">
+                                        <span class="b-text_btn">Подробнее</span>
+                                    </a>
+                                </div>
+                                <div class="b-string__slide b-string__slide_rating s-corporate_dark">
+                                    <img src="./img/providna.png" alt="" class="b-proposition__logo">
+                                    <span class="b-company__name">СК ПРОВІДНА</span>
                                     <span class="b-company__rating b-company__rating_propos" data-rating="2">
                                         <span class="fa fa-star-o" aria-hidden="true"></span>
                                         <span class="fa fa-star-o" aria-hidden="true"></span>
@@ -414,7 +461,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <section class="b-section_buy b-container b-container_narrow" id="buy">
             <h2 class="b-section__heading">
                 КУПИТЬ СТРАХОВКУ 
-                <span class="b-section__subheading" id="rating">05</span>
+                <span class="b-section__subheading">05</span>
             </h2>
             <div class="b-block_buy">
                 <div class="b-buy_single">
@@ -464,10 +511,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
             </div>
     <div class="b-container b-container_mid">
-        <section class="b-section_buy b-container b-container_narrow" id="buy">
+        <section class="b-section_buy b-container b-container_responses" id="buy">
             <h2 class="b-section__heading">
                 ОТЗьіВЬІ КЛИЕНТОВ
-                <span class="b-section__subheading" id="rating">06</span>
+                <span class="b-section__subheading">06</span>
             </h2>
             <div class="b-rating__block_btns b-responses__block_btns">
                 <button class="b-btn_rating b-btn_active b-btn_responses js-btn_responses">Отзывы от клиентов Oh.ua</button>
@@ -577,7 +624,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </section>
     </div>
-    <div class="s-highlited">
+    <div class="s-highlited_light">
         <div class="b-container b-container_mid">
             <section class="b-section_seo b-container b-container_narrow">
                 <h2 class="b-section__heading">
@@ -621,7 +668,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="b-section__heading b-section__heading_price">
                 ЦЕНА СТРАХОВКИ 
             </div>
-            <p class="b-paragraph__price" id="rating">Стоимость полиса страхования, в зависимости от вида выбранного страхового продукта<br>формируется, в соответствии с такими критериями:</p>
+            <p class="b-paragraph__price">Стоимость полиса страхования, в зависимости от вида выбранного страхового продукта<br>формируется, в соответствии с такими критериями:</p>
             <ul class="b-criterions">
                 <li class="b-criterion b-criterion_price">
                     <div class="b-criterion__block_img">
@@ -672,7 +719,61 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <span class="b-map__address">Лимит и объем покрываемых рисков;</span>
                 </li>
             </ul>
-            <p class="b-paragraph__price" id="rating">К примеру, стоимость полиса ОСАГО для Киева и автомобиля с объемом до 1600см3 страховой платеж<br>составит от 778,00 грн., а цена на полис Зеленая карта для легкового типа транспортного средства в<br>страны Европы на 15 дней – от 619,00 грн.</p>
+            <p class="b-paragraph__price">К примеру, стоимость полиса ОСАГО для Киева и автомобиля с объемом до 1600см3 страховой платеж<br>составит от 778,00 грн., а цена на полис Зеленая карта для легкового типа транспортного средства в<br>страны Европы на 15 дней – от 619,00 грн.</p>
+            <div class="b-priceAgregator">
+                <div class="b-priceAgregator__heading b-advantages_online">Как пользоваться сервисом OH.UA?</div>
+                <div class="b-messaging__paragraph b-whatIsOh__text s-highlited_light">
+                    <div class="b-map__address">Пользоваться прайс-агрегатором Oh.ua элементарно просто:</div>
+                    <p class="b-whatIsOh__text">В верхней части этой страницы выберите интересующий Вас вид страхования: ОСАГО, Зеленая карта или Туристический полис.После перехода заполните поля для информации и нажмите кнопку «Найти предложения».Вы получите перечень предложений от страховых компаний с указанием стоимости, скидок и всевозможных бонусов.После сравнения всех вариантов и выбора оптимального нажмите кнопку «Купить». Введите свое имя и номер телефона и автоматически зарегистрируйтесь на сайте.Теперь Вы можете оформить полис самостоятельно онлайн, оставив необходимые данные, или по телефону.</p>
+                    <div class="b-decoration s-highlited_light"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="b-container b-container_mid">
+        <section class="b-section_specials b-container b-container_specials" id="specials">
+            <div class="b-section__heading">
+                СКИДКИ И СПЕЦПРЕДЛОЖЕНИЯ 
+                <div class="b-section__subheading">07</div>
+            </div>
+            <div class="b-specials__btns">
+                <button class="b-btn_rating b-btn_active">Все акции</button>
+                <button class="b-btn_rating">Молодому водителю</button>
+                <button class="b-btn_rating">Экономному водителю</button>
+                <button class="b-btn_rating">Скидки</button>
+            </div>
+            <div class="b-block_rating js-rating_clients">
+                <div class="b-container_sliderSpecials">
+                    <div class="b-slider b-slider_specials js-slider">
+                        <div class="b-slider__wrap">
+                            <div class="b-slider__string js-slider__string_specials">
+                                <div class="b-string__slide b-string__slide_specials s-corporate_dark">
+                                    <img src="./img/can.png" alt="канистра" class="b-slide__img_bg b-slide__img_small">
+                                    <div class="b-slide__heading_specials b-howItWorks__heading">
+                                        <span class="s-color-corporate-light">1 000</span>литров топлева<br>от СК ВУСО
+                                    </div>
+                                    <p class="b-slide__paragraph_special">Покупай ОСАГО и получай уникальную возможность выиграть 1000 литров топлива</p>
+                                    <a data-href="#" class="b-btn_wArrow b-btn_white b-btn_right">
+                                        <span class="b-text_btn">Подробнее</span>
+                                    </a>
+                                </div>
+                                <div class="b-string__slide b-string__slide_specials s-corporate_dark">
+                                    <img src="./img/vusq.png" alt="" class="b-proposition__logo">
+                                    <span class="b-company__name">СК VUSO</span>
+                                    <p class="b-slide__paragraph_special">Хорошее урегулирование Высокая надежность</p>
+                                    <a data-href="#" class="b-btn_wArrow b-btn_white b-btn_right">
+                                        <span class="b-text_btn">Подробнее</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="b-slider__control b-slider__control_left js-slider_left"><span class="fa fa-angle-double-left" aria-hidden="true"></span></button>
+                        <button class="b-slider__control b-slider__control_right js-slider_right"><span class="fa fa-angle-double-right" aria-hidden="true"></span></button>
+                    </div>
+
+                </div>
+            </div>
+            
         </section>
     </div>
 </div>
@@ -1012,7 +1113,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!--<script type="text/javascript" src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>-->
 <!--<script type="text/javascript" src="//yastatic.net/share2/share.js" charset="utf-8"></script>-->
 
-<script type="text/javascript" src="./js/custom.js" charset="utf-8"></script>
+<script type="text/javascript" src="./js/slick.min.js"></script>
+<script type="text/javascript" src="./js/custom.js"></script>
 
 </body>
 </html>

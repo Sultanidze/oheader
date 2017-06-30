@@ -1,6 +1,6 @@
 <?xml-stylesheet type="text/css" href="../css/custom.css"?>
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve" class="svg-stage">
+	 viewBox="-49 141 512 512" style="enable-background:new -49 141 512 512;" xml:space="preserve" class="svg-stage svg-filesbox">
 <path d="M463,424.2c0-0.8-0.1-1.5-0.3-2.3l-56.4-244.5c-1.1-4.6-5.2-7.9-9.9-7.9h-84.4v-13.7c0-5.6-4.6-10.2-10.2-10.2H112.3
 	c-5.6,0-10.2,4.6-10.2,10.2v13.7H17.6c-4.7,0-8.9,3.3-9.9,7.9l-56.4,244.5c-0.2,0.8-0.3,1.5-0.3,2.3l0,0v213.9
 	c0,5.6,4.6,10.2,10.2,10.2h491.6c5.6,0,10.2-4.6,10.2-10.2V424.2L463,424.2z M320.9,224.5v38.1H126.3c-2.7,0-5.3,1.1-7.2,3l-26,26

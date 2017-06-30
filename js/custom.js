@@ -2,6 +2,7 @@ $(document).ready(function(){
 	// stick header in top of window
 	$("#headerWrapper").stick_in_parent();
 
+	// menu functionality
 	(function(){
 		"use strict"
 		// menu hiding/appearance
@@ -89,5 +90,56 @@ $(document).ready(function(){
 			$content.slideToggle(200);
 			$trigger.parent().toggleClass("opened");
 		});
+	})();
+	// menu functionality end
+
+	// rating and specials sliders
+	(function(){
+		var settingsRating = {
+			arrows: false,
+			infinite: true,
+			speed: 400,
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 4400,
+			responsive: [
+				{
+					breakpoint: 991,
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+					  slidesToShow: 1
+				  }
+				}
+			]
+		};
+
+		var $slidersRating = $(".js-slider__string_rating").slick(settingsRating);
+
+		var settingsSpecials = {
+			arrows: false,
+			infinite: true,
+			speed: 400,
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 4400,
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+					  slidesToShow: 1
+				  }
+				}
+			]
+		};
+
+		var $slidersSpecials = $(".js-slider__string_specials").slick(settingsSpecials);
+		
 	})();
 });
