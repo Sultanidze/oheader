@@ -1393,6 +1393,21 @@ a.callback:hover{
     -ms-align-items: center;
     align-items: center;
 */
+    -webkit-transition: background-color 400ms, box-shadow 400ms, -webkit-transform 400ms;
+    -o-transition: background-color 400ms, box-shadow 400ms, -o-transform 400ms;
+    transition: background-color 400ms, box-shadow 400ms, transform 400ms;
+}
+.b-tile_buy:hover{
+    border: none;
+    background-color: #f2c90c;
+    color: #231f20;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.b-tile_buy:hover>.b-tile__heading_buy{
+    color: #231f20;
 }
 .b-block_buy .b-tile_active{
     margin-top: auto;
@@ -1431,7 +1446,7 @@ a.callback:hover{
 .b-tile_buy p{
     margin-top: auto;
     margin-bottom: 0;
-    color: #000;
+    color: #333333;
 }
 .b-buy__peoples{
     margin-top: 15px;
