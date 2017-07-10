@@ -256,6 +256,18 @@ a, button, input[type="button"], input[type="submit"], input[type="color"], inpu
 /* - PRELOADER END - */
 /*======= SOME OF PREVIOUS STYLES END =======*/
 
+/* === PREVIOUS STYLES OVERRIDES === */
+.css-custom{
+    color: #231f20;
+}
+.css-custom a:hover{
+    color: #231f20;
+}
+.css-custom h1{
+    color: #231f20;
+}
+/* === PREVIOUS STYLES OVERRIDES END === */
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -276,6 +288,9 @@ a, button, input[type="button"], input[type="submit"], input[type="color"], inpu
 }
 .s-bold{
     font-weight: 700!important;
+}
+.s-center{
+    text-align: center;
 }
 /*
 .s-color_light{
@@ -1280,6 +1295,7 @@ a.callback:hover{
     width: 59px;
     height: 59px;
     border: none;
+    border-radius: 0;
     padding: 0;
     font-size: 24px;
     background-color: #f2c90c;
@@ -2281,6 +2297,7 @@ a.b-callback_footer:hover{
     width: 130px;
     display: inline-block;
     vertical-align: -55%;
+    line-height: 1.28571;
     font-size: 24px;
     font-family: 'Bad Script', cursive;
     font-weight: 400;
@@ -2301,9 +2318,12 @@ a.b-callback_footer:hover{
 }
 .b-404__preBuy .svg-arrow_wavy{
     position: absolute;
-    top: 45%;
-    right: 8%;
-    width: 83px;
+/*    top: 45%;*/
+/*    right: 8%;*/
+/*    width: 83px;*/
+    top: -16%;
+    left: 101%;
+    width: 105px;
 }
 .b-404__buy{
     margin-bottom: 35px;
