@@ -260,10 +260,10 @@ a, button, input[type="button"], input[type="submit"], input[type="color"], inpu
 .css-custom{
     color: #231f20;
 }
-.css-custom a:hover{
-    color: #231f20;
-}
-.css-custom h1{
+
+.css-custom h1,
+.css-custom h2
+{
     color: #231f20;
 }
 /* === PREVIOUS STYLES OVERRIDES END === */
@@ -542,6 +542,9 @@ body{
 .b-link_lang{
     color: #f2c90c;
 }
+.b-link_lang:hover{
+    color: #6f37a1;
+}
 .b-dropdown_lang{
     visibility: hidden;
     opacity: 0;
@@ -642,6 +645,11 @@ a.callback:hover{
 .b-menu__heading:hover{
     color: #743aa7;
 }
+/*
+a.b-menu__heading:hover{
+    color: #743aa7;
+}
+*/
 .b-heading_submenu{
     display: block;
     margin-bottom: 10px;
@@ -670,6 +678,11 @@ a.callback:hover{
     text-decoration: underline;
     color: #61308e;
 }
+/*
+.b-submenu__link:hover{
+    color: #61308e;
+}
+*/
 .b-submenu__link_more{
     font-weight: 700;
     text-decoration: underline;
@@ -678,6 +691,11 @@ a.callback:hover{
 .b-submenu__link_more:hover{
     color: #f2c90c;
 }
+/*
+a.b-submenu__link_more:hover{
+    color: #f2c90c;
+}
+*/
 /*======= HEADER END=======*/
 
 /*======= SERVICE №1 =======*/
@@ -864,7 +882,13 @@ a.callback:hover{
 .b-btn_white{
     color: #fff; 
 }
+.b-btn_white:hover{
+    color: #fff; 
+}
 .b-btn_black{
+   color: #231f20; 
+}
+.b-btn_black:hover{
    color: #231f20; 
 }
 .b-btn_left:after{
@@ -1010,6 +1034,9 @@ a.callback:hover{
     font-weight: 700;
     text-decoration: none;
     color: inherit;
+}
+.b-link_stage:hover{
+    color: #231f20;
 }
 /*======= HOW IT WORKS END=======*/
 
@@ -2103,6 +2130,9 @@ a.callback:hover{
     font-family: 'Roboto Condensed', sans-serif;
 }
 .b-link_footer:hover{
+    color: #fff;
+}
+a.b-link_footer:hover{
     color: #fff;
 }
 a.b-callback_footer{
