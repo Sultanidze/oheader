@@ -445,7 +445,7 @@ body{
     right: 0;
     width: 20px;
     height: 15px;
-    background-image: url(../img/bars.svg);
+    background-image: url(../images/redesign/bars.svg);
     line-height: 100%;
     vertical-align: top;
 }
@@ -510,7 +510,7 @@ body{
     vertical-align: -3px;
     width: 16px;
     height: 16px;
-    background-image: url(../img/phone.svg);
+    background-image: url(../images/redesign/phone.svg);
     -webkit-background-size: contain;
     background-size: contain;
     -webkit-transform: rotate(90deg);
@@ -2067,7 +2067,7 @@ a.b-submenu__link_more:hover{
     align-items: flex-end;
 }
 .b-footer__part{
-    background: url(../img/footer-bg.jpg) center/cover no-repeat ;
+    background: url(../images/redesign/footer-bg.jpg) center/cover no-repeat ;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -2160,7 +2160,7 @@ a.b-callback_footer:hover{
     font-size: 19px;
 }
 .b-link_footer .b-icon_phone{
-    background-image: url(../img/phone-yellow.svg);
+    background-image: url(../images/redesign/phone-yellow.svg);
 }
 .b-part_footer .b-adress_header{
     display: block;
@@ -2172,7 +2172,7 @@ a.b-callback_footer:hover{
 
 .b-footer__up_mobile{
     display: none;
-    background: url(../img/footer-bg.jpg) center/cover no-repeat;
+    background: url(../images/redesign/footer-bg.jpg) center/cover no-repeat;
 }
 .b-footer__up_mobile:after{
     content: '';
@@ -2294,7 +2294,7 @@ a.b-callback_footer:hover{
     height: 150px;
     flex-shrink: 0;
 /*    flex-basis: 350px;*/
-    background: url("../img/404.png") center/contain no-repeat;
+    background: url("../images/redesign/404.png") center/contain no-repeat;
 }
 .b-block__content_404{
     margin-left: 42px;
@@ -2831,7 +2831,7 @@ a.b-callback_footer:hover{
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        background-image: url(../img/phone-white.svg);
+        background-image: url(../images/redesign/phone-white.svg);
         background-repeat: no-repeat;
         background-position: center;
         -webkit-background-size: 14px 14px;
