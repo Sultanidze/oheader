@@ -258,6 +258,7 @@ a, button, input[type="button"], input[type="submit"], input[type="color"], inpu
 
 /* === PREVIOUS STYLES OVERRIDES === */
 .css-custom{
+    font-family: 'Roboto', sans-serif;
     color: #231f20;
 }
 
