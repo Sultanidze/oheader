@@ -781,6 +781,16 @@ a.b-submenu__link_more:hover{
     border: 1px solid transparent;
     padding: 11px 0 20px 19px;
 /*    color: #fff;*/
+    -webkit-transition: color 200ms, background-color 200ms;
+    -o-transition: all 200ms, background-color 200ms;
+    transition:  all 200ms, background-color 200ms;
+}
+.b-tile_service:hover{
+    background-color: #f2c90c;
+    color: #231f20;
+}
+.b-tile_service:hover .b-btn_wArrow{
+    color: #000;
 }
 .b-tile_active{
     background-color: #f2c90c;
@@ -1030,14 +1040,30 @@ a.b-submenu__link_more:hover{
     font-family: 'Roboto Condensed', sans-serif;
 }
 .b-link_stage{
+    width: 260px;
+    display: inline-block;
+    border-color: transparent;
+    border-width: 0;
+    padding-right: 10px;
+    padding-left: 10px;
     font-size: 24px;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     text-decoration: none;
     color: inherit;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+/*    -webkit-transition: border-width 200ms;*/
+/*    -o-transition: border-width 200ms;*/
+    transition: border-color 200ms;
 }
 .b-link_stage:hover{
     color: #231f20;
+    border-style: solid;
+    border-color: #231f20;
+    border-width: 0 2px;
+    
 }
 /*======= HOW IT WORKS END=======*/
 
@@ -2381,6 +2407,9 @@ a.b-callback_footer:hover{
 .b-container__seoMap{
     margin: 0 auto 30px;
 }
+.b-container__seoMap+.cities_links{
+    display: none;
+}
 .b-seoMap{
     position: relative;
     width: 846px;
@@ -2424,6 +2453,8 @@ a.b-callback_footer:hover{
 .b-region__img_highlighted{
     position: absolute;
     top: 0;
+    left: 0;
+    width: 100%;
     opacity: 0;
 }
 .b-region__title:hover ~ .b-region__img_highlighted{
@@ -2846,6 +2877,13 @@ a.b-callback_footer:hover{
         width: 456px;
         margin-right: auto;
         margin-left: auto;
+    }
+    
+    .b-container__seoMap{
+        display: none;
+    }
+    .b-container__seoMap+.cities_links{
+        display: block;
     }
 }
 @media (max-width: 911px){
