@@ -142,4 +142,22 @@ $(document).ready(function(){
 		var $slidersSpecials = $(".js-slider__string_specials").slick(settingsSpecials);
 		
 	})();
+
+	// seoMap links click
+	(function(){
+		var  $map = $("#seoMap")
+			,$links = $map.find(".js-link_region")
+			,$titles = $links.find(".js-title")
+			;
+
+		$links.on("click", function(){
+			return false;
+		});
+
+		$titles.on("click", function(){
+			var $link = $(this).parent(".js-link_region");
+			window.open($link.attr("href"), $link.attr("target"));
+		});
+
+	})();
 });

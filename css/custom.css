@@ -2377,6 +2377,292 @@ a.b-callback_footer:hover{
 }
 /*======= 404 END =======*/
 
+/*======= OSAGO SEOMAP =======*/
+.b-container__seoMap{
+    margin: 0 auto 30px;
+}
+.b-seoMap{
+    position: relative;
+    width: 846px;
+    height: 570px;
+/*    background: url("../images/seomap/ukraine.svg") 0 0 no-repeat;*/
+}
+.b-seomap__bgnd{
+/*
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+*/
+    -webkit-filter: drop-shadow(0 0 20px #bbb);
+    -o-filter: drop-shadow(0 0 20px #bbb);
+    filter: drop-shadow(0 0 20px #bbb);
+}
+.b-map__region{
+    position: absolute;
+    cursor: default;
+}
+.b-region__title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    z-index: 1;
+    cursor: pointer;
+}
+.b-region__img{
+    -webkit-transition: opacity 25ms;
+    -ms-transition: opacity 25ms;
+    -o-transition: opacity 25ms;
+    transition: opacity 25ms;
+}
+.b-region__img_regular{
+}
+.b-region__img_highlighted{
+    position: absolute;
+    top: 0;
+    opacity: 0;
+}
+.b-region__title:hover ~ .b-region__img_highlighted{
+    opacity: 1;
+}
+
+.b-region_lutsk{
+    width: 109px;
+    top: 13px;
+    left: 93px;
+}
+.b-region_lutsk .b-region__title{
+    top: 57px;
+    left: 39px;
+}
+.b-region_rovno{
+    width: 125px;
+    top: 17px;
+    left: 153px;
+}
+.b-region_rovno .b-region__title{
+    top: 75px;
+    left: 54px;
+}
+.b-region_zhitomyr{
+    width: 117px;
+    top: 45px;
+    left: 247px;
+}
+.b-region_zhitomyr .b-region__title{
+    top: 78px;
+    left: 33px;
+}
+.b-region_kyiv{
+    width: 128.5px;
+    top: 58px;
+    left: 343.7px;
+}
+.b-region_kyiv .b-region__title{
+    top: 86px;
+    left: 36px;
+}
+.b-region_chernigov{
+    width: 130.7px;
+    top: 0;
+    left: 401px;
+}
+.b-region_chernigov .b-region__title{
+    top: 86px;
+    left: 36px;
+}
+.b-region_sumy{
+    width: 125px;
+    top: 0;
+    left: 507px;
+}
+.b-region_sumy .b-region__title{
+    top: 86px;
+    left: 36px;
+}
+
+.b-region_lviv{
+    width: 134px;
+    top: 94px;
+    left: 31px;
+}
+.b-region_lviv .b-region__title{
+    top: 65px;
+    left: 45px;
+}
+.b-region_ternopol{
+    width: 76px;
+    top: 137px;
+    left: 129px;
+}
+.b-region_ternopol .b-region__title{
+    top: 51px;
+    left: 6px;
+}
+.b-region_khmelnickyi{
+    width: 81px;
+    top: 119px;
+    left: 194px;
+}
+.b-region_khmelnickyi .b-region__title{
+    top: 51px;
+    left: 6px;
+}
+.b-region_vinnytsia{
+    width: 124px;
+    top: 172px;
+    left: 249px;
+}
+.b-region_vinnytsia .b-region__title{
+    top: 80px;
+    left: 39px;
+}
+.b-region_cherkassy{
+    width: 154px;
+    top: 152px;
+    left: 353px;
+}
+.b-region_cherkassy .b-region__title{
+    top: 74px;
+    left: 57px;
+}
+.b-region_poltava{
+    width: 157px;
+    top: 129px;
+    left: 470px;
+}
+.b-region_poltava .b-region__title{
+    top: 65px;
+    left: 54px;
+}
+.b-region_kharkiv{
+    width: 151px;
+    top: 130px;
+    left: 596px;
+}
+.b-region_kharkiv .b-region__title{
+    top: 63px;
+    left: 64px;
+}
+
+.b-region_uzhgorod{
+    width: 115px;
+    top: 204px;
+    left: 0px;
+}
+.b-region_uzhgorod .b-region__title{
+    top: 53px;
+    left: 26px;
+}
+.b-region_frankovsk{
+    width: 99px;
+    top: 183px;
+    left: 68px;
+}
+.b-region_frankovsk .b-region__title{
+    top: 38px;
+    left: 19px;
+}
+.b-region_chernovtsy{
+    width: 129px;
+    top: 250px;
+    left: 126px;
+}
+.b-region_chernovtsy .b-region__title{
+    top: 22px;
+    left: 23px;
+}
+
+.b-region_kirovograd{
+    width: 198px;
+    top: 232px;
+    left: 357px;
+}
+.b-region_kirovograd .b-region__title{
+    top: 51px;
+    left: 88px;
+}
+.b-region_dnepropetrovsk{
+    width: 189px;
+    top: 225px;
+    left: 511px;
+}
+.b-region_dnepropetrovsk .b-region__title{
+    top: 54px;
+    left: 45px;
+}
+.b-region_donetsk{
+    width: 125px;
+    top: 214px;
+    left: 681px;
+}
+.b-region_donetsk .b-region__title{
+    top: 91px;
+    left: 34px;
+}
+.b-region_lugansk{
+    width: 111px;
+    top: 153px;
+    left: 736px;
+}
+.b-region_lugansk .b-region__title{
+    top: 80px;
+    left: 37px;
+}
+
+.b-region_odessa{
+    width: 154px;
+    top: 292px;
+    left: 277px;
+}
+.b-region_odessa .b-region__title{
+    top: 70px;
+    left: 81px;
+}
+.b-region_nikolaev{
+    width: 141px;
+    top: 293px;
+    left: 379px;
+}
+.b-region_nikolaev .b-region__title{
+    top: 69px;
+    left: 60px;
+}
+.b-region_kherson{
+    width: 163px;
+    top: 339px;
+    left: 454px;
+}
+.b-region_kherson .b-region__title{
+    top: 67px;
+    left: 60px;
+}
+.b-region_zaporozhye{
+    width: 144px;
+    top: 298px;
+    left: 573px
+}
+.b-region_zaporozhye .b-region__title{
+    top: 63px;
+    left: 37px;
+}
+
+.b-region_simferopol{
+    width: 208px;
+    top: 435px;
+    left: 489px;
+}
+.b-region_simferopol .b-region__title{
+    top: 68px;
+    left: 60px;
+}
+
+/*======= OSAGO SEOMAP END =======*/
+
 /*======= SVG =======*/
 .svg-stage{
     fill: #000;
