@@ -718,10 +718,10 @@ a.b-submenu__link_more:hover{
 }
 .c-num_heading{
     display: inline-block;
-    -webkit-transform: scale(1.1, 1.4) translateY(-0.37rem);
-    -ms-transform: scale(1.1, 1.4) translateY(-0.37rem);
-    -o-transform: scale(1.1, 1.4) translateY(-0.37rem);
-    transform: scale(1.1, 1.4) translateY(-0.37rem);
+    -webkit-transform: scale(1.1, 1.4) translateY(-0.5rem);
+    -ms-transform: scale(1.1, 1.4) translateY(-0.5rem);
+    -o-transform: scale(1.1, 1.4) translateY(-0.5rem);
+    transform: scale(1.1, 1.4) translateY(-0.5rem);
 }
 .b-section_top p{
     max-width: 15em;
@@ -2417,16 +2417,16 @@ a.b-callback_footer:hover{
 /*    background: url("../images/seomap/ukraine.svg") 0 0 no-repeat;*/
 }
 .b-seomap__bgnd{
-/*
     position: absolute;
     top: 0;
-    right: 0;
+/*    right: 0;*/
     left: 0;
-    margin: auto;
-*/
+/*    margin: auto;*/
+/*
     -webkit-filter: drop-shadow(0 0 20px #bbb);
     -o-filter: drop-shadow(0 0 20px #bbb);
     filter: drop-shadow(0 0 20px #bbb);
+*/
 }
 .b-map__region{
     position: absolute;
@@ -2449,12 +2449,12 @@ a.b-callback_footer:hover{
     transition: opacity 25ms;
 }
 .b-region__img_regular{
+    width: 100%;
 }
 .b-region__img_highlighted{
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
     opacity: 0;
 }
 .b-region__title:hover ~ .b-region__img_highlighted{
@@ -2462,9 +2462,15 @@ a.b-callback_footer:hover{
 }
 
 .b-region_lutsk{
-    width: 109px;
-    top: 13px;
-    left: 93px;
+    width: 107.64px;
+    top: 13.6px;
+    left: 93.799999px;
+    
+/*
+    width: 107.325px;
+    top: 13.14px;
+    left: 94.49166488px;
+*/
 }
 .b-region_lutsk .b-region__title{
     top: 57px;
@@ -2507,9 +2513,14 @@ a.b-callback_footer:hover{
     left: 36px;
 }
 .b-region_sumy{
+/*
     width: 125px;
     top: 0;
     left: 507px;
+*/
+    width: 124.6px;
+    top: 0.5px;
+    left: 508px;
 }
 .b-region_sumy .b-region__title{
     top: 86px;
@@ -2517,9 +2528,14 @@ a.b-callback_footer:hover{
 }
 
 .b-region_lviv{
+/*
     width: 134px;
     top: 94px;
     left: 31px;
+*/
+    width: 131.69px;
+    top: 95.19px;
+    left: 32.7px;
 }
 .b-region_lviv .b-region__title{
     top: 65px;
@@ -2535,18 +2551,23 @@ a.b-callback_footer:hover{
     left: 6px;
 }
 .b-region_khmelnickyi{
-    width: 81px;
-    top: 119px;
-    left: 194px;
+    width: 81.07px;
+    top: 118.7px;
+    left: 193.4px;
 }
 .b-region_khmelnickyi .b-region__title{
     top: 51px;
     left: 6px;
 }
 .b-region_vinnytsia{
+/*
     width: 124px;
     top: 172px;
     left: 249px;
+*/
+    width: 123.7px;
+    top: 172.25px;
+    left: 248.9px;
 }
 .b-region_vinnytsia .b-region__title{
     top: 80px;
@@ -2571,9 +2592,14 @@ a.b-callback_footer:hover{
     left: 54px;
 }
 .b-region_kharkiv{
+/*
     width: 151px;
     top: 130px;
     left: 596px;
+*/
+    width: 150.1px;
+    top: 129.9px;
+    left: 596.5px;
 }
 .b-region_kharkiv .b-region__title{
     top: 63px;
@@ -2581,8 +2607,8 @@ a.b-callback_footer:hover{
 }
 
 .b-region_uzhgorod{
-    width: 115px;
-    top: 204px;
+    width: 115.2px;
+    top: 203.75px;
     left: 0px;
 }
 .b-region_uzhgorod .b-region__title{
@@ -2599,9 +2625,9 @@ a.b-callback_footer:hover{
     left: 19px;
 }
 .b-region_chernovtsy{
-    width: 129px;
-    top: 250px;
-    left: 126px;
+    width: 128.4px;
+    top: 249.35px;
+    left: 126.599999px;
 }
 .b-region_chernovtsy .b-region__title{
     top: 22px;
@@ -2627,8 +2653,13 @@ a.b-callback_footer:hover{
     left: 45px;
 }
 .b-region_donetsk{
+/*
     width: 125px;
     top: 214px;
+    left: 681px;
+*/
+    width: 125px;
+    top: 213.3px;
     left: 681px;
 }
 .b-region_donetsk .b-region__title{
@@ -2636,9 +2667,14 @@ a.b-callback_footer:hover{
     left: 34px;
 }
 .b-region_lugansk{
+/*
     width: 111px;
     top: 153px;
     left: 736px;
+*/
+    width: 110.3px;
+    top: 152.599999px;
+    left: 735.7px;
 }
 .b-region_lugansk .b-region__title{
     top: 80px;
@@ -2646,36 +2682,51 @@ a.b-callback_footer:hover{
 }
 
 .b-region_odessa{
-    width: 154px;
-    top: 292px;
-    left: 277px;
+    width: 154.2px;
+    top: 291.5px;
+    left: 276.9px;
 }
 .b-region_odessa .b-region__title{
     top: 70px;
     left: 81px;
 }
 .b-region_nikolaev{
+/*
     width: 141px;
     top: 293px;
     left: 379px;
+*/
+    width: 141.4px;
+    top: 293px;
+    left: 379.2px
 }
 .b-region_nikolaev .b-region__title{
     top: 69px;
     left: 60px;
 }
 .b-region_kherson{
+/*
     width: 163px;
     top: 339px;
     left: 454px;
+*/
+    width: 163.399px;
+    top: 338.588px;
+    left: 453.7px;
 }
 .b-region_kherson .b-region__title{
     top: 67px;
     left: 60px;
 }
 .b-region_zaporozhye{
+/*
     width: 144px;
     top: 298px;
-    left: 573px
+    left: 573px;
+*/
+    width: 144.8px;
+    top: 297.0px;
+    left: 572.3px;
 }
 .b-region_zaporozhye .b-region__title{
     top: 63px;
@@ -2683,14 +2734,72 @@ a.b-callback_footer:hover{
 }
 
 .b-region_simferopol{
-    width: 208px;
-    top: 435px;
+    width: 207.9px;
+    top: 434.1px;
     left: 489px;
 }
 .b-region_simferopol .b-region__title{
     top: 68px;
     left: 60px;
 }
+
+/* firefox map hacks */
+_:-moz-tree-row(hover), .b-region_uzhgorod{
+    width: 115.2px;
+}
+_:-moz-tree-row(hover), .b-region_khmelnickyi{
+    width: 82.07px;
+}
+_:-moz-tree-row(hover), .b-region_lviv{
+    width: 131.4px;
+    top: 94.9px;
+    left: 33.4px;
+}
+_:-moz-tree-row(hover), .b-region_lutsk{
+    width: 107.64px;
+    top: 12.7px;
+    left: 94.5px;
+}
+_:-moz-tree-row(hover), .b-region_rovno{
+    width: 124.76px;
+    top: 16.6px;
+    left: 153.5px;
+}
+_:-moz-tree-row(hover), .b-region_zhitomyr{
+    width: 116.5px;
+    top: 45.5px;
+    left: 247.5px;
+}
+_:-moz-tree-row(hover), .b-region_chernovtsy{
+    width: 128.4px;
+    top: 249.1px;
+    left: 126.9px;
+}
+_:-moz-tree-row(hover), .b-region_frankovsk{
+    width: 98.7px;
+    top: 182px;
+    left: 68.999px;
+}
+_:-moz-tree-row(hover), .b-region_ternopol{
+    width: 76.1px;
+    top: 137px;
+    left: 129.3px;
+}
+_:-moz-tree-row(hover), .b-region_khmelnickyi{
+    width: 81.5px;
+    top: 118.7px;
+    left: 193.54px;
+}
+_:-moz-tree-row(hover), .b-region_kyiv{
+    width: 128.9px;
+    top: 57.8px;
+    left: 343.54px;
+}
+_:-moz-tree-row(hover), .b-region_vinnytsia{
+    left: 249px;
+    top: 172.1px;
+}
+/* firefox map hacks end */
 
 /*======= OSAGO SEOMAP END =======*/
 
@@ -2880,7 +2989,7 @@ a.b-callback_footer:hover{
     }
     
     .b-container__seoMap{
-        display: none;
+/*        display: none;*/
     }
     .b-container__seoMap+.cities_links{
         display: block;
