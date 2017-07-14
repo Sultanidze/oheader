@@ -2744,62 +2744,116 @@ a.b-callback_footer:hover{
 }
 
 /* firefox map hacks */
-_:-moz-tree-row(hover), .b-region_uzhgorod{
-    width: 115.2px;
-}
-_:-moz-tree-row(hover), .b-region_khmelnickyi{
-    width: 82.07px;
-}
-_:-moz-tree-row(hover), .b-region_lviv{
-    width: 131.4px;
-    top: 94.9px;
-    left: 33.4px;
-}
-_:-moz-tree-row(hover), .b-region_lutsk{
-    width: 107.64px;
-    top: 12.7px;
-    left: 94.5px;
-}
-_:-moz-tree-row(hover), .b-region_rovno{
-    width: 124.76px;
-    top: 16.6px;
-    left: 153.5px;
-}
-_:-moz-tree-row(hover), .b-region_zhitomyr{
-    width: 116.5px;
-    top: 45.5px;
-    left: 247.5px;
-}
-_:-moz-tree-row(hover), .b-region_chernovtsy{
-    width: 128.4px;
-    top: 249.1px;
-    left: 126.9px;
-}
-_:-moz-tree-row(hover), .b-region_frankovsk{
-    width: 98.7px;
-    top: 182px;
-    left: 68.999px;
-}
-_:-moz-tree-row(hover), .b-region_ternopol{
-    width: 76.1px;
-    top: 137px;
-    left: 129.3px;
-}
-_:-moz-tree-row(hover), .b-region_khmelnickyi{
-    width: 81.5px;
-    top: 118.7px;
-    left: 193.54px;
-}
-_:-moz-tree-row(hover), .b-region_kyiv{
-    width: 128.9px;
-    top: 57.8px;
-    left: 343.54px;
-}
-_:-moz-tree-row(hover), .b-region_vinnytsia{
-    left: 249px;
-    top: 172.1px;
+@-moz-document url-prefix() {
+    .b-region_uzhgorod{
+        width: 116.5px;
+        top: 203.3px;
+    }
+    .b-region_khmelnickyi{
+        width: 82.07px;
+    }
+    .b-region_lviv{
+        width: 131.5px;
+        top: 94.9px;
+        left: 33.4px;
+    }
+    .b-region_lutsk{
+        width: 107.64px;
+        top: 12.7px;
+        left: 94.5px;
+    }
+    .b-region_rovno{
+        width: 124.76px;
+        top: 16.6px;
+        left: 153.5px;
+    }
+    .b-region_zhitomyr{
+        width: 116.5px;
+        top: 45.5px;
+        left: 247.5px;
+    }
+    .b-region_chernovtsy{
+        width: 128.4px;
+        top: 249.1px;
+        left: 126.9px;
+    }
+    .b-region_frankovsk{
+        width: 98.7px;
+        top: 182px;
+        left: 68.999px;
+    }
+    .b-region_ternopol{
+        width: 76.1px;
+        top: 137px;
+        left: 129.3px;
+    }
+    .b-region_khmelnickyi{
+        width: 81.5px;
+        top: 118.7px;
+        left: 193.54px;
+    }
+    .b-region_kyiv{
+        width: 128.9px;
+        top: 57.8px;
+        left: 343.54px;
+    }
+    .b-region_vinnytsia{
+        left: 249px;
+        top: 172.1px;
+    }
+    .b-region_odessa {
+        top: 290.2px;
+    }
+    .b-region_sumy {
+        width: 124.25px;
+        top: -0.2px;
+        left: 507.7px;
+    }
+    .b-region_lugansk {
+        top: 152.3px;
+        left: 735.1px;
+    }
+    .b-region_donetsk {
+        width: 124.8px;
+        top: 212.2px;
+        left: 680.45px;
+    }
+    b-region_zaporozhye {
+        width: 146.4px;
+        top: 296.8px;
+        left: 571.1px;
+    }
+    .b-region_kherson {
+        width: 163.5px;
+        top: 338.1px;
+        left: 453.4px;
+    }
+    .b-region_simferopol {
+        left: 487.5px;
+        top: 433.6px;
+        width: 210px;
+    }
+    .b-region_kharkiv {
+        left: 595px;
+        top: 129.5px;
+        width: 151.45px;
+    }
+    .b-region_nikolaev {
+        left: 379.5px;
+        top: 292.5px;
+        width: 140.5px;
+    }
 }
 /* firefox map hacks end */
+
+/* IE map hacks */
+/* IE10-11 styles*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .b-seomap__bgnd{
+        top: -2px;
+    }
+}
+/* IE map hacks end */
 
 /*======= OSAGO SEOMAP END =======*/
 
@@ -2989,7 +3043,7 @@ _:-moz-tree-row(hover), .b-region_vinnytsia{
     }
     
     .b-container__seoMap{
-/*        display: none;*/
+        display: none;
     }
     .b-container__seoMap+.cities_links{
         display: block;

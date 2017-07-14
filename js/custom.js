@@ -160,4 +160,24 @@ $(document).ready(function(){
 		});
 
 	})();
+
+ //    function scrollToSection($link, e) {
+ //        e.preventDefault();
+ //        var 
+ //             link = $el.attr('href'),
+ //            ,$target = $(link)
+ //            ,offset = top_offset
+ //            ;
+
+ //        if ($(window).width() <= breakpoint) {
+ //            offset = 0;
+ //        }
+ //        $('html,body').animate({ scrollTop: $target.offset().top - offset }, 500, 'swing');
+ //    }
+
+	// // index section links scroll functionality
+	// (function(){
+	// 	var sectionLinks = $();
+
+	// });
 });

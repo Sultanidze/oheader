@@ -98,38 +98,105 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div id="qLoverlay"></div>
 <!--/For Main Page only! (queryloader2.js helper)-->
 
-<header>
-	<nav class="container">
-		<a href="https://oh.ua/" class="logo ">Oh.UA</a>
-		<ul class="lang pull-right">
-			<li class="current"><a href="https://oh.ua/" class="set-lang">RU</a></li>
-			<li class="0"><a href="https://oh.ua/ua/" class="set-lang">UA</a></li>
-		</ul>
-		<!--ul class="top-nav pull-right" id="user-auth-block">
-			<li>
-	<a class="gui-request gui-fast-open" module="user" data="page=auth-get"><i class="icon-login"></i> <span class="hide-mobile">Вход</span></a>
-</li>
-
-		</ul-->
-
-		<ul class="top-nav pull-right">
-			<li>
-				<img style="width:20px;" src="https://oh.ua/project/templates/oh.ua/images/phone.svg" alt="" /> 
-				<a class="ringo-phone" href="tel:+380987336718" style="font-size: 1.6rem;font-weight:bold;display:inline;">(098) 733 6718</a>
-			</li>
-			<li style="margin-left:-40px;"><a href="#" class="callback" style="margin:0 0 0 40px;"><span class="del-mobile">|&nbsp;&nbsp;&nbsp;<span style="font-size: 1.4rem;"><i class="icon-phone"></i> ОБРАТНЫЙ ЗВОНОК</span><!--&nbsp;&nbsp;&nbsp;|--></span></a></li>
-			<!--li><a id="chat"><i class="icon-chat"></i> <span class="hide-mobile">ONLINE-ЧАТ</span></a></li-->
-
-		</ul>
-		<!--div class="phone pull-right">
-
-
-			<a href="tel:+380987336718" class="phone-number">
-				<img src="https://oh.ua/project/templates/oh.ua/images/phone.svg" alt="" /> (098) 733 6718
-			</a>
-		</div-->
-
-	</nav>
+<header class="b-header b-container" id="headerWrapper">
+	<a href="#" class="b-logo__link">
+	    <img src="./images/redesign/logo.svg" alt="OH.UA лого" class="b-logo">
+    </a>
+    <button class="b-btn_menu" id="menuBtn">
+        <span class="b-menu__icon">
+            <span class="b-icon_bars"></span>
+            <span class="fa fa-times" aria-hidden="true"></span>
+        </span>
+        <span class="b-btn__text">Меню</span>
+    </button>
+    <span class="b-adress_header">Украина, г. Киев, ул. Пушкинская, 9</span>
+    <a href="mailto:sales@oh.ua" class="b-header__link b-header__link_email">
+        <span class="fa fa-envelope-open-o" aria-hidden="true"></span>
+        <span class="b-link__text">sales@oh.ua</span>
+    </a>
+    <div class="b-call">
+        <a href="tel:0442903669" class="b-header__link b-header__link_phone">
+            <span class="b-icon_phone"></span>
+            <span class="b-link__text">(098) 733 67 18</span>
+        </a>
+        <a class="b-header__link b-btn_callback js-btn_callback callback">Обратный звонок</a>
+    </div>
+    <div class="b-btn_lang b-btn_menu" id="langBtn">
+        <span>RU</span>
+        <ul class="b-dropdown_lang">
+            <li><a href="https://oh.ua/ua/" class="set-lang b-link_lang">UA</a></li>
+        </ul>
+    </div>
+    <div class="b-menu" id="mainMenu">
+        <div class="b-modal__btn_close js-menu__close">
+            <span class="fa fa-times" aria-hidden="true"></span>
+        </div>
+        <ul class="b-menu__list">
+            <li class="b-menu__item">
+                <a href="#" class="b-menu__heading"><span>ОСАГО</span></a>
+                <span class="b-heading_submenu">Регион:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">ОСАГО в Харькове</a></li>
+                    <li><a href="#" class="b-submenu__link">ОСАГО в Днепре</a></li>
+                    <li><a href="#" class="b-submenu__link">ОСАГО в Запорожье</a></li>
+                    <li><a href="#" class="b-submenu__link">ОСАГО в Одессе</a></li>
+                    <li><a href="#" class="b-submenu__link">ОСАГО во Львове</a></li>
+                    <li><a href="#" class="b-submenu__link b-submenu__link_more">Другие регионы</a></li>
+                </ul>
+                <span class="b-heading_submenu">Доп услуги:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">Электронный полис ОСАГО</a></li>
+                    <li><a href="#" class="b-submenu__link">ОСАГО с доставкой</a></li>
+                </ul>
+            </li>
+            <li class="b-menu__item">
+                <a href="#" class="b-menu__heading"><span>КАСКО</span></a>
+                <span class="b-heading_submenu">Регион:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">КАСКО в Харькове</a></li>
+                    <li><a href="#" class="b-submenu__link">КАСКО в Днепре</a></li>
+                    <li><a href="#" class="b-submenu__link">КАСКО в Запорожье</a></li>
+                    <li><a href="#" class="b-submenu__link">КАСКО в Одессе</a></li>
+                    <li><a href="#" class="b-submenu__link">КАСКО во Львове</a></li>
+                    <li><a href="#" class="b-submenu__link b-submenu__link_more">Другие регионы</a></li>
+                </ul>
+                <span class="b-heading_submenu">Доп услуги:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">Проверить полис КАСКО</a></li>
+                </ul>
+            </li>
+            <li class="b-menu__item">
+                <a href="#" class="b-menu__heading"><span>Туристическое страхование</span></a>
+                <span class="b-heading_submenu">Регион:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">Туристическое страхование в Харькове</a></li>
+                    <li><a href="#" class="b-submenu__link">Туристическое страхование в Днепре</a></li>
+                    <li><a href="#" class="b-submenu__link">Туристическое страхование в Запорожье</a></li>
+                    <li><a href="#" class="b-submenu__link">Туристическое страхование в Одессе</a></li>
+                    <li><a href="#" class="b-submenu__link">Туристическое страхование во Львове</a></li>
+                    <li><a href="#" class="b-submenu__link b-submenu__link_more">Другие регионы</a></li>
+                </ul>
+                <span class="b-heading_submenu">Доп услуги:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">Страхование для визы</a></li>
+                    <li><a href="#" class="b-submenu__link">Страхование для рабочей визы</a></li>
+                </ul>
+            </li>
+            <li class="b-menu__item">
+                <a href="#" class="b-menu__heading"><span>Зеленая карта</span></a>
+                <span class="b-heading_submenu">Регион:</span>
+                <ul class="b-submenu">
+                    <li><a href="#" class="b-submenu__link">Зеленая карта в Харькове</a></li>
+                    <li><a href="#" class="b-submenu__link">Зеленая карта в Днепре</a></li>
+                    <li><a href="#" class="b-submenu__link">Зеленая карта в Запорожье</a></li>
+                    <li><a href="#" class="b-submenu__link">Зеленая карта в Одессе</a></li>
+                    <li><a href="#" class="b-submenu__link">Зеленая карта во Львове</a></li>
+                    <li><a href="#" class="b-submenu__link b-submenu__link_more">Другие регионы</a></li>
+                </ul>
+            </li>
+        </ul>
+        <a class="b-header__link b-btn_callback js-btn_callback callback">Обратный звонок</a>
+    </div>
 </header>
 <div itemscope itemtype="http://schema.org/Article">
 <!--<nav class="page-scroll">
@@ -652,66 +719,149 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	</div>
 </div>
 
-<footer>
-	<div class="content">
-		<div class="container">
-			<div class="row collapse">
-				<div class="one-third column">
-					<a href="#" class="callback">
-						<span class="dotted">ОБРАТНЫЙ ЗВОНОК</span>
-					</a>
-				</div>
-				<nav class="two-thirds column">
-	<ul class="bottom-nav">
-		<li><a data-href="https://oh.ua/about/">О сервисе</a></li>
-		<li><a data-href="https://oh.ua/news/">Новости</a></li>
-		<li><a href="https://oh.ua/contacts/">Контакты</a></li>
-		<li><a data-href="https://oh.ua/cooperation/">Сотрудничество</a></li>
-		<li><a data-href="https://oh.ua/kasko/">КАСКО</a></li>
-		<li><a data-href="https://oh.ua/osago/">ОСАГО</a></li>
-		<li><a data-href="https://oh.ua/greencard/">Зеленая карта</a></li>
-		<li><a data-href="https://oh.ua/travel/">Туризм</a></li>
-		<li><a data-href="https://oh.ua/dgo/">ДГО</a></li>
-		
-	</ul>
-</nav>
-
-			</div>
-			<div class="row collapse">
-				<div class="one-third column">
-					<div class="phone">
-						<img src="https://oh.ua/project/templates/oh.ua/images/phone.svg" alt="" /> 
-						<a data-href="tel:+380987336718" class="phone-number ringo-phone">(098) 733 6718</a>
-					</div>
-					<div class="site-platfoorm">
-						<div>
-							<div class="ya-share2" style="display:inline-block;margin-right:10px;" data-services="vkontakte,facebook,gplus,twitter"></div>
-						</div>
-						Работает на платформе <noindex><a rel="nofollow" data-href="http://about.ewa.ua/" target="_blank"><img src="https://oh.ua/project/templates/oh.ua/images/logo-ewa.png" width="88" height="28" /></a></noindex>
-					</div>
-				</div>
-				<nav class="two-thirds column">
-					<ul class="list-inline pull-left social-buttons">
-						<li><a href="https://www.facebook.com/ohua.online" target="_blank"><i class="icon-facebook"></i></a></li>
-						<li><a href="https://plus.google.com/+OhUa-osago-strahovka" target="_blank" rel="publisher"><i class="icon-gplus"></i></a></li>
-						<li><a href="https://vk.com/ohua.online" target="_blank"><i class="icon-vk"></i></a></li>
-					</ul>
-					<ul class="list-inline pull-right bottom-links">
-						<li><img src="https://oh.ua/project/templates/oh.ua/images/logo-visa.png" width="46" height="16" alt="" /></li>
-						<li><img src="https://oh.ua/project/templates/oh.ua/images/logo-mastercard.png" width="46" height="28" alt="" /></li>
-						<li><img src="https://oh.ua/project/templates/oh.ua/images/logo-liqpay.png" width="66" height="28" alt="" /></li>
-						<li><img src="https://oh.ua/project/templates/oh.ua/images/logo-privat24.png" width="82" height="16" alt="" /></li>
-					</ul>
-				</nav>
-			</div>
-		</div><!--/container-->
-	</div><!--/content-->
-	<div class="sole">
-		<div class="container">
-			<span>© 2015. Oh.UA. Все права защищены.</span>
-			<img style="float:right;" src="https://oh.ua/project/templates/oh.ua/images/logo-thawte.png" width="45" height="26" alt="" />
-		</div>
-	</div><!--/sole-->
+<footer class="b-footer">
+    <div class="b-footer__up">
+        <div class="b-footer__part b-footer__part_left">
+            <div class="b-part_footer">
+                <ul class="b-linkslist_footer">
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer b-header__link b-callback_footer js-btn_callback callback">
+                            <span class="fa fa-phone" aria-hidden="true"></span>
+                            <span class="b-link__text">Обратный звонок</span>
+                        </a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="tel:0442903669" class="b-link_footer b-header__link b-header__link_phone">
+                            <span class="b-icon_phone"></span>
+                            <span class="b-link__text">(098) 733 67 18</span>
+                        </a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="mailto:sales@oh.ua" class="b-link_footer b-header__link b-header__link_email">
+                            <span class="fa fa-envelope-open-o" aria-hidden="true"></span>
+                            <span class="b-link__text">sales@oh.ua</span>
+                        </a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="tel:0442903669" class="b-link_footer"><span class="b-link__text">Звонок оператору</span></a>
+                    </li>
+                </ul>
+                <ul class="b-linkslist_footer">
+                    <li class="b-linkitem_footer">
+                        <a data-href="#" class="b-link_footer">О компании</a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a data-href="#" class="b-link_footer">Контакты</a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a data-href="#" class="b-link_footer">Оплата и доставка</a>
+                    </li>
+                </ul>
+                <span class="b-adress_header">Украина, г. Киев, ул. Пушкинская, 9</span>
+            </div>
+        </div>
+        <div class="b-footer__part b-footer__part_right">
+            <div class="b-part_footer">
+                <ul class="b-linkslist_footer">
+                    <li class="b-linkitem_footer">
+                        <a data-shit="true" data-href="#" class="b-link_footer">Сотрудничество</a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a data-href="#" class="b-link_footer">Акции</a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer">Автострахование</a>
+                    </li>
+                </ul>
+                <ul class="b-linkslist_footer">
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer">Новости</a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer">Часто задаваемые вопросы (FAQ)</a>
+                    </li>
+                    <li class="b-linkitem_footer">
+                        <a href="#" class="b-link_footer">Рейтинг страховых компаний</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="b-footer__up_mobile">
+        <ul class="b-footer__list_categories">
+            <li class="b-footer__category">
+                <span class="b-category__heading js-accordion__trigger">О компании</span>
+                <div class="b-accordion_content js-accordion__content">
+                    <ul class="b-category__list_links">
+                        <li class="b-category__item"><a href="#" class="b-category__link">Акции</a></li>
+                        <li class="b-category__item"><a href="#" class="b-category__link">Новости</a></li>
+                        <li class="b-category__item"><a href="#" class="b-category__link">Оплата и доставка</a></li>
+                        <li class="b-category__item"><a href="#" class="b-category__link">Часто задаваемые вопросы (FAQ)</a></li>
+                        <li class="b-category__item"><a href="#" class="b-category__link">Сотрудничество</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="b-footer__category">
+                <span class="b-category__heading js-accordion__trigger">Услуги</span>
+                <div class="b-accordion_content js-accordion__content">
+                    <ul class="b-category__list_links">
+                        <li class="b-category__item"><a href="#" class="b-category__link">ОСАГО</a></li>
+                        <li class="b-category__item"><a href="#" class="b-category__link">Туристическое страхование</a></li>
+                        <li class="b-category__item"><a href="#" class="b-category__link">Зеленая Карта</a></li>
+                        <li class="b-category__item"><a href="#" class="b-category__link">КАСКО</a></li>
+                        <li class="b-category__item"><a href="#" class="b-category__link">Электронный полис ОСАГО</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="b-footer__category">
+                <span class="b-category__heading js-accordion__trigger">Сервисы</span>
+                <div class="b-accordion_content js-accordion__content">
+                    <ul class="b-category__list_links">
+                        <li class="b-category__item"><a href="#" class="b-category__link">Калькулятор ОСАГО</a></li>
+                        <li class="b-category__item"><a href="#" class="b-category__link">Калькулятор Зеленая Карта</a></li>
+                        <li class="b-category__item"><a href="#" class="b-category__link">Калькулятор ВЗР</a></li>
+                        <li class="b-category__item"><a href="#" class="b-category__link">Калькулятор КАСКО</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="b-footer__category">
+                <span class="b-category__heading js-accordion__trigger">Контакты</span>
+                <div class="b-accordion_content js-accordion__content">
+                    <ul class="b-linkslist_footer">
+                        <li class="b-linkitem_footer">
+                            <a href="#" class="b-link_footer b-header__link b-callback_footer js-btn_callback callback">
+                                <span class="fa fa-phone" aria-hidden="true"></span>
+                                <span class="b-link__text">Обратный звонок</span>
+                            </a>
+                        </li>
+                        <li class="b-linkitem_footer">
+                            <a href="tel:0442903669" class="b-link_footer b-header__link b-header__link_phone">
+                                <span class="b-icon_phone"></span>
+                                <span class="b-link__text">(098) 733 67 18</span>
+                            </a>
+                        </li>
+                        <li class="b-linkitem_footer">
+                            <a href="mailto:sales@oh.ua" class="b-link_footer b-header__link b-header__link_email">
+                                <span class="fa fa-envelope-open-o" aria-hidden="true"></span>
+                                <span class="b-link__text">sales@oh.ua</span>
+                            </a>
+                        </li>
+                        <li class="b-linkitem_footer">
+                            <a href="tel:0442903669" class="b-link_footer"><span class="b-link__text">Звонок оператору</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="b-footer__down">
+        <p class="b-footer__pay">
+           Мы принимаем:<br>
+           <span class="fa fa-cc-visa" aria-hidden="true"></span>
+           <span class="fa fa-cc-mastercard" aria-hidden="true"></span>
+           <span class="fa fa-cc-paypal" aria-hidden="true"></span>
+        </p>
+    </div>
 </footer>
 
 <!-- Start SiteHeart code -->
