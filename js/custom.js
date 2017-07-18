@@ -1,97 +1,131 @@
 $(document).ready(function(){
-	// stick header in top of window
-	$("#headerWrapper").stick_in_parent();
 
-	// menu functionality
-	(function(){
+	// menu module
+	var menu = (function(){
 		"use strict"
+		var obj = {};	// module returned object
+
+		obj.headerStick = function(){
+			// stick header in top of window
+			$("#headerWrapper").stick_in_parent();
+		};
+
 		// menu hiding/appearance
-		var  $mainMenu = $("#mainMenu")
-			,$menuBtn = $("#menuBtn")
-			,$closeIcon = $menuBtn.find(".b-icon_bars")
-			,$openIcon = $menuBtn.find(".fa-times")
-			,menuHeight = $mainMenu.outerHeight();
-			;
+		obj.$mainMenu = $("#mainMenu");
+		obj.$menuBtn = $("#menuBtn");
+		obj.$closeIcon = obj.$menuBtn.find(".b-icon_bars");
+		obj.$openIcon = obj.$menuBtn.find(".fa-times");
+		obj.menuHeight = obj.$mainMenu.outerHeight();
+
 		// menu btn icon toggle
-		var menuBtnToggle = function(){
-			if ($mainMenu.hasClass("opened")){
-				$closeIcon.fadeOut(200);
-				$openIcon.fadeIn(200);
+		obj.menuBtnToggle = function(){
+			if (obj.$mainMenu.hasClass("opened")){
+				obj.$closeIcon.fadeOut(200);
+				obj.$openIcon.fadeIn(200);
 			} else {
-				$openIcon.fadeOut(200);
-				$closeIcon.fadeIn(200);
+				obj.$openIcon.fadeOut(200);
+				obj.$closeIcon.fadeIn(200);
 			}
 		};
 		// menu open
-		var openMenu = function(){
-			$mainMenu.css("top", "100%");
-			$mainMenu.animate({
-				height: menuHeight
+		obj.openMenu = function(){
+			obj.$mainMenu.css("top", "100%");
+			obj.$mainMenu.animate({
+				height: obj.menuHeight
 			}, 200);
-			$mainMenu.addClass("opened");
-			menuBtnToggle();
+			obj.$mainMenu.addClass("opened");
+			obj.menuBtnToggle();
 		};
 		// menu close
-		var closeMenu = function(){
-			$mainMenu.animate({
+		obj.closeMenu = function(){
+			obj.$mainMenu.animate({
 				height: "0"
 			}, 200, function(){
-				$mainMenu.css("top", "-9999px");
+				obj.$mainMenu.css("top", "-9999px");
 			});
-			$mainMenu.removeClass("opened");
-			menuBtnToggle();
+			obj.$mainMenu.removeClass("opened");
+			obj.menuBtnToggle();
 		};
 		// menu close after some scroll
-		var closeAfterScroll = function(){
-			var  SCROLL_VAL_PX = 100	// close after 100px scroll
-				,startCoor = $mainMenu.offset().top
+		obj.closeAfterScroll = new function(){
+			var  o = this
+				,startCoor
 				;
 
-			var menuScrollHandler = function (){
-				var currentCoor = $mainMenu.offset().top;
+			o.SCROLL_VAL_PX = 100;	// close after 100px scroll
 
-				if (Math.abs(currentCoor - startCoor) >= SCROLL_VAL_PX){
-					closeMenu();
-					$(document).off("scroll", menuScrollHandler);
+			o.menuScrollHandler = function (){
+				var currentCoor = obj.$mainMenu.offset().top;
+
+				if (Math.abs(currentCoor - startCoor) >= o.SCROLL_VAL_PX){
+					obj.closeMenu();
+					$(document).off("scroll", o.menuScrollHandler);
 				}
 			}
-			$(document).on("scroll", menuScrollHandler);
+			o.init = function(){
+				startCoor = obj.$mainMenu.offset().top;
+				$(document).on("scroll", o.menuScrollHandler);
+			};
 		};
 
-		// open/close menue on mouseenter event
-		$menuBtn.on("mouseenter click", function(){
-			if ($mainMenu.hasClass("opened")){
-				closeMenu();
-			} else {
-				openMenu();
-			};
-			if ($mainMenu.hasClass("opened")){
-				closeAfterScroll();
-			}
-		});
-		// close menu after click on close btn
-		$mainMenu.find(".js-menu__close").on("click", closeMenu);
-		
-		// mobile Footer accordion
-		var $accordionTriggers = $("footer").find(".js-accordion__trigger");
-		var $accordionContents = $("footer").find(".js-accordion__content");
-		$accordionTriggers.on("click", function(){
-			var  $trigger = $(this)
-				,$content = $trigger.siblings(".js-accordion__content")
-				;
-			// close all opened accordion items except of clicked
-			$accordionContents.each(function(){
-				if (($(this)[0] !== $content[0])&&($(this).parent().hasClass("opened"))){
-					console.log("sdfsdff")
-					$(this).slideUp(200);
-					$(this).parent().removeClass("opened");
+		obj.menuToggler = function(){
+			// open/close menu on mouseenter event
+			obj.$menuBtn.on("mouseenter click", function(){
+				if (obj.$mainMenu.hasClass("opened")){
+					obj.closeMenu();
+				} else {
+					obj.openMenu();
+				};
+				if (obj.$mainMenu.hasClass("opened")){
+					obj.closeAfterScroll.init();
 				}
 			});
-			$content.slideToggle(200);
-			$trigger.parent().toggleClass("opened");
-		});
+			// close menu after click on close btn
+			obj.$mainMenu.find(".js-menu__close").on("click", obj.closeMenu);
+		};
+
+		obj.init = function(){
+			obj.headerStick();	// stick header
+			obj.menuToggler();	// menu open/close functionality 
+		}
+
+		return obj;	// return object with menu methods and buttons
 	})();
-	// menu functionality end
+	// menu module end
+
+	// footer module
+	var footer = (function(){
+		"use strict"
+		var obj = {};	// module returned object
+
+		// mobile Footer accordion
+		obj.$accordionTriggers = $("footer").find(".js-accordion__trigger");
+		obj.$accordionContents = $("footer").find(".js-accordion__content");
+
+		obj.mobileAccordion = function() {
+			obj.$accordionTriggers.on("click", function(){
+				var  $trigger = $(this)
+					,$content = $trigger.siblings(".js-accordion__content")
+					;
+				// close all opened accordion items except of clicked
+				obj.$accordionContents.each(function(){
+					if (($(this)[0] !== $content[0])&&($(this).parent().hasClass("opened"))){
+						console.log("sdfsdff")
+						$(this).slideUp(200);
+						$(this).parent().removeClass("opened");
+					}
+				});
+				$content.slideToggle(200);
+				$trigger.parent().toggleClass("opened");
+			});
+		}
+
+		obj.init = function(){
+			obj.mobileAccordion();	// mobile footer accordion functionality
+		}
+
+		return obj;	// return object with menu methods and buttons
+	})();
 
 	// rating and specials sliders
 	(function(){
@@ -144,27 +178,27 @@ $(document).ready(function(){
 	})();
 
 	// seoMap links click
-	(function(){
-		var  $map = $("#seoMap")
-			,$links = $map.find(".js-link_region")
-			,$titles = $links.find(".js-title")
-			;
+	// (function(){
+	// 	var  $map = $("#seoMap")
+	// 		,$links = $map.find(".js-link_region")
+	// 		,$titles = $links.find(".js-title")
+	// 		;
 
-		$links.on("click", function(){
-			return false;
-		});
+	// 	$links.on("click", function(){
+	// 		return false;
+	// 	});
 
-		$titles.on("click", function(){
-			var $link = $(this).parent(".js-link_region");
-			window.open($link.attr("href"), $link.attr("target"));
-		});
+	// 	$titles.on("click", function(){
+	// 		var $link = $(this).parent(".js-link_region");
+	// 		window.open($link.attr("href"), $link.attr("target"));
+	// 	});
 
-	})();
+	// })();
 
  //    function scrollToSection($link, e) {
  //        e.preventDefault();
  //        var 
- //             link = $el.attr('href'),
+ //             link = $el.attr('href')
  //            ,$target = $(link)
  //            ,offset = top_offset
  //            ;
@@ -180,4 +214,8 @@ $(document).ready(function(){
 	// 	var sectionLinks = $();
 
 	// });
+
+	// executable part
+	menu.init();	// menu module init
+	footer.init();	// footer module init
 });
