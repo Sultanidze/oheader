@@ -199,7 +199,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         </ul>
                     </li>
                 </ul>
-                <a class="b-header__link b-btn_callback js-btn_callback callback">Обратный звонок</a>
+                <a class="b-menu__item_callback b-header__link b-btn_callback js-btn_callback callback">Обратный звонок</a>
             </div>
         </header>
     </div>
@@ -283,26 +283,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     </li>
                 </ul>
             </div>
-            <ol class="b-links_stages s-corporate_light s-shadow">
+            <ol class="b-links_stages s-corporate_light s-shadow js-contents" id="indexContents">
                 <li>
                     <span class="c-num">03</span>
-                    <a href="#whatIsOh" class="b-link_stage">Что такое OH.ua ?</a>
+                    <a href="#whatIsOh" class="b-link_stage js-contents__link">Что такое OH.ua ?</a>
                 </li>
                 <li>
                     <span class="c-num">04</span>
-                    <a href="#rating" class="b-link_stage">Рейтинг компаний</a>
+                    <a href="#rating" class="b-link_stage js-contents__link">Рейтинг компаний</a>
                 </li>
                 <li>
                     <span class="c-num">05</span>
-                    <a href="#buy" class="b-link_stage">Купить страховку</a>
+                    <a href="#buy" class="b-link_stage js-contents__link">Купить страховку</a>
                 </li>
                 <li>
                     <span class="c-num">06</span>
-                    <a href="#responses" class="b-link_stage">Отзывы клиентов</a>
+                    <a href="#responses" class="b-link_stage js-contents__link">Отзывы клиентов</a>
                 </li>
                 <li>
                     <span class="c-num">07</span>
-                    <a href="#specials" class="b-link_stage">Скидки и спецпредложения</a>
+                    <a href="#specials" class="b-link_stage js-contents__link">Скидки и спецпредложения</a>
                 </li>
             </ol>
         </section>
@@ -338,17 +338,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
     </div>
     <div class="b-container b-container_mid">
-        <section class="b-section_rating" id="rating">
+        <section class="b-section_rating b-container b-container_slider" id="rating">
             <div class="b-section__heading">
                 РЕЙТИНГ КОМПАНИЙ 
                 <div class="b-section__subheading">04</div>
             </div>
-            <div class="b-container_sliderRating">
+            <div>
                 <button class="b-btn_rating b-rating__link b-btn_active js-btn__rating_clients">Клиентов oh.ua </button>
                 <button class="b-btn_rating b-rating__link js-btn__rating_assets">Рейтинг по активам</button>
             </div>
             <div class="b-block_rating js-rating_clients">
-                <div class="b-container_sliderRating">
+                <div class="b-container__slider b-container__slider_rating">
                     <div class="b-slider b-slider_rating js-slider">
                         <div class="b-slider__wrap">
                             <div class="b-slider__string js-slider__string_rating">
@@ -513,7 +513,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
             </div>
     <div class="b-container b-container_mid">
-        <section class="b-section_buy b-container b-container_responses" id="buy">
+        <section class="b-section_buy b-container b-container_responses" id="responses">
             <h2 class="b-section__heading">
                 ОТЗьіВЬІ КЛИЕНТОВ
                 <span class="b-section__subheading">06</span>
@@ -733,7 +733,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
     </div>
     <div class="b-container b-container_mid">
-        <section class="b-section_specials b-container b-container_specials" id="specials">
+        <section class="b-section_specials b-container b-container_slider b-container_specials" id="specials">
             <div class="b-section__heading">
                 СКИДКИ И СПЕЦПРЕДЛОЖЕНИЯ 
                 <div class="b-section__subheading">07</div>
@@ -745,24 +745,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <button class="b-btn_rating">Скидки</button>
             </div>
             <div class="b-block_rating js-rating_clients">
-                <div class="b-container_sliderSpecials">
+                <div class="b-container__slider b-container__slider_rating b-container__slider_specials">
                     <div class="b-slider b-slider_specials js-slider">
                         <div class="b-slider__wrap">
                             <div class="b-slider__string js-slider__string_specials">
-                                <div class="b-string__slide b-string__slide_specials s-corporate_dark">
+                                <div class="b-string__slide b-string__slide_rating b-string__slide_specials s-corporate_dark">
                                     <img src="./images/redesign/can.png" alt="канистра" class="b-slide__img_bg b-slide__img_small">
                                     <div class="b-slide__heading_specials b-howItWorks__heading">
-                                        <span class="s-color-corporate-light">1 000</span>литров топлева<br>от СК ВУСО
+                                        <span class="s-color-corporate-light">1 000</span> литров топлева<br>от СК ВУСО
                                     </div>
                                     <p class="b-slide__paragraph_special">Покупай ОСАГО и получай уникальную возможность выиграть 1000 литров топлива</p>
                                     <a data-href="#" class="b-btn_wArrow b-btn_white b-btn_right">
                                         <span class="b-text_btn">Подробнее</span>
                                     </a>
                                 </div>
-                                <div class="b-string__slide b-string__slide_specials s-corporate_dark">
+                                <div class="b-string__slide b-string__slide_rating b-string__slide_specials s-corporate_dark">
                                     <img src="./images/redesign/vusq.png" alt="" class="b-proposition__logo">
                                     <span class="b-company__name">СК VUSO</span>
                                     <p class="b-slide__paragraph_special">Хорошее урегулирование Высокая надежность</p>
+                                    <a data-href="#" class="b-btn_wArrow b-btn_white b-btn_right">
+                                        <span class="b-text_btn">Подробнее</span>
+                                    </a>
+                                </div>
+                                <div class="b-string__slide b-string__slide_rating b-string__slide_specials s-corporate_dark">
+                                    <img src="./images/redesign/can.png" alt="канистра" class="b-slide__img_bg b-slide__img_small">
+                                    <div class="b-slide__heading_specials b-howItWorks__heading">
+                                        <span class="s-color-corporate-light">1 000</span>литров топлева<br>от СК ВУСО
+                                    </div>
+                                    <p class="b-slide__paragraph_special">Покупай ОСАГО и получай уникальную возможность выиграть 1000 литров топлива</p>
                                     <a data-href="#" class="b-btn_wArrow b-btn_white b-btn_right">
                                         <span class="b-text_btn">Подробнее</span>
                                     </a>
@@ -779,7 +789,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
     </div>
 
-<div class="hidden">
+    <div class="hidden">
 	<div class="box-modal" id="callback">
 		<div class="box-modal_close arcticmodal-close">
 			<i class="icon-cancel"></i>

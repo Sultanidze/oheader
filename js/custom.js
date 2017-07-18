@@ -1,21 +1,27 @@
 $(document).ready(function(){
+	"use strict"
 
-	// menu module
-	var menu = (function(){
-		"use strict"
+	// header module
+	var header = (function(){
 		var obj = {};	// module returned object
 
-		obj.headerStick = function(){
-			// stick header in top of window
-			$("#headerWrapper").stick_in_parent();
-		};
-
 		// menu hiding/appearance
-		obj.$mainMenu = $("#mainMenu");
-		obj.$menuBtn = $("#menuBtn");
+		obj.$header = $("#headerWrapper");	// header
+		// obj.headerHeight = obj.$header.outerHeight();
+		obj.$mainMenu = $("#mainMenu");		// menu
+		// obj.menuHeight = obj.$mainMenu.outerHeight();
+		obj.$menuBtn = $("#menuBtn");		
 		obj.$closeIcon = obj.$menuBtn.find(".b-icon_bars");
 		obj.$openIcon = obj.$menuBtn.find(".fa-times");
-		obj.menuHeight = obj.$mainMenu.outerHeight();
+
+		// stick header in top of window
+		obj.headerStick = function(){
+			obj.$header.stick_in_parent();
+			// $(window).on("resize", function(){
+			// 	$(document.body).trigger("sticky_kit:recalc");
+			// 	console.log("resize");
+			// });
+		};
 
 		// menu btn icon toggle
 		obj.menuBtnToggle = function(){
@@ -29,9 +35,16 @@ $(document).ready(function(){
 		};
 		// menu open
 		obj.openMenu = function(){
+			var  $menuList = obj.$mainMenu.children("ul")
+				,$menuCallback = obj.$mainMenu.children(".js-btn_callback")
+				,height = $menuList.outerHeight() + $menuCallback.is(":visible")?$menuCallback.outerHeight():0
+				;
+			console.log("list: ", $menuList.outerHeight());
+			console.log("callback: ", $menuCallback.is(":visible")?$menuCallback.outerHeight():0);
+			console.log(height);
 			obj.$mainMenu.css("top", "100%");
 			obj.$mainMenu.animate({
-				height: obj.menuHeight
+				height: height
 			}, 200);
 			obj.$mainMenu.addClass("opened");
 			obj.menuBtnToggle();
@@ -82,6 +95,10 @@ $(document).ready(function(){
 			});
 			// close menu after click on close btn
 			obj.$mainMenu.find(".js-menu__close").on("click", obj.closeMenu);
+
+			$(window).on("resize", function(){	// close menu - prevent visible menu height overflow
+				obj.closeMenu();
+			});
 		};
 
 		obj.init = function(){
@@ -91,11 +108,36 @@ $(document).ready(function(){
 
 		return obj;	// return object with menu methods and buttons
 	})();
-	// menu module end
+
+	// index contents module
+	var indexContents = (function(){
+		var obj = {};
+
+		obj.contents = $("#indexContents");
+		obj.sectionLinks = obj.contents.find(".js-contents__link")
+
+		obj.scrollToSection = function($link, e){
+			e.preventDefault();
+	        var 
+	             sAnchor = $link.attr('href')
+	            ,$target = $(sAnchor)
+	            ,offset = header.$header.outerHeight();
+	            ;
+
+	        $('html,body').animate({ scrollTop: $target.offset().top - offset }, 500, 'swing');
+		}
+
+		obj.linkInit = function(){
+			obj.sectionLinks.on("click", function(e){
+				obj.scrollToSection($(this), e);
+			})
+		}
+
+		return obj;
+	})();
 
 	// footer module
 	var footer = (function(){
-		"use strict"
 		var obj = {};	// module returned object
 
 		// mobile Footer accordion
@@ -128,14 +170,16 @@ $(document).ready(function(){
 	})();
 
 	// rating and specials sliders
-	(function(){
-		var settingsRating = {
+	var sliders = (function(){
+		var obj = {};
+
+		obj.settingsRating = {
 			arrows: false,
 			infinite: true,
 			speed: 400,
 			slidesToShow: 3,
 			slidesToScroll: 1,
-			autoplay: true,
+			// autoplay: true,
 			autoplaySpeed: 4400,
 			responsive: [
 				{
@@ -153,15 +197,19 @@ $(document).ready(function(){
 			]
 		};
 
-		var $slidersRating = $(".js-slider__string_rating").slick(settingsRating);
 
-		var settingsSpecials = {
+		obj.$slidersRating = $(".js-slider__string_rating");
+		obj.slidersRatingInit = function(){
+			obj.$slidersRating.slick(obj.settingsRating);
+		};
+
+		obj.settingsSpecials = {
 			arrows: false,
 			infinite: true,
 			speed: 400,
 			slidesToShow: 2,
 			slidesToScroll: 1,
-			autoplay: true,
+			// autoplay: true,
 			autoplaySpeed: 4400,
 			responsive: [
 				{
@@ -173,14 +221,21 @@ $(document).ready(function(){
 			]
 		};
 
-		var $slidersSpecials = $(".js-slider__string_specials").slick(settingsSpecials);
-		
-	})();
+		obj.$slidersSpecials = $(".js-slider__string_specials");
+		obj.slidersSpecialsInit = function(){
+			obj.$slidersSpecials.slick(obj.settingsSpecials);
+		};
 
+		obj.init = function(){
+			obj.slidersRatingInit();
+			obj.slidersSpecialsInit();
+		}
+
+		return obj;	// return object with menu methods and buttons
+	})();
 
 	// seoMap module
 	var seoMap = (function(){
-		"use strict"
 		var obj = {};	// module returned object
 
 		obj.$map = $("#seoMap");
@@ -207,31 +262,14 @@ $(document).ready(function(){
 			obj.regionTitleClick();
 		}
 
-		return obj;	// return object with menu methods and buttons
+		return obj;	// return module object
 	})();
 
- //    function scrollToSection($link, e) {
- //        e.preventDefault();
- //        var 
- //             link = $el.attr('href')
- //            ,$target = $(link)
- //            ,offset = top_offset
- //            ;
-
- //        if ($(window).width() <= breakpoint) {
- //            offset = 0;
- //        }
- //        $('html,body').animate({ scrollTop: $target.offset().top - offset }, 500, 'swing');
- //    }
-
-	// // index section links scroll functionality
-	// (function(){
-	// 	var sectionLinks = $();
-
-	// });
-
 	// executable part
-	menu.init();	// menu module init
+	header.init();	// header module init
+	indexContents.linkInit();	// content links functionality
+	sliders.init();	// footer module init
 	footer.init();	// footer module init
+
 	seoMap.init();	// footer module init
 });
