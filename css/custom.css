@@ -2414,7 +2414,7 @@ a.b-callback_footer:hover{
     position: relative;
     width: 846px;
     height: 570px;
-/*    background: url("../images/seomap/ukraine.svg") 0 0 no-repeat;*/
+    background: url("../images/seomap/ukraine.svg") 0 0 no-repeat;
 }
 .b-seomap__bgnd{
     position: absolute;
@@ -2422,11 +2422,9 @@ a.b-callback_footer:hover{
 /*    right: 0;*/
     left: 0;
 /*    margin: auto;*/
-/*
     -webkit-filter: drop-shadow(0 0 20px #bbb);
     -o-filter: drop-shadow(0 0 20px #bbb);
     filter: drop-shadow(0 0 20px #bbb);
-*/
 }
 .b-map__region{
     position: absolute;

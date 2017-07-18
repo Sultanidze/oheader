@@ -177,23 +177,38 @@ $(document).ready(function(){
 		
 	})();
 
-	// seoMap links click
-	// (function(){
-	// 	var  $map = $("#seoMap")
-	// 		,$links = $map.find(".js-link_region")
-	// 		,$titles = $links.find(".js-title")
-	// 		;
 
-	// 	$links.on("click", function(){
-	// 		return false;
-	// 	});
+	// seoMap module
+	var seoMap = (function(){
+		"use strict"
+		var obj = {};	// module returned object
 
-	// 	$titles.on("click", function(){
-	// 		var $link = $(this).parent(".js-link_region");
-	// 		window.open($link.attr("href"), $link.attr("target"));
-	// 	});
+		obj.$map = $("#seoMap");
+		obj.$links = obj.$map.find(".js-link_region");
+		obj.$titles = obj.$links.find(".js-title");
+		
+		// prevent regions links default functionality
+		obj.regionClick = function(){
+			obj.$links.on("click", function(){
+				return false;
+			});
+		};
 
-	// })();
+		// open links when click title
+		obj.regionTitleClick = function(){
+			obj.$titles.on("click", function(){
+				var $link = $(this).parent(".js-link_region");
+				window.open($link.attr("href"), $link.attr("target"));
+			});
+		};
+
+		obj.init = function(){
+			obj.regionClick();
+			obj.regionTitleClick();
+		}
+
+		return obj;	// return object with menu methods and buttons
+	})();
 
  //    function scrollToSection($link, e) {
  //        e.preventDefault();
@@ -218,4 +233,5 @@ $(document).ready(function(){
 	// executable part
 	menu.init();	// menu module init
 	footer.init();	// footer module init
+	seoMap.init();	// footer module init
 });
