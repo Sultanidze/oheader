@@ -37,11 +37,9 @@ $(document).ready(function(){
 		obj.openMenu = function(){
 			var  $menuList = obj.$mainMenu.children("ul")
 				,$menuCallback = obj.$mainMenu.children(".js-btn_callback")
-				,height = $menuList.outerHeight() + $menuCallback.is(":visible")?$menuCallback.outerHeight():0
+				,height = $menuList.outerHeight() + ($menuCallback.is(":visible")?$menuCallback.outerHeight():0)
 				;
-			console.log("list: ", $menuList.outerHeight());
-			console.log("callback: ", $menuCallback.is(":visible")?$menuCallback.outerHeight():0);
-			console.log(height);
+				
 			obj.$mainMenu.css("top", "100%");
 			obj.$mainMenu.animate({
 				height: height
