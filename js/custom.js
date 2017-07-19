@@ -17,10 +17,6 @@ $(document).ready(function(){
 		// stick header in top of window
 		obj.headerStick = function(){
 			obj.$header.stick_in_parent();
-			// $(window).on("resize", function(){
-			// 	$(document.body).trigger("sticky_kit:recalc");
-			// 	console.log("resize");
-			// });
 		};
 
 		// menu btn icon toggle
@@ -39,7 +35,7 @@ $(document).ready(function(){
 				,$menuCallback = obj.$mainMenu.children(".js-btn_callback")
 				,height = $menuList.outerHeight() + ($menuCallback.is(":visible")?$menuCallback.outerHeight():0)
 				;
-				
+
 			obj.$mainMenu.css("top", "100%");
 			obj.$mainMenu.animate({
 				height: height
@@ -194,8 +190,6 @@ $(document).ready(function(){
 				}
 			]
 		};
-
-
 		obj.$slidersRating = $(".js-slider__string_rating");
 		obj.slidersRatingInit = function(){
 			obj.$slidersRating.slick(obj.settingsRating);
@@ -218,7 +212,6 @@ $(document).ready(function(){
 				}
 			]
 		};
-
 		obj.$slidersSpecials = $(".js-slider__string_specials");
 		obj.slidersSpecialsInit = function(){
 			obj.$slidersSpecials.slick(obj.settingsSpecials);
