@@ -1215,6 +1215,9 @@ a.b-submenu__link_more:hover{
 /*    margin-left: 25px;*/
 }
 
+.b-rating__wrap_contents{
+    min-height: 325px;
+}
 .b-block_rating{
     display: -webkit-flex;
     display: -moz-flex;
