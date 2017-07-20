@@ -2468,6 +2468,7 @@ a.b-callback_footer:hover{
     font-weight: 700;
     z-index: 1;
     cursor: pointer;
+    color: #1b5f9e;
 }
 .b-region__img{
     -webkit-transition: opacity 25ms;
@@ -2483,6 +2484,9 @@ a.b-callback_footer:hover{
     top: 0;
     left: 0;
     opacity: 0;
+}
+.b-region__title:hover{
+    color: #5f308c;
 }
 .b-region__title:hover ~ .b-region__img_highlighted{
     opacity: 1;
@@ -2649,12 +2653,12 @@ a.b-callback_footer:hover{
     top: 53px;
     left: 26px;
 }
-.b-region_frankovsk{
+.b-region_ivano-frankovsk{
     width: 99px;
     top: 183px;
     left: 68px;
 }
-.b-region_frankovsk .b-region__title{
+.b-region_ivano-frankovsk .b-region__title{
     top: 38px;
     left: 19px;
 }
@@ -2811,7 +2815,7 @@ a.b-callback_footer:hover{
         top: 249.1px;
         left: 126.9px;
     }
-    .b-region_frankovsk{
+    .b-region_ivano-frankovsk{
         width: 98.7px;
         top: 182px;
         left: 68.999px;
