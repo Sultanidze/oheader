@@ -354,6 +354,9 @@ $(document).ready(function(){
 		// open links when click title
 		obj.regionTitleClick = function(){
 			obj.$titles.on("click", function(){
+				if ($(this).hasClass("js-title_active")){
+					return false;
+				}
 				var $link = $(this).parent(".js-link_region");
 				window.open($link.attr("href"), $link.attr("target"));
 			});

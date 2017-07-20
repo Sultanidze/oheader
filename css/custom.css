@@ -2487,6 +2487,13 @@ a.b-callback_footer:hover{
 .b-region__title:hover ~ .b-region__img_highlighted{
     opacity: 1;
 }
+.b-region__title_active{
+    cursor: default;
+    color: #5f308c;
+}
+.b-region__title_active ~ .b-region__img_highlighted{
+    opacity: 1;
+}
 
 .b-region_lutsk{
     width: 107.64px;
