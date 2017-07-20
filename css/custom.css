@@ -3329,6 +3329,9 @@ a.b-callback_footer:hover{
     .b-map__address{
         margin-right: 15px;
     }
+    .b-criterion_price .b-map__address{
+        margin-right: 0;
+    }
     .b-card_map{
         position: static;
 /*        left: 0;*/
@@ -3546,6 +3549,16 @@ a.b-callback_footer:hover{
         float: none;
         margin-left: 0;
 /*        margin-top: 7px;*/
+    }
+    
+    .b-criterions{
+        justify-content: space-around;
+    }
+    .b-criterion_price{
+        flex-basis: 137px;
+        flex-shrink: 8;
+        margin-right: 5px;
+        margin-left: 5px;
     }
     
     .b-section__heading_404{
