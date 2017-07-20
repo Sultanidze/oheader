@@ -2432,6 +2432,20 @@ a.b-callback_footer:hover{
 }
 /*======= 404 END =======*/
 
+/*======= TRAVEL BANNER =======*/
+.b-banner_travel{
+    max-width: 1024px;
+    margin-bottom: 50px;
+/*    padding: 0 7px;*/
+    padding-left: 3px;
+}
+.b-banner__img_travel{
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+/*===== TRAVEL BANNER END =====*/
+
 /*======= OSAGO SEOMAP =======*/
 .b-container__seoMap{
     margin: 0 auto 30px;
@@ -2503,12 +2517,6 @@ a.b-callback_footer:hover{
     width: 107.64px;
     top: 13.6px;
     left: 93.799999px;
-    
-/*
-    width: 107.325px;
-    top: 13.14px;
-    left: 94.49166488px;
-*/
 }
 .b-region_lutsk .b-region__title{
     top: 57px;
@@ -2551,11 +2559,6 @@ a.b-callback_footer:hover{
     left: 36px;
 }
 .b-region_sumy{
-/*
-    width: 125px;
-    top: 0;
-    left: 507px;
-*/
     width: 124.6px;
     top: 0.5px;
     left: 508px;
@@ -2566,11 +2569,6 @@ a.b-callback_footer:hover{
 }
 
 .b-region_lviv{
-/*
-    width: 134px;
-    top: 94px;
-    left: 31px;
-*/
     width: 131.69px;
     top: 95.19px;
     left: 32.7px;
@@ -2598,11 +2596,6 @@ a.b-callback_footer:hover{
     left: 6px;
 }
 .b-region_vinnytsia{
-/*
-    width: 124px;
-    top: 172px;
-    left: 249px;
-*/
     width: 123.7px;
     top: 172.25px;
     left: 248.9px;
@@ -2630,11 +2623,6 @@ a.b-callback_footer:hover{
     left: 54px;
 }
 .b-region_kharkiv{
-/*
-    width: 151px;
-    top: 130px;
-    left: 596px;
-*/
     width: 150.1px;
     top: 129.9px;
     left: 596.5px;
@@ -2691,11 +2679,6 @@ a.b-callback_footer:hover{
     left: 45px;
 }
 .b-region_donetsk{
-/*
-    width: 125px;
-    top: 214px;
-    left: 681px;
-*/
     width: 125px;
     top: 213.3px;
     left: 681px;
@@ -2705,11 +2688,6 @@ a.b-callback_footer:hover{
     left: 34px;
 }
 .b-region_lugansk{
-/*
-    width: 111px;
-    top: 153px;
-    left: 736px;
-*/
     width: 110.3px;
     top: 152.599999px;
     left: 735.7px;
@@ -2729,11 +2707,6 @@ a.b-callback_footer:hover{
     left: 81px;
 }
 .b-region_nikolaev{
-/*
-    width: 141px;
-    top: 293px;
-    left: 379px;
-*/
     width: 141.4px;
     top: 293px;
     left: 379.2px
@@ -2743,11 +2716,6 @@ a.b-callback_footer:hover{
     left: 60px;
 }
 .b-region_kherson{
-/*
-    width: 163px;
-    top: 339px;
-    left: 454px;
-*/
     width: 163.399px;
     top: 338.588px;
     left: 453.7px;
@@ -2757,11 +2725,6 @@ a.b-callback_footer:hover{
     left: 60px;
 }
 .b-region_zaporozhye{
-/*
-    width: 144px;
-    top: 298px;
-    left: 573px;
-*/
     width: 144.8px;
     top: 297.0px;
     left: 572.3px;
