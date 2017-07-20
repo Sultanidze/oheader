@@ -162,68 +162,6 @@ $(document).ready(function(){
 		return obj;	// return object with menu methods and buttons
 	})();
 
-	// tabs module (in Rating, Specials)
-	var tabs = (function(){
-		// tabs init function
-		function init(oTabbed){
-			var sActiveTabClass = "b-btn_active js-tab_active";
-			oTabbed.$contents.each(function(){
-				if (!$(this).hasClass("js-content_active")){
-					
-					$(this).css("display", "none").removeClass("hidden");
-
-					// $(this).hide(0, function(){
-						// $(this).css("display", "none");
-					// });
-				}
-			});
-			oTabbed.$tabs.on("click", function(){
-				if ($(this).hasClass("js-tab_active")){
-					return false	// if active tab clicked do nothing
-				};
-				
-				if (!oTabbed.$contents.is(":animated")){
-					var index = oTabbed.$tabs.index(this);	// index of clicked tab
-
-					oTabbed.$tabs.removeClass(sActiveTabClass);
-					$(this).addClass(sActiveTabClass);
-					oTabbed.$contents.filter(".js-content_active").fadeOut(400, function(){
-						oTabbed.$contents.eq(index).addClass("js-content_active").fadeIn(400);
-					});
-				}
-			});
-		}
-		
-		var obj = {};
-
-		obj.rating = {};
-		obj.rating.$section = $("#rating");
-		obj.rating.$tabsBlock = obj.rating.$section.find(".js-tabsBlock");
-		obj.rating.$tabs = obj.rating.$tabsBlock.find(".js-tab");
-		obj.rating.$contentsBlock = obj.rating.$section.find(".js-tabContentsBlock");
-		obj.rating.$contents = obj.rating.$section.find(".js-content");
-		obj.rating.init = function(){
-			init(obj.rating);
-		};
-
-		obj.specials = {};
-		obj.specials.$section = $("#specials");
-		obj.specials.$tabsBlock = obj.specials.$section.find(".js-tabsBlock");
-		obj.specials.$tabs = obj.specials.$tabsBlock.find(".js-tab");
-		obj.specials.$contentsBlock = obj.specials.$section.find(".js-tabContentsBlock");
-		obj.specials.$contents = obj.specials.$section.find(".js-content");
-		obj.specials.init = function(){
-			init(obj.specials);
-		};
-
-		obj.init = function(){
-			obj.rating.init();	// rating tabs init
-			obj.specials.init();// specials tabs init
-		}
-
-		return obj;
-	})();
-
 	// sliders module
 	var sliders = (function(){
 		var obj = {};
@@ -254,7 +192,8 @@ $(document).ready(function(){
 				}
 			]
 		};
-		obj.rating.$slider = $(".js-slider__string_rating");
+		obj.rating.$section = $("#rating");
+		obj.rating.$slider = obj.rating.$section.find(".js-slider__string");	// two objects
 		// obj.rating.$prevBtn = obj.rating.$slider.parent().siblings(".js-slider_left");
 		// obj.rating.$nextBtn = obj.rating.$slider.parent().siblings(".js-slider_right");
 
@@ -313,7 +252,8 @@ $(document).ready(function(){
 				}
 			]
 		};
-		obj.specials.$slider = $(".js-slider__string_specials");
+		obj.specials.$section = $("#specials");	
+		obj.specials.$slider = obj.specials.$section.find(".js-slider__string");
 		obj.specials.init = function(){
 			init(obj.specials);
 		};
@@ -324,6 +264,76 @@ $(document).ready(function(){
 		}
 
 		return obj;	// return object with menu methods and buttons
+	})();
+
+	// tabs module (in Rating, Specials)
+	var tabs = (function(){
+		// tabs init function
+		function init(oTabbed){
+			var sActiveTabClass = "b-btn_active js-tab_active";
+			oTabbed.$contents.each(function(){
+				if (!$(this).hasClass("js-content_active")){
+					
+					$(this).css("display", "none").removeClass("hidden");
+				}
+			});
+			oTabbed.$tabs.on("click", function(){
+				if ($(this).hasClass("js-tab_active")){
+					return false	// if active tab clicked do nothing
+				};
+				
+				if (!oTabbed.$contents.is(":animated")){
+					var index = oTabbed.$tabs.index(this);	// index of clicked tab
+
+					oTabbed.$tabs.removeClass(sActiveTabClass);
+					$(this).addClass(sActiveTabClass);
+
+					oTabbed.$contents.filter(".js-content_active").fadeOut(400).promise().done(function(){
+						var $slider = oTabbed.$contents.eq(index).find(".js-slider__string");	// slider inside
+						console.log($slider)
+
+						oTabbed.$contents.eq(index).addClass("js-content_active").fadeIn({
+							duration: 400,
+							progress: function(){
+								if ($slider.length){
+									$slider.slick('setPosition'); // prevent hidden slider broken sizes when visible
+								}
+							}
+						});
+					});
+				}
+			});
+		}
+		
+		var obj = {};
+
+		obj.rating = {};
+		// obj.rating.$section = $("#rating");
+		obj.rating.$section = sliders.rating.$section;
+		obj.rating.$tabsBlock = obj.rating.$section.find(".js-tabsBlock");
+		obj.rating.$tabs = obj.rating.$tabsBlock.find(".js-tab");
+		obj.rating.$contentsBlock = obj.rating.$section.find(".js-tabContentsBlock");
+		obj.rating.$contents = obj.rating.$section.find(".js-content");
+		obj.rating.init = function(){
+			init(obj.rating);
+		};
+
+		obj.specials = {};
+		obj.specials.$section = sliders.specials.$section;
+		obj.specials.$tabsBlock = obj.specials.$section.find(".js-tabsBlock");
+		obj.specials.$tabs = obj.specials.$tabsBlock.find(".js-tab");
+		obj.specials.$contentsBlock = obj.specials.$section.find(".js-tabContentsBlock");
+		obj.specials.$contents = obj.specials.$section.find(".js-content");
+		obj.specials.init = function(){
+			init(obj.specials);
+		};
+
+		obj.init = function(){
+			obj.rating.init();	// rating tabs init
+			obj.specials.init();// specials tabs init
+		}
+
+		return obj;
 	})();
 
 	// seoMap module
