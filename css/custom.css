@@ -287,6 +287,11 @@ a, button, input[type="button"], input[type="submit"], input[type="color"], inpu
 .hidden {
     display: none!important;
 }
+.g-clearfix:after{
+    content: '';
+    clear: both;
+    display: table;
+}
 .s-bold{
     font-weight: 700!important;
 }
@@ -1194,7 +1199,7 @@ a.b-submenu__link_more:hover{
     outline: none;
     border: none;
     padding: 0;
-    background-color: #fff;
+    background-color: transparent;
     font-size: 22px;
     font-weight: 700;
     font-family: 'Roboto Condensed', sans-serif;
@@ -1557,6 +1562,7 @@ a.b-submenu__link_more:hover{
     max-width: 970px;
 }
 .row{
+    width: auto;
     margin-left: -15px;
     margin-right: -15px;
 }
@@ -1587,7 +1593,6 @@ a.b-submenu__link_more:hover{
 }
 
 .b-responses__block_btns{
-/*    width: 970px;*/
     margin-bottom: 25px;
 }
 /*
@@ -1683,6 +1688,7 @@ a.b-submenu__link_more:hover{
 .b-slide__heading{
     margin-bottom: 12px;
     font-family: 'Playfair Display', serif;
+    line-height: 1.15;
     font-size: 27px;
     font-weight: 700;
     color: #fff;
@@ -1754,6 +1760,7 @@ a.b-submenu__link_more:hover{
     margin-bottom: 6px;
     padding-left: 3px;
     color: #4b4b4b;
+    font-size: 14px;
 }
 .b-form_feedback input{
     margin-bottom: 10px;
@@ -1837,6 +1844,7 @@ a.b-submenu__link_more:hover{
     display: block;
     width: 100%;
     height: 84px;
+    min-height: unset;
     border: 1px solid #adadad;
     padding: 2px;
     -webkit-box-sizing: border-box;
@@ -1845,12 +1853,8 @@ a.b-submenu__link_more:hover{
     resize: none;
 }
 .b-form__submit_feedback{
-/*
-    margin-top: 0;
-    border: 1px solid #000;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-*/
+    background-color: transparent;
+    border-radius: 0;
 }
 
 .b-slider__control_responses:hover{

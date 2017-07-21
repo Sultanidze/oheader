@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	"use strict"
+	var $window = $(window);
 
 	// header module
 	var header = (function(){
@@ -370,11 +371,255 @@ $(document).ready(function(){
 		return obj;	// return module object
 	})();
 
+	// responces slider
+	var responces = (function(){
+		var obj = {};
+
+		obj.$section = $("#responses");
+
+		obj.$slider = obj.$section.find(".b-slider_responses");
+
+		var  $slideResp = obj.$slider.find(".b-slide_responses")
+			,$respFedbBtn = obj.$section.children(".js-btns_category")
+			,$responsesBtn = $respFedbBtn.children(".js-btn_responses")
+			,$feedbackBtn = $respFedbBtn.children(".js-btn_feedback")
+			,$sliderRespControlBtn = obj.$slider.find(".b-slider__control_responses")
+			,$sliderRespPrevBtn = obj.$slider.find(".b-slider__controls_responses .b-slider__control_left")
+			,$sliderRespNextBtn = obj.$slider.find(".b-slider__controls_responses .b-slider__control_right")
+			,$activeSlide = $slideResp.filter(".b-slide_active")
+			,$unactiveSlide = $slideResp.filter(":not(.b-slide_active)")
+			,$slidesContent = $("#slides").children()	// знаходимо відгуки в прихованому блоці
+			,slidesArray = []	// масив з html відгуків
+			,responseNum	// зберігає індекс останнього завантаженого відгуку
+			,bPrevNext		// чи попередній напрямок запитів "Наступний слайд"
+			,widthContainerCss = obj.$slider.outerWidth()	// initial width for desctop
+			,widthSlideCss = $activeSlide.outerWidth()	// initial width for desctop
+			,widthContainer
+			,widthSlide
+			,diff	// widthContainer - widthSlide
+			;
+
+		obj.slidesInit = function(){
+			// initial slides content
+			$slidesContent.each(function(index, element){	// заповнюємо масив html відгуків
+				slidesArray.push($(element).html())
+			});
+			// наповнимо слайди початковим контенотом
+			$slideResp.eq(0).find(".b-slide__side_front .b-slide__wrap").html(slidesArray[1]);			
+			$slideResp.eq(1).find(".b-slide__side_front .b-slide__wrap").html(slidesArray[0]);
+			responseNum = 1;	// 2й відгук завантажували останнім
+			bPrevNext =true;	// порядок завантаження слайдів був прямий
+
+			// active slide initial position
+			$window.on("resize", function(){
+				activeSlidePosition();
+			}).trigger("resize");
+		};
+
+		var  
+			activeSlidePosition = function(){
+				$activeSlide = $slideResp.filter(".b-slide_active");
+				$unactiveSlide = $slideResp.filter(":not(.b-slide_active)");
+				$unactiveSlide.css("top", "0px");
+				$unactiveSlide.css("left", "0px");
+				
+				widthContainer = obj.$slider.outerWidth();
+				widthSlide = $activeSlide.outerWidth();
+				diff = widthContainer - widthSlide;
+				if (diff<0){
+					widthSlide = widthContainer;
+					$slideResp.css("width", widthContainer + "px")
+					diff = 0;
+				}
+				
+				$activeSlide.css("top", "30px");
+				$activeSlide.css("left", diff + "px");
+			}
+			,moveLeft = function($slide, bNext){
+				$slide.animate({
+						top: 20,
+						left: diff*1.1
+					},	{
+						duration: 200,
+						easing: "linear",
+						queue: "active",	// черга для анімації цього слайда
+						done: function(){
+							$(this).css("z-index", "-1")	// приберемо на задній фон
+						}
+					}
+				);
+				$slide.animate({
+						top: 5,
+						left: diff*0.99
+					},	{
+						duration: 200,
+						easing: "linear",
+						queue: "active"	// черга для анімації цього слайда
+					}
+				);
+				$slide.animate({
+						top: 2,
+						left: diff*0.5
+					},	{
+						duration: 300,
+						easing: "linear",
+						queue: "active",	// черга для анімації цього слайда
+						done: function(){
+							// завантажимо новий контент слайда
+							var $slideContent = $(this).find(".b-slide__side_front .b-slide__wrap");
+							$slideContent.fadeOut(100);
+							if(bNext){
+								if(bPrevNext){
+									// перевірка індекса масива перед інкрементом на 1
+									if (responseNum == slidesArray.length-1){
+										responseNum = 0
+									} else {
+										++responseNum;
+									}
+									$slideContent.html(slidesArray[responseNum]);	// відмальовуєм відгук з індексом responseNum
+								} else {
+									// перевірка індекса масива перед інкрементом на 2
+									if (responseNum == slidesArray.length-1){
+										responseNum = 1
+									} else if (responseNum == slidesArray.length-2){
+										responseNum = 0;
+									} else {
+										responseNum+=2;
+									}
+									$slideContent.html(slidesArray[responseNum]);
+								}
+								bPrevNext = true;
+							} else {
+								if(!bPrevNext){
+									// перевірка індекса масива перед декрементом на 1
+									if (responseNum == 0){
+										responseNum = slidesArray.length - 1
+									} else {
+										--responseNum;
+									}
+									$slideContent.html(slidesArray[responseNum]);
+								} else {
+									// перевірка індекса масива перед декрементом на 2
+									if (responseNum == 1){
+										responseNum = slidesArray.length - 1
+									} else if (responseNum == 0){
+										responseNum = slidesArray.length - 2
+									} else {
+										responseNum-=2;
+									}
+									$slideContent.html(slidesArray[responseNum]);
+								}
+								bPrevNext = false;
+							}
+							
+							$slideContent.fadeIn(100);
+						}
+					}
+				);
+				$slide.animate({
+						top: 0,
+						left: 0
+					},	{
+						duration: 300,
+						easing: "linear",
+						queue: "active",
+						done: function(){
+							$slideResp.toggleClass("b-slide_active");
+						}
+					}
+				);
+				$slide.dequeue("active");	// запустимо чергу
+			}
+			,moveRight = function($slide){
+				$slide.animate({
+						top: 40,
+						left: -diff*0.1
+					},	{
+						duration: 200,
+						easing: "linear",
+						queue: "unactive",	// черга для анімації цього слайда
+						done: function(){
+							$(this).css("z-index", "4")
+						}
+					}
+				);
+				$slide.animate({
+						top: 60,
+						left: diff*0.01
+					},	{
+						duration: 200,
+						easing: "linear",
+						queue: "unactive"	// черга для анімації цього слайда
+					}
+				);
+				$slide.animate({
+						top: 30,
+						left: diff
+					},	{
+						duration: 600,
+						easing: "linear",
+						queue: "unactive"
+					}
+				);
+				$slide.dequeue("unactive");	// запустимо чергу
+			}
+			,reshuffle = function($active, $unActive, bNext){
+				moveLeft($active, bNext);
+				moveRight($unActive);
+			};
+
+		obj.sliderInit = function(){
+			// sliderInit();
+			$responsesBtn.click(function(){
+				$respFedbBtn.removeClass("b-rating__btn_active");
+				$responsesBtn.addClass("b-rating__btn_active");
+				$activeSlide.removeClass("b-slide_rotated");	// rotate back if rotated
+			});
+			$feedbackBtn.click(function(){
+				$respFedbBtn.toggleClass("b-rating__btn_active");
+				$activeSlide = $slideResp.filter(".b-slide_active");
+				if (!$activeSlide.is(":animated")) {
+					$activeSlide.toggleClass("b-slide_rotated");
+				}
+			});
+
+			$sliderRespControlBtn.click(function(){
+				$activeSlide = $slideResp.filter(".b-slide_active");
+				if ($activeSlide.hasClass("b-slide_rotated")){
+					$feedbackBtn.trigger("click");
+				}
+			});
+			$sliderRespPrevBtn.click(function(){
+				$activeSlide = $slideResp.filter(".b-slide_active");
+				$unactiveSlide = $slideResp.filter(":not(.b-slide_active)");
+				if(!$activeSlide.is(":animated")){
+					reshuffle($activeSlide, $unactiveSlide, false);
+				}
+			});
+			$sliderRespNextBtn.click(function(){
+				$activeSlide = $slideResp.filter(".b-slide_active");
+				$unactiveSlide = $slideResp.filter(":not(.b-slide_active)");
+				if(!$activeSlide.is(":animated")){
+					reshuffle($activeSlide, $unactiveSlide, true);
+				}
+			});
+		};
+
+		obj.init = function(){
+			obj.slidesInit();	// підвантаження слайдів з прихованого блока
+			obj.sliderInit();
+		}
+
+		return obj;
+
+	})();
+
 	// executable part
 	header.init();	// header module init
 	indexContents.linkInit();	// content links functionality
 	sliders.init();	// sliders module init
 	tabs.init();	// tabs init
+	responces.init();	// responses slider init
 	footer.init();	// footer module init
 
 	seoMap.init();	// seoMap module init
