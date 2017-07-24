@@ -392,11 +392,11 @@ $(document).ready(function(){
 			,slidesArray = []	// масив з html відгуків
 			,responseNum	// зберігає індекс останнього завантаженого відгуку
 			,bPrevNext		// чи попередній напрямок запитів "Наступний слайд"
-			,widthContainerCss = obj.$slider.outerWidth()	// initial width for desctop
-			,widthSlideCss = $activeSlide.outerWidth()	// initial width for desctop
+			,widthSlideCss = $activeSlide.outerWidth()	// initial width for desktop
 			,widthContainer
 			,widthSlide
 			,diff	// widthContainer - widthSlide
+			,bSmallScr // true on large screens
 			;
 
 		obj.slidesInit = function(){
@@ -425,22 +425,32 @@ $(document).ready(function(){
 				
 				widthContainer = obj.$slider.outerWidth();
 				widthSlide = $activeSlide.outerWidth();
-				diff = widthContainer - widthSlide;
-				if (diff<0){
+
+				if (widthContainer > widthSlideCss){
+					if (widthSlide < widthSlideCss){
+						$slideResp.css("width", widthSlideCss + "px")
+					}
+					bSmallScr = false;
+					$activeSlide.css("top", "30px");
+					diff = widthContainer - widthSlideCss;
+					$activeSlide.css("left", diff + "px");
+				} else {
 					widthSlide = widthContainer;
 					$slideResp.css("width", widthContainer + "px")
-					diff = 0;
+					bSmallScr = true;
+					// diff = 0;
+					$activeSlide.css("top", "10px");
+					$activeSlide.css("left", "5px");
+					$unactiveSlide.css("left", "-5px");
 				}
 				
-				$activeSlide.css("top", "30px");
-				$activeSlide.css("left", diff + "px");
 			}
-			,moveLeft = function($slide, bNext){
+			,moveLeft = function($slide, bNext, bSmallScr){	
 				$slide.animate({
-						top: 20,
-						left: diff*1.1
+						top: bSmallScr?9:20,
+						left: bSmallScr?40:diff*1.1
 					},	{
-						duration: 200,
+						duration: bSmallScr?100:200,
 						easing: "linear",
 						queue: "active",	// черга для анімації цього слайда
 						done: function(){
@@ -449,19 +459,19 @@ $(document).ready(function(){
 					}
 				);
 				$slide.animate({
-						top: 5,
-						left: diff*0.99
+						top: bSmallScr?7:5,
+						left: bSmallScr?30:diff*0.99
 					},	{
-						duration: 200,
+						duration: bSmallScr?100:200,
 						easing: "linear",
 						queue: "active"	// черга для анімації цього слайда
 					}
 				);
 				$slide.animate({
-						top: 2,
-						left: diff*0.5
+						top: bSmallScr?5:2,
+						left: bSmallScr?15:diff*0.5
 					},	{
-						duration: 300,
+						duration: bSmallScr?150:300,
 						easing: "linear",
 						queue: "active",	// черга для анімації цього слайда
 						done: function(){
@@ -517,10 +527,10 @@ $(document).ready(function(){
 					}
 				);
 				$slide.animate({
-						top: 0,
-						left: 0
+						top: bSmallScr?0:0,
+						left: -5
 					},	{
-						duration: 300,
+						duration: bSmallScr?150:300,
 						easing: "linear",
 						queue: "active",
 						done: function(){
@@ -530,12 +540,12 @@ $(document).ready(function(){
 				);
 				$slide.dequeue("active");	// запустимо чергу
 			}
-			,moveRight = function($slide){
+			,moveRight = function($slide, bSmallScr){
 				$slide.animate({
-						top: 40,
-						left: -diff*0.1
+						top: bSmallScr?7:40,
+						left: bSmallScr?-40:-diff*0.1
 					},	{
-						duration: 200,
+						duration: bSmallScr?100:200,
 						easing: "linear",
 						queue: "unactive",	// черга для анімації цього слайда
 						done: function(){
@@ -544,19 +554,19 @@ $(document).ready(function(){
 					}
 				);
 				$slide.animate({
-						top: 60,
-						left: diff*0.01
+						top: bSmallScr?9:60,
+						left: bSmallScr?-30:diff*0.01
 					},	{
-						duration: 200,
+						duration: bSmallScr?100:200,
 						easing: "linear",
 						queue: "unactive"	// черга для анімації цього слайда
 					}
 				);
 				$slide.animate({
-						top: 30,
-						left: diff
+						top: bSmallScr?10:30,
+						left: bSmallScr?5:diff
 					},	{
-						duration: 600,
+						duration: bSmallScr?300:600,
 						easing: "linear",
 						queue: "unactive"
 					}
@@ -564,19 +574,19 @@ $(document).ready(function(){
 				$slide.dequeue("unactive");	// запустимо чергу
 			}
 			,reshuffle = function($active, $unActive, bNext){
-				moveLeft($active, bNext);
-				moveRight($unActive);
+				moveLeft($active, bNext, bSmallScr);
+				moveRight($unActive, bSmallScr);
 			};
 
 		obj.sliderInit = function(){
-			// sliderInit();
 			$responsesBtn.click(function(){
-				$respFedbBtn.removeClass("b-rating__btn_active");
-				$responsesBtn.addClass("b-rating__btn_active");
-				$activeSlide.removeClass("b-slide_rotated");	// rotate back if rotated
+				$feedbackBtn.toggleClass("b-btn_active");
+				$responsesBtn.toggleClass("b-btn_active");
+				$activeSlide.toggleClass("b-slide_rotated");	// rotate back if rotated
 			});
 			$feedbackBtn.click(function(){
-				$respFedbBtn.toggleClass("b-rating__btn_active");
+				$feedbackBtn.toggleClass("b-btn_active");
+				$responsesBtn.toggleClass("b-btn_active");
 				$activeSlide = $slideResp.filter(".b-slide_active");
 				if (!$activeSlide.is(":animated")) {
 					$activeSlide.toggleClass("b-slide_rotated");
@@ -607,7 +617,7 @@ $(document).ready(function(){
 
 		obj.init = function(){
 			obj.slidesInit();	// підвантаження слайдів з прихованого блока
-			obj.sliderInit();
+			obj.sliderInit();	// підвантаження слайдів з прихованого блока
 		}
 
 		return obj;
