@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto+Condensed:300,400|Roboto:300,400,500,700|Bad+Script&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Bad+Script&subset=cyrillic');
 /*
 font-family: 'Roboto', sans-serif;
 font-family: 'Roboto Condensed', sans-serif;
@@ -734,10 +734,12 @@ a.b-submenu__link_more:hover{
 }
 .c-num_heading{
     display: inline-block;
-    -webkit-transform: scale(1.1, 1.4) translateY(-0.5rem);
-    -ms-transform: scale(1.1, 1.4) translateY(-0.5rem);
-    -o-transform: scale(1.1, 1.4) translateY(-0.5rem);
-    transform: scale(1.1, 1.4) translateY(-0.5rem);
+}
+.c-num_heading{
+    -webkit-transform: scale(1.1, 1.4) translateY(-0.1241em);
+    -ms-transform: scale(1.1, 1.4) translateY(-0.1241em);
+    -o-transform: scale(1.1, 1.4) translateY(-0.1241em);
+    transform: scale(1.1, 1.4) translateY(-0.1241em);
 }
 .b-section_top p{
     max-width: 15em;
@@ -848,6 +850,7 @@ a.b-submenu__link_more:hover{
 .b-btn_wArrow{
     position: relative;
     border: none;
+    border-radius: 0;
     height: 40px;
     line-height: 38px;
     padding: 0;
@@ -929,6 +932,9 @@ a.b-submenu__link_more:hover{
 }
 .b-btn_down:after{
     content: "\f107";
+}
+.b-btn_phone:after{
+    content: "\f095";
 }
 .b-btn_dialogue:after{
     content: "\f0e6";
@@ -1116,6 +1122,14 @@ a.b-submenu__link_more:hover{
     text-align: left;
     font-size: 23.5px;
 }
+/*
+.b-whatIsOh__heading .c-num_heading{
+    -webkit-transform: scale(1.1, 1.4) translateY(-0.1246em);
+    -ms-transform: scale(1.1, 1.4) translateY(-0.1246em);
+    -o-transform: scale(1.1, 1.4) translateY(-0.1246em);
+    transform: scale(1.1, 1.4) translateY(-0.1246em);
+}
+*/
 .b-whatIsOh__text{
     line-height: 21px;
 }
@@ -1391,6 +1405,9 @@ a.b-submenu__link_more:hover{
 .b-slider__control:hover{
     -webkit-box-shadow:  0 0 18px 2px rgba(0,0,0,0.26);
     box-shadow: 0 0 18px 2px rgba(0,0,0,0.26);
+}
+.b-slider__control.slick-disabled{
+    opacity: 0.8;
 }
 .b-slider__control_left{
     left: -30px;
@@ -1708,7 +1725,14 @@ a.b-submenu__link_more:hover{
     height: 211px;
     overflow: auto;
     font-family: 'Roboto Condensed', sans-serif;
+    
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
 }
+.b-slide__content::-webkit-scrollbar{
+    width: 0
+}
+
 .b-slide__content .b-company__rating{
     float: left;
     margin-top: 0;
@@ -2330,6 +2354,83 @@ a.b-callback_footer:hover{
     font-size: 30px;
 }
 /*======= FOOTER END =======*/
+
+/*======= MODALS =======*/
+.b-modal{
+/*    display: none;*/
+/*    position: absolute;*/
+    position: relative;
+/*
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+*/
+/*    margin: auto;*/
+/*    width: 359px;*/
+/*    height: 274px;*/
+    width: 320px;
+    padding: 30px;
+    padding: 35px 30px 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    -webkit-box-shadow: 0 0 30px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 30px 10px rgba(0,0,0,0.2);
+}
+
+.b-modal_callback{
+/*
+    width: 320px;
+    height: 320px;
+*/
+}
+.b-modal .b-modal__btn_close{
+    right: -38px;
+    color: #000;
+/*
+    position: absolute;
+    top: 0;
+    text-align: center;
+    width: 38px;
+    height: 38px;
+    background-color: #f2c916;
+    font-size: 16px;
+    line-height: 38px;
+    cursor: pointer;
+*/
+}
+.b-modal__heading{
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.b-modal__form_callback{
+    width: 191px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.b-modal__form_callback label{
+    color: #fff;
+}
+.b-modal__form_callback input{
+    margin-bottom: 26px;
+}
+.b-modal__form_callback .b-btn_wArrow{
+    width: 100%;
+    color: #000;
+}
+.b-modal__form_callback div.gui-message{
+    padding: 15px 0;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    line-height: normal;
+}
+/*======= MODALS END =======*/
 
 /*======= 404 =======*/
 .b-section__heading_404{
@@ -3121,7 +3222,7 @@ a.b-callback_footer:hover{
     .b-menu__item:hover{
         border-right: 2px solid #f2c90c;
     }
-    .b-modal__btn_close{
+    .b-menu .b-modal__btn_close{
         left: 0;
         right: unset;
     }
@@ -3181,6 +3282,7 @@ a.b-callback_footer:hover{
     .b-section_top h1{
         max-width: none;
         text-align: center;
+        font-size: 34px;
     }
     .b-section_top p{
         max-width: none;
@@ -3209,9 +3311,12 @@ a.b-callback_footer:hover{
         padding-right: 0;
     }
     .b-links_stages{
+        display: none;
+/*
         position: static;
         -ms-align-self: stretch;
         align-self: stretch;
+*/
     }
     
     .b-whatIsOh__block_img{
@@ -3252,6 +3357,10 @@ a.b-callback_footer:hover{
     
     .b-responses__block_btns{
         margin-bottom: 10px;
+    }
+    
+    .b-section_seo{
+        display: none;
     }
     
     .b-string__slide_specials{
@@ -3457,6 +3566,8 @@ a.b-callback_footer:hover{
     .b-header .b-header__link_phone{
         margin-left: 0;
         position: relative;
+        bottom: 0;
+        right: 0;
         width: 44px;
         height: 44px;
         display: block;
@@ -3514,7 +3625,10 @@ a.b-callback_footer:hover{
         -o-order: 1;
         order: 1;
     }
-    .b-modal__btn_close{
+    .b-modal .b-modal__btn_close{
+        right: 0;
+    }
+    .b-menu .b-modal__btn_close{
         display: none;
     }
     .b-menu__heading{
@@ -3588,12 +3702,14 @@ a.b-callback_footer:hover{
     .b-section_top h1{
         font-size: 30px;
     }
+/*
     .c-num_heading{
         -webkit-transform: scale(1.1, 1.4) translateY(-0.36rem);
         -ms-transform: scale(1.1, 1.4) translateY(-0.36rem);
         -o-transform: scale(1.1, 1.4) translateY(-0.36rem);
         transform: scale(1.1, 1.4) translateY(-0.36rem);
     }
+*/
     .b-tiles_square{
         -webkit-flex-direction: column;
         -moz-flex-direction: column;

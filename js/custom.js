@@ -239,9 +239,37 @@ $(document).ready(function(){
 			init(obj.specials);
 		};
 
+		obj.blogArticle = {};
+		obj.blogArticle.settings = {
+			centerMode: true,
+			centerPadding: '60px',
+			arrows: true,
+			infinite: true,
+			speed: 400,
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 4400,
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 1,
+						centerPadding: '40px',
+				  }
+				}
+			]
+		};
+		obj.blogArticle.$section = $("#blogArticle");	
+		obj.blogArticle.$slider = obj.blogArticle.$section.find(".js-slider__string");
+		obj.blogArticle.init = function(){
+			init(obj.blogArticle);
+		};
+
 		obj.init = function(){
 			obj.rating.init();
 			obj.specials.init();
+			obj.blogArticle.init();
 		}
 
 		return obj;	// return object with menu methods and buttons
