@@ -8,9 +8,7 @@ $(document).ready(function(){
 
 		// menu hiding/appearance
 		obj.$header = $("#headerWrapper");	// header
-		// obj.headerHeight = obj.$header.outerHeight();
 		obj.$mainMenu = $("#mainMenu");		// menu
-		// obj.menuHeight = obj.$mainMenu.outerHeight();
 		obj.$menuBtn = $("#menuBtn");		
 		obj.$closeIcon = obj.$menuBtn.find(".b-icon_bars");
 		obj.$openIcon = obj.$menuBtn.find(".fa-times");
@@ -170,13 +168,11 @@ $(document).ready(function(){
 		obj.rating = {};	// rating slider object - contains '$slider' and 'settings' fields
 		obj.rating.settings = {
 			arrows: true,
-			// prevArrow: '$(this).parent().siblings(".js-slider_left")',
-			// nextArrow: '$(this).parent().siblings(".js-slider_right")',
 			infinite: true,
 			speed: 400,
 			slidesToShow: 3,
 			slidesToScroll: 1,
-			// autoplay: true,
+			autoplay: true,
 			autoplaySpeed: 4400,
 			responsive: [
 				{
@@ -195,8 +191,6 @@ $(document).ready(function(){
 		};
 		obj.rating.$section = $("#rating");
 		obj.rating.$slider = obj.rating.$section.find(".js-slider__string");	// two objects
-		// obj.rating.$prevBtn = obj.rating.$slider.parent().siblings(".js-slider_left");
-		// obj.rating.$nextBtn = obj.rating.$slider.parent().siblings(".js-slider_right");
 
 		// slider settings object extend function
 		function addBtnsSettings(oSlider){
@@ -218,20 +212,6 @@ $(document).ready(function(){
 		};
 		// init rating slider function
 		obj.rating.init = function(){
-		// 	// obj.rating.$slider.slick(function(){
-		// 	// 	var 
-		// 	// 		 t = this
-		// 	// 		,settings = {}
-		// 	// 		;
-
-		// 	// 	settings.prevArrow = $(t).parent().siblings(".js-slider_left");
-		// 	// 	settings.nextArrow = $(t).parent().siblings(".js-slider_right");
-
-		// 	// 	return	jQuery.extend(settings, obj.rating.settings);	
-		// 	// }.call(obj.rating.$slider));
-		// 	obj.rating.$slider.each(function(){
-		// 		$(this).slick(addBtnsSettings.call(this, obj.rating))
-		// 	});
 			init(obj.rating);
 		};
 
@@ -242,7 +222,7 @@ $(document).ready(function(){
 			speed: 400,
 			slidesToShow: 2,
 			slidesToScroll: 1,
-			// autoplay: true,
+			autoplay: true,
 			autoplaySpeed: 4400,
 			responsive: [
 				{
@@ -309,7 +289,6 @@ $(document).ready(function(){
 		var obj = {};
 
 		obj.rating = {};
-		// obj.rating.$section = $("#rating");
 		obj.rating.$section = sliders.rating.$section;
 		obj.rating.$tabsBlock = obj.rating.$section.find(".js-tabsBlock");
 		obj.rating.$tabs = obj.rating.$tabsBlock.find(".js-tab");

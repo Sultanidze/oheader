@@ -440,6 +440,7 @@ body{
 }
 .b-btn_menu .b-menu__icon{
     position: relative;
+    top: 2px;
     display: inline-block;
     margin-right: 10px;
     width: 20px;
@@ -459,9 +460,9 @@ body{
     display: none;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 3px;
     line-height: 14px;
-    font-size: 16px;
+    font-size: 17px;
 }
 .opened>
 .b-btn_menu b-btn__text{
@@ -631,8 +632,18 @@ a.callback:hover{
     border-right: 1px solid #e4e4e4;
     border-bottom: 1px solid #5b2d85;
 }
+.b-menu__item:first-child{
+    flex-basis: 235px;
+}
+.b-menu__item:nth-child(2){
+    flex-basis: 245px;
+}
+.b-menu__item:nth-last-child(2){
+    flex-basis: 450px;
+}
 .b-menu__item:last-child{
     border-right: none;
+    flex-basis: 335px;
     flex-grow: 1;
 }
 a.b-menu__item_callback{
