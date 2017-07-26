@@ -1939,7 +1939,15 @@ a.b-submenu__link_more:hover{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 /*    padding: 80px 61px;*/
-    padding: 8.45% 6.444%;
+/*    padding: 8.45% 6.444%;*/
+    padding: 0 6.444%;
+}
+.b-advantages_online:before,
+.b-advantages_online:after{
+    content: '';
+    display: table;
+    width: 100%;
+    padding-top: 27.595%;
 }
 .b-advantages_online>p{
     margin-top: 26px;
@@ -3009,6 +3017,12 @@ a.b-callback_footer:hover{
     min-width: 100%;
     box-sizing: content-box
 }
+
+/*bug - part of default scroll is visible*/
+.simplebar-scroll-content::-webkit-scrollbar{
+    width: 15px
+}
+
 .simplebar-content {
     overflow-x: scroll;
     overflow-y: hidden;
@@ -3743,10 +3757,20 @@ a.b-callback_footer:hover{
     
     
     .b-advantages_online{
-        padding: 12% 9%;
+/*        padding: 12% 9%;*/
+        padding: 0 9%;
     }
     .b-messaging__paragraph_wBorder{
-        padding: 12% 9%;
+        padding: 0 9%;
+    }
+    .b-advantages_online:before,
+    .b-advantages_online:after,
+    .b-messaging__paragraph_wBorder:before,
+    .b-messaging__paragraph_wBorder:after{
+        content: '';
+        display: table;
+        width: 100%;
+        padding-top: 14.63%;
     }
 /*
     a.callback:hover{
