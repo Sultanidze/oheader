@@ -2967,11 +2967,27 @@ a.b-callback_footer:hover{
 }
 /* firefox map hacks end */
 
-/* IE map hacks */
 /* IE10-11 styles*/
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    /* IE map hack*/
     .b-seomap__bgnd{
         top: -2px;
+    }
+    
+    .b-tile__heading_service{
+        display: inline-table;
+    }
+    .b-btn_right::after{
+        display: inline-block;
+    }
+    .b-decoration{
+        top: 160px;
+    }
+    .b-container__slider_rating{
+        flex-basis: 975px;
+    }
+    .b-rating__description{
+        flex-basis: 200px;
     }
 }
 /* IE map hacks end */
