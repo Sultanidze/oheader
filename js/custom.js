@@ -410,9 +410,11 @@ $(document).ready(function(){
 			$slidesContent.each(function(index, element){	// заповнюємо масив html відгуків
 				slidesArray.push($(element).html())
 			});
+			
 			// наповнимо слайди початковим контенотом
 			$slideResp.eq(0).find(".b-slide__side_front .b-slide__wrap").html(slidesArray[1]);			
 			$slideResp.eq(1).find(".b-slide__side_front .b-slide__wrap").html(slidesArray[0]);
+
 			responseNum = 1;	// 2й відгук завантажували останнім
 			bPrevNext =true;	// порядок завантаження слайдів був прямий
 

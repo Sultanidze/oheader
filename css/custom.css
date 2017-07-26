@@ -2986,84 +2986,77 @@ a.b-callback_footer:hover{
 /*======= SVG END =======*/
 
 /*======= Plugins =======*/
-/*
- * CSS Styles that are needed by jScrollPane for it to operate correctly.
- *
+/*!
+ * 
+ *  SimpleBar.js - v2.4.3
+ *  Scrollbars, simpler.
+ *         
  */
-
-.jspContainer{
-	overflow: hidden;
-	position: relative;
+[data-simplebar] {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch
 }
-.jspPane{
-	position: absolute;
+[data-simplebar=init] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
 }
-.jspVerticalBar{
-	position: absolute;
-	top: 0;
-	right: 0;
-	width: 16px;
-	height: 100%;
-	background: red;
+.simplebar-scroll-content {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-width: 100%;
+    box-sizing: content-box
 }
-.jspHorizontalBar{
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 16px;
-	background: red;
+.simplebar-content {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    min-height: 100%
 }
-.jspCap{
-	display: none;
+.simplebar-track {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 11px
 }
-.jspHorizontalBar .jspCap{
-	float: left;
+.simplebar-scrollbar {
+    position: absolute;
+    right: 2px;
+    border-radius: 7px;
+    min-height: 10px;
+    width: 7px;
+    opacity: 0;
+    -webkit-transition: opacity .2s linear;
+    transition: opacity .2s linear;
+    background: #000;
+    background-clip: padding-box
 }
-.jspTrack{
-	background: #dde;
-	position: relative;
+.simplebar-track:hover .simplebar-scrollbar {
+    opacity: .5;
+    -webkit-transition: opacity 0 linear;
+    transition: opacity 0 linear
 }
-.jspDrag{
-	background: #bbd;
-	position: relative;
-	top: 0;
-	left: 0;
-	cursor: pointer;
+.simplebar-track .simplebar-scrollbar.visible {
+    opacity: .5
 }
-.jspHorizontalBar .jspTrack,
-.jspHorizontalBar .jspDrag{
-	float: left;
-	height: 100%;
+.simplebar-track.horizontal {
+    left: 0;
+    width: auto;
+    height: 11px
 }
-
-.jspArrow{
-	background: #50506d;
-	text-indent: -20000px;
-	display: block;
-	cursor: pointer;
-	padding: 0;
-	margin: 0;
+.simplebar-track.vertical {
+    top: 0
 }
-.jspArrow.jspDisabled{
-	cursor: default;
-	background: #80808d;
-}
-.jspVerticalBar .jspArrow{
-	height: 16px;
-}
-.jspHorizontalBar .jspArrow{
-	width: 16px;
-	float: left;
-	height: 100%;
-}
-.jspVerticalBar .jspArrow:focus{
-	outline: none;
-}
-.jspCorner{
-	background: #eeeef4;
-	float: left;
-	height: 100%;
+.horizontal.simplebar-track .simplebar-scrollbar {
+    right: auto;
+    top: 2px;
+    height: 7px;
+    min-height: 0;
+    min-width: 10px;
+    width: auto
 }
 /*======= Plugins END =======*/
 
