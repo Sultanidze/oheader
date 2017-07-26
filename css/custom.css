@@ -1726,11 +1726,11 @@ a.b-submenu__link_more:hover{
     overflow: auto;
     font-family: 'Roboto Condensed', sans-serif;
     
-    overflow: -moz-scrollbars-none;
-    -ms-overflow-style: none;
+/*    overflow: -moz-scrollbars-none;*/
+/*    -ms-overflow-style: none;*/
 }
 .b-slide__content::-webkit-scrollbar{
-    width: 0
+/*    width: 0*/
 }
 
 .b-slide__content .b-company__rating{
@@ -2985,6 +2985,88 @@ a.b-callback_footer:hover{
 }
 /*======= SVG END =======*/
 
+/*======= Plugins =======*/
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ */
+
+.jspContainer{
+	overflow: hidden;
+	position: relative;
+}
+.jspPane{
+	position: absolute;
+}
+.jspVerticalBar{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 16px;
+	height: 100%;
+	background: red;
+}
+.jspHorizontalBar{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 16px;
+	background: red;
+}
+.jspCap{
+	display: none;
+}
+.jspHorizontalBar .jspCap{
+	float: left;
+}
+.jspTrack{
+	background: #dde;
+	position: relative;
+}
+.jspDrag{
+	background: #bbd;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag{
+	float: left;
+	height: 100%;
+}
+
+.jspArrow{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+}
+.jspArrow.jspDisabled{
+	cursor: default;
+	background: #80808d;
+}
+.jspVerticalBar .jspArrow{
+	height: 16px;
+}
+.jspHorizontalBar .jspArrow{
+	width: 16px;
+	float: left;
+	height: 100%;
+}
+.jspVerticalBar .jspArrow:focus{
+	outline: none;
+}
+.jspCorner{
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+/*======= Plugins END =======*/
+
 /*======= MEDIA QUERIES =======*/
 @media (min-width: 1200px){
     body{
@@ -3483,7 +3565,8 @@ a.b-callback_footer:hover{
     }
     .b-slide__content{
         height: auto;
-        overflow-y: auto;
+/*        overflow-y: auto;*/
+        overflow-x: hidden;
     }
     .b-slide__content .b-company__rating{
         display: inline-block;

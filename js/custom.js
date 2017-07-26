@@ -299,7 +299,6 @@ $(document).ready(function(){
 
 					oTabbed.$contents.filter(".js-content_active").fadeOut(400).promise().done(function(){
 						var $slider = oTabbed.$contents.eq(index).find(".js-slider__string");	// slider inside
-						console.log($slider)
 
 						oTabbed.$contents.eq(index).addClass("js-content_active").fadeIn({
 							duration: 400,
@@ -529,7 +528,9 @@ $(document).ready(function(){
 								bPrevNext = false;
 							}
 							
-							$slideContent.fadeIn(100);
+							$slideContent.fadeIn(100).promise().done(function(){
+								$(this).css('display', '');
+							});
 						}
 					}
 				);
