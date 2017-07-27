@@ -1,6 +1,9 @@
 # oheader
 new oh.ua header
-http://demo.digitalforce.ua/oheader/
+
+prod: http://oh.ua/
+test: http://test.oh.ua/
+frontend: http://demo.digitalforce.ua/oheader/
 
 styles.css - старі стилі
 custom.css - мої нові стилі

@@ -2988,6 +2988,9 @@ a.b-callback_footer:hover{
     .b-container__slider_rating{
         flex-basis: 975px;
     }
+    .b-container__slider{
+        max-height: 327px;
+    }
     .b-rating__description{
         flex-basis: 200px;
     }
@@ -3015,6 +3018,9 @@ a.b-callback_footer:hover{
     
     .b-form_feedback textarea{
         margin-bottom: 3px;
+    }
+    .b-advantages_online{
+        flex-basis: 290px;
     }
 }
 
