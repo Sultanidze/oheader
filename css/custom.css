@@ -2973,10 +2973,12 @@ a.b-callback_footer:hover{
     .b-seomap__bgnd{
         top: -2px;
     }
+    /* IE map hack end */
     
     .b-tile__heading_service{
         display: inline-table;
     }
+    .b-btn_wArrow::after,
     .b-btn_right::after{
         display: inline-block;
     }
@@ -2989,8 +2991,32 @@ a.b-callback_footer:hover{
     .b-rating__description{
         flex-basis: 200px;
     }
+    
+    
+    .b-sides_flip, .b-slide_rotated {
+        -ms-transform: none;
+        transform: none;
+    }
+    .b-trash__side, b-slide__side,
+    .b-slide_rotated .b-slide__side{
+        -ms-transition: -ms-transform 400ms;
+        transition: transform 400ms;
+    }
+    .b-sides_flip .b-trash__side_front,
+    .b-slide_rotated .b-slide__side_front{  
+        -ms-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+    .b-sides_flip .b-trash__side_back,
+    .b-slide_rotated .b-slide__side_back{  
+        -ms-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+    
+    .b-form_feedback textarea{
+        margin-bottom: 3px;
+    }
 }
-/* IE map hacks end */
 
 /*======= OSAGO SEOMAP END =======*/
 
