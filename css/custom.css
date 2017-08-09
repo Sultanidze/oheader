@@ -1220,7 +1220,8 @@ a.b-submenu__link_more:hover{
 .b-container_slider{
     padding: 0 12px;
 }
-.b-btn_rating{
+.b-btn_rating,
+.b-btn_rating:hover{
     outline: none;
     border: none;
     padding: 0;
@@ -1228,6 +1229,7 @@ a.b-submenu__link_more:hover{
     font-size: 22px;
     font-weight: 700;
     font-family: 'Roboto Condensed', sans-serif;
+    color: #231f20;
     text-transform: uppercase;
     text-decoration: underline;
     -webkit-transition: color 400ms;
@@ -1238,7 +1240,8 @@ a.b-submenu__link_more:hover{
 .b-section_rating .b-btn_rating + .b-btn_rating{
     margin-left: 50px;
 }
-.b-btn_active{
+.b-btn_active,
+.b-btn_active:hover{
     color: #f2c90c;
 }
 .b-rating__link{
@@ -2040,6 +2043,10 @@ a.b-submenu__link_more:hover{
     display: flex;
     -ms-align-items: center;
     align-items: center;
+}
+.b-priceAgregator__heading:before,
+.b-priceAgregator__heading:after{
+    content: none;
 }
 .b-priceAgregator .b-map__address{
     margin-bottom: 25px;
@@ -2939,7 +2946,7 @@ a.b-callback_footer:hover{
         top: 212.2px;
         left: 680.45px;
     }
-    b-region_zaporozhye {
+    .b-region_zaporozhye {
         width: 146.4px;
         top: 296.8px;
         left: 571.1px;
@@ -3025,6 +3032,163 @@ a.b-callback_footer:hover{
 }
 
 /*======= OSAGO SEOMAP END =======*/
+
+/*======= B-CRUMBS =======*/
+.b-container_crumbs{
+    max-width: 1110px;
+}
+.b-section_crumbs{
+    min-height: 40px;
+/*    background-color: #f5f5f5;*/
+}
+.b-crumbs{
+/*    display: none;*/
+    margin: 0;
+    padding-top: 20px;
+}
+.b-crumbs__item{
+    display: inline-block;
+    font-family: 'Roboto Condensed', sans-serif;
+    line-height: 30px;
+    cursor: default;
+}
+.b-crumbs__item+.b-crumbs__item:before{
+    content: "\f061";
+    font-family: FontAwesome;
+}
+.b-crumbs__link{
+    text-decoration: underline;
+    color: #7239a6;
+/*
+    transition: color 300ms ease;
+    -moz-transition: color 300ms ease;
+    -webkit-transition: color 300ms ease;
+    -o-transition: color 300ms ease;
+*/
+}
+.b-crumbs__link:hover{
+    color: #7239a6;
+}
+/*
+.b-crumbs__item_unactive{
+    cursor: pointer;
+}
+*/
+.b-crumbs__item_unactive span{
+/*    text-transform: uppercase;*/
+    text-decoration: underline;
+    color: #7239a6;
+}
+/*======= B-CRUMBS END =======*/
+
+/*======= BLOG =======*/
+.b-section_blog{
+    max-width: 810px;
+}
+.b-section__heading_blog{
+    font-size: 34px;
+    text-transform: capitalize;
+}
+.b-blog__filters{
+    margin-bottom: 50px;
+    text-align: center;
+}
+.b-filter,
+.b-filter:hover{
+    position: relative;
+    margin-right: 50px;
+    display: inline-block;
+    height: 0.955em;
+    line-height: 0.86364em;
+    border-left-width: 3px;
+    border-left-style: solid;
+    padding-left: 6px;
+}
+.b-filter_articles,
+.b-filter_articles:hover{
+    border-left-color: #f2c916;
+}
+.b-filter_news,
+.b-filter_news:hover{
+    border-left-color: #128ff9;
+}
+.b-filter_promotes,
+.b-filter_promotes:hover{
+    border-left-color: #00a651;
+}
+.b-filter:last-child,
+.b-filter:last-child:hover{
+    margin-right: 0;
+}
+.b-filter__num{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: .5091em;
+    color: #fff;
+    -webkit-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%);
+    -o-transform: translate(50%, -50%);
+    transform: translate(50%, -50%);
+}
+.b-filter__num_articles{
+    background-color: #f2c916;
+}
+.b-filter__num_news{
+    background-color: #128ff9;
+}
+.b-filter__num_promotes{
+    background-color: #00a651;
+}
+.b-blog__article{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    cursor: pointer;
+}
+.b-blog__block_img{
+    max-width: 352px;
+/*    height: 204px;*/
+    position: relative;
+/*    overflow: hidden;*/
+    text-align: center;
+}
+.b-blog__bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: top 100ms, left 100ms;
+    -o-transition: top 100ms, left 100ms;
+    transition: top 100ms, left 100ms;
+}
+.b-blog__article_articles .b-blog__bg{
+    background-color: #f2c916;
+}
+.b-blog__article:hover .b-blog__bg{
+    top: 10px;
+    left: -10px;
+}
+.b-blog__img{
+/*    width: 100%;*/
+    max-width: 100%;
+    max-height: 100%;
+    
+}
+.b-blog__info_article{
+    position: absolute;
+    left: 1px;
+    bottom: 1px;
+}
+/*======= BLOG END =======*/
 
 /*======= SVG =======*/
 .svg-stage{
