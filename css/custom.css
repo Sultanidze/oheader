@@ -3388,6 +3388,23 @@ a.b-callback_footer:hover{
     min-width: 10px;
     width: auto
 }
+
+.tooltipster-light {
+    max-width: 147px;
+	border-radius: 3px; 
+	border: 1px solid #d4d4d4;
+	background: #fff;
+	color: #666666;
+    z-index: 1;
+}
+.tooltipster-light .tooltipster-content {
+	padding: 5px 8px;
+	line-height: 16px;
+	font-size: 12px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    color: #75489c;
+}
 /*======= Plugins END =======*/
 
 /*======= MEDIA QUERIES =======*/
@@ -3534,6 +3551,9 @@ a.b-callback_footer:hover{
     .b-advantages_online{
         flex-basis: 0;
     }
+    .b-advantages_online:before, .b-advantages_online:after{
+        padding-top: 7.5%;
+    }
     .b-messaging__paragraph{
         flex-basis: 0;
     }
@@ -3590,7 +3610,8 @@ a.b-callback_footer:hover{
         margin-right: 0;
     }
     
-    .b-btn_rating {
+    .b-btn_rating,
+    .b-btn_rating:hover {
         font-size: 18px;
     }
     
@@ -3609,7 +3630,8 @@ a.b-callback_footer:hover{
         margin-left: 30px;
     }
     
-    .b-filter{
+    .b-filter,
+    .b-filter:hover{
         font-size: 22px;
     }
 }
@@ -3723,13 +3745,10 @@ a.b-callback_footer:hover{
         padding-left: 4%;
         padding-right: 0;
     }
-    .b-links_stages{
+    .b-links_stages,
+    .b-section_seo,
+    .b-section_messaging    {
         display: none;
-/*
-        position: static;
-        -ms-align-self: stretch;
-        align-self: stretch;
-*/
     }
     
     .b-whatIsOh__block_img{
@@ -3768,12 +3787,12 @@ a.b-callback_footer:hover{
         margin-left: 0;
     }
     
-    .b-responses__block_btns{
-        margin-bottom: 10px;
+    .b-responses__container_slider{
+        margin-bottom: 50px;    
     }
     
-    .b-section_seo{
-        display: none;
+    .b-responses__block_btns{
+        margin-bottom: 10px;
     }
     
     .b-string__slide_specials{
@@ -4099,6 +4118,9 @@ a.b-callback_footer:hover{
         margin-left: 25px;
     }
     
+    .b-responses__container_slider{
+        margin-bottom: 30px;    
+    }
     
     .b-advantages_online{
 /*        padding: 12% 9%;*/
@@ -4107,6 +4129,7 @@ a.b-callback_footer:hover{
     .b-messaging__paragraph_wBorder{
         padding: 0 9%;
     }
+/*
     .b-advantages_online:before,
     .b-advantages_online:after,
     .b-messaging__paragraph_wBorder:before,
@@ -4116,6 +4139,7 @@ a.b-callback_footer:hover{
         width: 100%;
         padding-top: 14.63%;
     }
+*/
 /*
     a.callback:hover{
         border-right: 2px solid #f2c90c;
@@ -4172,7 +4196,8 @@ a.b-callback_footer:hover{
     .b-tile_service{
         border-bottom: 1px solid #9e73be;
     }
-    .b-btn_rating{
+    .b-btn_rating,
+    .b-btn_rating:hover{
         font-size: 16px;
         height: 28px;
     }

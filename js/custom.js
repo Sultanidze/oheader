@@ -677,6 +677,12 @@ $(document).ready(function(){
 
 	// executable part
 	stars.init();	// rating stars filling
+	
+	$('.tooltip').tooltipster({
+		theme: 'tooltipster-light',
+		position: 'bottom',
+		zIndex: 1
+	});	// enable tooltips
 
 	header.init();	// header module init
 	indexContents.linkInit();	// content links functionality
