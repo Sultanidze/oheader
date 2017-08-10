@@ -217,36 +217,271 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </ol>
     </div>
     <div class="b-container b-container_mid">
-        <section class="b-container b-section_blog">
+        <section class="b-container b-section_blog" id="blog">
             <div class="b-section__heading b-section__heading_blog">
                 Блог
             </div>
-            <div class="b-blog__filters">
-                <a href="#" class="b-filter b-filter_articles b-btn_rating b-rating__link b-btn_active">
+            <div class="b-blog__filters js-tabsBlock">
+                <button href="#" class="b-filter b-filter_usefuls b-btn_rating b-rating__link b-btn_active js-tab js-tab_active">
                     Полезные статьи
-                    <span class="b-filter__num b-filter__num_articles">3</span>
-                </a>
-                <a href="#" class="b-filter b-filter_news b-btn_rating b-rating__link">
+                    <span class="b-filter__num b-blog__bg_usefuls">3</span>
+                </button>
+                <button href="#" class="b-filter b-filter_news b-btn_rating b-rating__link js-tab">
                     Новости
-                    <span class="b-filter__num b-filter__num_news">3</span>
-                </a>
-                <a href="#" class="b-filter b-filter_promotes b-btn_rating b-rating__link">
+                    <span class="b-filter__num b-blog__bg_news">3</span>
+                </button>
+                <button href="#" class="b-filter b-filter_promotes b-btn_rating b-rating__link js-tab">
                     Акции
-                    <span class="b-filter__num b-filter__num_promotes">3</span>
-                </a>
+                    <span class="b-filter__num b-blog__bg_promotes">3</span>
+                </button>
             </div>
-            <div class="b-blog__articles">
-                <article class="b-blog__article b-blog__article_articles">
-                    <div class="b-blog__block_img">
-                        <div class="b-blog__bg s-shadow"></div>
-                        <img src="./images/redesign/dantist.jpg" alt="стоматолог" class="b-blog__img">
-                        <div class="b-blog__info_article">
-                            
+            <div class="js-tabContentsBlock">
+                <div class="b-blog__articles_usefuls js-content js-content_active">
+                    <article class="b-blog__article">
+                        <div class="b-blog__block_img">
+                            <div class="b-blog__bg b-blog__bg_usefuls s-shadow"></div>
+                            <img src="./images/redesign/dantist.jpg" alt="стоматолог" class="b-blog__img">
+                            <div class="b-blog__infos b-blog__infos_article">
+                                <span class="b-info_video">
+                                    <span class="fa fa-youtube-play" aria-hidden="true"></span>
+                                </span>
+                                <span class="b-info_time">5 min</span>
+                            </div>
                         </div>
-                    </div>
-                </article>
-                <article class="b-blog__article b-blog__article_news"></article>
-                <article class="b-blog__article b-blog__article_promotes"></article>
+                        <div class="b-blog__block_review">
+                            <div class="b-blog__title">Во сколько обойдется туристам лечение за границей</div>
+                            <time datetime="2017-02-17" class="b-time_article">2017-02-17</time>
+                            <p class="b-review_blog">В данной статье мы расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов, расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов.</p>
+                            <a href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_usefuls">
+                                <span class="b-text_btn">Читать</span>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="b-blog__article">
+                        <div class="b-blog__block_img">
+                            <div class="b-blog__bg b-blog__bg_usefuls s-shadow"></div>
+                            <img src="./images/redesign/gravicapa.png" alt="стоматолог" class="b-blog__img">
+                            <div class="b-blog__infos b-blog__infos_article">
+                                <span class="b-info_video">
+                                    <span class="fa fa-youtube-play" aria-hidden="true"></span>
+                                </span>
+                                <span class="b-info_time">5 min</span>
+                            </div>
+                        </div>
+                        <div class="b-blog__block_review">
+                            <div class="b-blog__title">Во сколько обойдется туристам лечение за границей</div>
+                            <time datetime="2017-02-17" class="b-time_article">2017-02-17</time>
+                            <p class="b-review_blog">В данной статье мы расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов, расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов.</p>
+                            <a href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_usefuls">
+                                <span class="b-text_btn">Читать</span>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="b-blog__article">
+                        <div class="b-blog__block_img">
+                            <div class="b-blog__bg b-blog__bg_usefuls s-shadow"></div>
+                            <img src="./images/redesign/404.png" alt="стоматолог" class="b-blog__img">
+                            <div class="b-blog__infos b-blog__infos_article">
+                                <span class="b-info_video">
+                                    <span class="fa fa-youtube-play" aria-hidden="true"></span>
+                                </span>
+                                <span class="b-info_time">5 min</span>
+                            </div>
+                        </div>
+                        <div class="b-blog__block_review">
+                            <div class="b-blog__title">Во сколько обойдется туристам лечение за границей</div>
+                            <time datetime="2017-02-17" class="b-time_article">2017-02-17</time>
+                            <p class="b-review_blog">В данной статье мы расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов, расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов.</p>
+                            <a href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_usefuls">
+                                <span class="b-text_btn">Читать</span>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="b-blog__article">
+                        <div class="b-blog__block_img">
+                            <div class="b-blog__bg b-blog__bg_usefuls s-shadow"></div>
+                            <img src="./images/redesign/banner.jpg" alt="стоматолог" class="b-blog__img">
+                            <div class="b-blog__infos b-blog__infos_article">
+                                <span class="b-info_video">
+                                    <span class="fa fa-youtube-play" aria-hidden="true"></span>
+                                </span>
+                                <span class="b-info_time">5 min</span>
+                            </div>
+                        </div>
+                        <div class="b-blog__block_review">
+                            <div class="b-blog__title">Во сколько обойдется туристам лечение за границей</div>
+                            <time datetime="2017-02-17" class="b-time_article">2017-02-17</time>
+                            <p class="b-review_blog">В данной статье мы расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов, расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов.</p>
+                            <a href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_usefuls">
+                                <span class="b-text_btn">Читать</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="b-blog__articles_news hidden js-content">
+                    <article class="b-blog__article">
+                        <div class="b-blog__block_img">
+                            <div class="b-blog__bg b-blog__bg_news s-shadow"></div>
+                            <img src="./images/redesign/dantist.jpg" alt="стоматолог" class="b-blog__img">
+                            <div class="b-blog__infos b-blog__infos_article">
+                                <span class="b-info_video">
+                                    <span class="fa fa-youtube-play" aria-hidden="true"></span>
+                                </span>
+                                <span class="b-info_time">5 min</span>
+                            </div>
+                        </div>
+                        <div class="b-blog__block_review">
+                            <div class="b-blog__title">Во сколько обойдется туристам лечение за границей</div>
+                            <time datetime="2017-02-17" class="b-time_article">2017-02-17</time>
+                            <p class="b-review_blog">В данной статье мы расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов, расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов.</p>
+                            <a href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_news">
+                                <span class="b-text_btn">Читать</span>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="b-blog__article">
+                        <div class="b-blog__block_img">
+                            <div class="b-blog__bg b-blog__bg_news s-shadow"></div>
+                            <img src="./images/redesign/gravicapa.png" alt="стоматолог" class="b-blog__img">
+                            <div class="b-blog__infos b-blog__infos_article">
+                                <span class="b-info_video">
+                                    <span class="fa fa-youtube-play" aria-hidden="true"></span>
+                                </span>
+                                <span class="b-info_time">5 min</span>
+                            </div>
+                        </div>
+                        <div class="b-blog__block_review">
+                            <div class="b-blog__title">Во сколько обойдется туристам лечение за границей</div>
+                            <time datetime="2017-02-17" class="b-time_article">2017-02-17</time>
+                            <p class="b-review_blog">В данной статье мы расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов, расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов.</p>
+                            <a href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_news">
+                                <span class="b-text_btn">Читать</span>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="b-blog__article">
+                        <div class="b-blog__block_img">
+                            <div class="b-blog__bg b-blog__bg_news s-shadow"></div>
+                            <img src="./images/redesign/404.png" alt="стоматолог" class="b-blog__img">
+                            <div class="b-blog__infos b-blog__infos_article">
+                                <span class="b-info_video">
+                                    <span class="fa fa-youtube-play" aria-hidden="true"></span>
+                                </span>
+                                <span class="b-info_time">5 min</span>
+                            </div>
+                        </div>
+                        <div class="b-blog__block_review">
+                            <div class="b-blog__title">Во сколько обойдется туристам лечение за границей</div>
+                            <time datetime="2017-02-17" class="b-time_article">2017-02-17</time>
+                            <p class="b-review_blog">В данной статье мы расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов, расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов.</p>
+                            <a href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_news">
+                                <span class="b-text_btn">Читать</span>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="b-blog__article">
+                        <div class="b-blog__block_img">
+                            <div class="b-blog__bg b-blog__bg_news s-shadow"></div>
+                            <img src="./images/redesign/banner.jpg" alt="стоматолог" class="b-blog__img">
+                            <div class="b-blog__infos b-blog__infos_article">
+                                <span class="b-info_video">
+                                    <span class="fa fa-youtube-play" aria-hidden="true"></span>
+                                </span>
+                                <span class="b-info_time">5 min</span>
+                            </div>
+                        </div>
+                        <div class="b-blog__block_review">
+                            <div class="b-blog__title">Во сколько обойдется туристам лечение за границей</div>
+                            <time datetime="2017-02-17" class="b-time_article">2017-02-17</time>
+                            <p class="b-review_blog">В данной статье мы расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов, расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов.</p>
+                            <a href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_news">
+                                <span class="b-text_btn">Читать</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+                <div class="b-blog__articles_promotes hidden js-content">
+                    <article class="b-blog__article">
+                        <div class="b-blog__block_img">
+                            <div class="b-blog__bg b-blog__bg_promotes s-shadow"></div>
+                            <img src="./images/redesign/gravicapa.png" alt="стоматолог" class="b-blog__img">
+                            <div class="b-blog__infos b-blog__infos_article">
+                                <span class="b-info_video">
+                                    <span class="fa fa-youtube-play" aria-hidden="true"></span>
+                                </span>
+                                <span class="b-info_time">5 min</span>
+                            </div>
+                        </div>
+                        <div class="b-blog__block_review">
+                            <div class="b-blog__title">Во сколько обойдется туристам лечение за границей</div>
+                            <time datetime="2017-02-17" class="b-time_article">2017-02-17</time>
+                            <p class="b-review_blog">В данной статье мы расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов, расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов.</p>
+                            <a href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_promotes">
+                                <span class="b-text_btn">Читать</span>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="b-blog__article">
+                        <div class="b-blog__block_img">
+                            <div class="b-blog__bg b-blog__bg_promotes s-shadow"></div>
+                            <img src="./images/redesign/404.png" alt="стоматолог" class="b-blog__img">
+                            <div class="b-blog__infos b-blog__infos_article">
+                                <span class="b-info_video">
+                                    <span class="fa fa-youtube-play" aria-hidden="true"></span>
+                                </span>
+                                <span class="b-info_time">5 min</span>
+                            </div>
+                        </div>
+                        <div class="b-blog__block_review">
+                            <div class="b-blog__title">Во сколько обойдется туристам лечение за границей</div>
+                            <time datetime="2017-02-17" class="b-time_article">2017-02-17</time>
+                            <p class="b-review_blog">В данной статье мы расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов, расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов.</p>
+                            <a href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_promotes">
+                                <span class="b-text_btn">Читать</span>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="b-blog__article">
+                        <div class="b-blog__block_img">
+                            <div class="b-blog__bg b-blog__bg_promotes s-shadow"></div>
+                            <img src="./images/redesign/dantist.jpg" alt="стоматолог" class="b-blog__img">
+                            <div class="b-blog__infos b-blog__infos_article">
+                                <span class="b-info_video">
+                                    <span class="fa fa-youtube-play" aria-hidden="true"></span>
+                                </span>
+                                <span class="b-info_time">5 min</span>
+                            </div>
+                        </div>
+                        <div class="b-blog__block_review">
+                            <div class="b-blog__title">Во сколько обойдется туристам лечение за границей</div>
+                            <time datetime="2017-02-17" class="b-time_article">2017-02-17</time>
+                            <p class="b-review_blog">В данной статье мы расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов, расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов.</p>
+                            <a href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_promotes">
+                                <span class="b-text_btn">Читать</span>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="b-blog__article">
+                        <div class="b-blog__block_img">
+                            <div class="b-blog__bg b-blog__bg_promotes s-shadow"></div>
+                            <img src="./images/redesign/banner.jpg" alt="стоматолог" class="b-blog__img">
+                            <div class="b-blog__infos b-blog__infos_article">
+                                <span class="b-info_video">
+                                    <span class="fa fa-youtube-play" aria-hidden="true"></span>
+                                </span>
+                                <span class="b-info_time">5 min</span>
+                            </div>
+                        </div>
+                        <div class="b-blog__block_review">
+                            <div class="b-blog__title">Во сколько обойдется туристам лечение за границей</div>
+                            <time datetime="2017-02-17" class="b-time_article">2017-02-17</time>
+                            <p class="b-review_blog">В данной статье мы расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов, расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов.</p>
+                            <a href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_promotes">
+                                <span class="b-text_btn">Читать</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
     </div>

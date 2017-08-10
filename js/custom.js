@@ -275,7 +275,7 @@ $(document).ready(function(){
 		return obj;	// return object with menu methods and buttons
 	})();
 
-	// tabs module (in Rating, Specials)
+	// tabs module (in Rating, Specials, Blog)
 	var tabs = (function(){
 		// tabs init function
 		function init(oTabbed){
@@ -300,14 +300,16 @@ $(document).ready(function(){
 					oTabbed.$contents.filter(".js-content_active").fadeOut(400).promise().done(function(){
 						var $slider = oTabbed.$contents.eq(index).find(".js-slider__string");	// slider inside
 
-						oTabbed.$contents.eq(index).addClass("js-content_active").fadeIn({
-							duration: 400,
-							progress: function(){
-								if ($slider.length){
-									$slider.slick('setPosition'); // prevent hidden slider broken sizes when visible
+						if ($slider){
+							oTabbed.$contents.eq(index).addClass("js-content_active").fadeIn({
+								duration: 400,
+								progress: function(){
+									if ($slider.length){
+										$slider.slick('setPosition'); // prevent hidden slider broken sizes when visible
+									}
 								}
-							}
-						});
+							});
+						}
 					});
 				}
 			});
@@ -335,9 +337,21 @@ $(document).ready(function(){
 			init(obj.specials);
 		};
 
+		obj.blog = {};
+		obj.blog.$section = $("#blog");
+		obj.blog.$tabsBlock = obj.blog.$section.find(".js-tabsBlock");
+		obj.blog.$tabs = obj.blog.$tabsBlock.find(".js-tab");
+		obj.blog.$contentsBlock = obj.blog.$section.find(".js-tabContentsBlock");
+		obj.blog.$contents = obj.blog.$section.find(".js-content");
+		obj.blog.init = function(){
+			init(obj.blog);
+		};
+
 		obj.init = function(){
 			obj.rating.init();	// rating tabs init
 			obj.specials.init();// specials tabs init
+
+			obj.blog.init();// blog tabs init
 		}
 
 		return obj;
