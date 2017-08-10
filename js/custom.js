@@ -631,10 +631,39 @@ $(document).ready(function(){
 		}
 
 		return obj;
+	})();
 
+	// rating stars module
+	var stars = (function(){
+		var obj = {};
+
+		obj.fillStar = function(){	// ф-я для зафарбовування зірочок для кожного контейнера $("РейтингКонтейнер").each(fillStar)
+			var  starsNum = $(this).attr("data-rating")	// к-ть зірочок для зафарбування в атрибуті "data-rating" контейнера
+				,$stars = $(this).children("span.fa")
+				,i
+				;
+			// 	fa-star-o контур зірочки
+			// 	fa-star зафарбований контур зірочки
+			for (i=0; i<starsNum; ++i){
+				$stars.eq(i).removeClass("fa-star-o").addClass("fa-star");
+			}
+		};
+
+		obj.fillAllStars = function(sSelector){	// sSelector - селектор контейнера із зрочками
+			var $ratings = $(sSelector);	// контейнер із зірочками
+				$ratings.each(function(){obj.fillStar.call(this)});	// add context from each f-n
+		}
+
+		obj.init = function(){
+			obj.fillAllStars(".js-company__rating");
+		}
+
+		return obj;
 	})();
 
 	// executable part
+	stars.init();	// rating stars filling
+
 	header.init();	// header module init
 	indexContents.linkInit();	// content links functionality
 	sliders.init();	// sliders module init
