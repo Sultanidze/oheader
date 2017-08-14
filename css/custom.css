@@ -3094,6 +3094,82 @@ a.b-callback_footer:hover{
 }
 /*======= B-CRUMBS END =======*/
 
+/*======= PAGINATION =======*/
+
+.b-pagination ul {
+    margin-top: 0;
+    margin-bottom: 15px;
+  padding-left: 0;
+  list-style-type: none;
+  text-align:center;
+}
+
+.b-pagination ul li {
+  display: inline-table;
+/*  vertical-align: middle;*/
+  margin:0px 4px;
+  box-sizing: border-box;
+/*  border: 1px solid #cad5d9;*/
+/*    border-radius: 2px;*/
+/*  width: 37px;*/
+/*  height: 37px;*/
+/*  font-size: 0.875rem;*/
+  font-weight: 600;
+}
+
+.b-pagination ul li:first-child,
+.b-pagination ul li:last-child{
+    cursor: pointer;
+}
+.b-pagination ul li:first-child{
+    margin-left: 0;
+}
+.b-pagination ul li:last-child{
+    margin-right: 0;
+}
+.b-pagination ul li:first-child a.inactive,
+.b-pagination ul li:last-child a.inactive{
+    cursor: default;
+}
+.b-pagination ul li:first-child a.inactive:hover,
+.b-pagination ul li:last-child a.inactive:hover{
+    color:#231f20;
+/*    background: none;*/
+}
+
+.b-pagination ul li:first-child a,
+.b-pagination ul li:last-child a{
+/*    padding-right: 15px;*/
+/*    padding-left: 15px;*/
+    font-size: 20px;
+}
+.b-pagination ul li a {
+  display: table-cell;
+  vertical-align: middle;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 22px;
+  color:#231f20;
+  text-decoration: none !important;
+}
+
+.b-pagination ul li a:hover {
+/*  background: #8ca5af;*/
+/*  box-shadow: none;*/
+  color:#f2c90c;
+  transition: all .5s, color .1s ease-out;
+}
+
+.b-pagination ul li a.active {
+/*  background: #8ca5af;*/
+/*  box-shadow: none;*/
+    font-size: 24px;
+  color:#f2c90c;
+  transition: all .5s;
+    cursor: default;
+    cursor: default;
+}
+/*======= PAGINATION END =======*/
+
 /*======= BLOG =======*/
 .b-section_blog{
     max-width: 810px;
@@ -3179,6 +3255,9 @@ a.b-callback_footer:hover{
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+}
+.b-blog__article:last-of-type{
+    margin-bottom: 60px;   
 }
 .b-blog__block_img{
     max-width: 352px;
