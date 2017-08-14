@@ -241,9 +241,88 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
                 <div class="b-article__block">
                     <div class="b-article__content">
-                        <p class="b-content__paragraph">По окончанию 2016 года команда проекта Oh.ua связалась с коллегами в сфере туристического страхования и провела совместный анализ по посещаемости стран во время отпуска, лидером оказались такие страны как: Греция, Болгария, Египет, Таиланд. <span class="s-bold">По мнению экспертов, в 2017 году к этим странам должны добавиться Италия, Испания, ОАЭ и Кипр.</span><br><br>
+                        <p class="b-content__paragraph clearfix">По окончанию 2016 года команда проекта Oh.ua связалась с коллегами в сфере туристического страхования и провела совместный анализ по посещаемости стран во время отпуска, лидером оказались такие страны как: Греция, Болгария, Египет, Таиланд. <span class="s-bold">По мнению экспертов, в 2017 году к этим странам должны добавиться Италия, Испания, ОАЭ и Кипр.</span><br><br>
                         К сожалению, новая страна это не только смена обстановки, красивый пейзаж и теплое море. Новая страна это также и новый климат, другая еда, а также питьевая вода.<br><br>
+                        При этом у туристов отпуск абсолютно не ассоциируется с <a href="#" class="b-link_blog">заболеваниями и другими угрозами</a> для своего здоровья. Поэтому наши партнеры в области туристического страхования, решили подсчитать сколько обойдется туристу медицинская помощь в популярных государствах и мы делимся этой информацией с вами.<br><br>
+                        <iframe width="352" height="204" class="b-video_blog" src="https://www.youtube.com/embed/SLO1p4JzVHs" frameborder="0" allowfullscreen></iframe>
+                        При этом у туристов отпуск абсолютно не ассоциируется с заболеваниями и другими угрозами для своего здоровья.<br><br>
+                        <span class="s-bold">Поэтому наши партнеры в области туристического страхования, решили</span> подсчитать сколько обойдется туристу медицинская помощь в популярных государствах и мы делимся этой информацией с вами государствах и мы делимся этой информацией с вами информацией с вами.
                         </p>
+                        
+                        <form action="" class="b-blog__calc b-propos__recalc clearfix" id="vehicleForm">
+                            <div class="b-blog__heading_calc s-bold">ОСАГО</div>
+                            <div class="b-select__container_propos">
+                                <label for="vehicle" class="b-label_registration">Обьект страхования</label>
+                                <select name="vehicle" class="js-selectric" id="vehicle">
+                                    <option value="car" selected>Легковой автомобиль</option>
+                                    <option value="trailer">Грузовой автомобиль</option>
+                                    <option value="bus">Пассажирский автобус</option>
+                                    <option value="moto">Мотоцикл, мотороллер</option>
+                                </select>
+                            </div>
+                            <div class="b-select__container_propos js-vehicle__block js-car">
+                                <label for="engineCapacity" class="b-label_registration">Обьем двигателя</label>
+                                <select name="engineCapacity" class="js-selectric js-selectric_car" id="engineCapacity">
+                                    <option value="3" selected>до 1600 см&sup3;</option>
+                                    <option value="4">1601 - 2000 см&sup3;</option>
+                                    <option value="5">2001 - 3000 см&sup3;</option>
+                                    <option value="6">от 3001 см&sup3;</option>
+                                </select>
+                            </div>
+                            <div class="b-select__container_propos js-vehicle__block js-trailer">
+                                <label for="tonnage" class="b-label_registration">Грузоподьемность</label>
+                                <select name="engineCapacity" class="js-selectric js-selectric_trailer" id="tonnage">
+                                    <option value="7">до 2т</option>
+                                    <option value="8" selected>более 2т</option>
+                                </select>
+                            </div>
+                            <div class="b-select__container_propos js-vehicle__block js-bus">
+                                <label for="passengers" class="b-label_registration">Пассажировместительность</label>
+                                <select name="engineCapacity" class="js-selectric js-selectric_bus" id="passengers">
+                                    <option value="9">до 20 человек</option>
+                                    <option value="10" selected>более 20 человек</option>
+                                </select>
+                            </div>
+                            <div class="b-select__container_propos js-vehicle__block js-moto">
+                                <label for="engineCapacity" class="b-label_registration">Обьем двигателя</label>
+                                <select name="engineCapacity" class="js-selectric js-selectric_moto" id="engineCapacity">
+                                    <option value="1">до 300 см&sup3;</option>
+                                    <option value="2" selected>более 300 см&sup3;</option>
+                                </select>
+                            </div>
+                            <div class="b-select__container_propos">
+                                <label for="regCity" class="b-label_registration">Место регистрации</label>
+                                <input type="text" class="b-autocomplete selectric" id="regCity" title="Введите и выберите город" name="regCity" value="Киев (г.), Киевская обл." autocomplete="off" data-item="Киев (г.), Киевская обл.">
+                                <input class="hidden" name="regCityId" id="cityId" value="1" type="hidden">
+                                <input class="hidden" name="zoneId" id="zoneId" value="1" type="hidden">
+                                <div class="autocomplete-suggestions b-precomplete_brand js-precomplete">
+                                    <div class="autocomplete-suggestion" data-id="1" data-zone="1">Киев (г.), Киевская обл.</div>
+                                    <div class="autocomplete-suggestion" data-id="9" data-zone="3">Харьков (г.), Харьковская обл.</div>
+                                    <div class="autocomplete-suggestion" data-id="14" data-zone="3">Днепропетровск (г.), Днепропетровская обл.</div>
+                                    <div class="autocomplete-suggestion" data-id="46" data-zone="3">Мариуполь (г.), Донецкая обл.</div>
+                                    <div class="autocomplete-suggestion" data-id="15" data-zone="3">Львов (г.), Львовская обл.</div>
+                                    <div class="autocomplete-suggestion" data-id="10" data-zone="3">Одесса (г.), Одесская обл.</div>
+                                    <div class="autocomplete-suggestion" data-id="12" data-zone="3">Запорожье (г.), Запорожская обл.</div>
+                                    <div class="autocomplete-suggestion" data-id="5237" data-zone="3">Красноармейск (г.), Донецкая обл.</div>
+                                    <div class="autocomplete-suggestion" data-id="47" data-zone="3">Черкассы (г.), Черкасская обл.</div>
+                                    <div class="autocomplete-suggestion" data-id="3" data-zone="3">Бровары (г.), Киевская обл.</div>
+                                    <div class="autocomplete-suggestion" data-id="37" data-zone="3">Житомир (г.), Житомирская обл.</div>
+                                    <div class="autocomplete-suggestion" data-id="32" data-zone="3">Полтава (г.), Полтавская обл.</div>
+                                    <div class="autocomplete-suggestion" data-id="13" data-zone="6">Кривой Рог (г.), Днепропетровская обл.</div>
+                                    <div class="autocomplete-suggestion" data-id="44" data-zone="3">Николаев (г.), Николаевская обл.</div>
+                                </div>
+                            </div>
+                            <label class="b-block_checkbox b-label_taxi">
+                               <input type="checkbox" class="sr-only" id="notTaxi" value="true" name="notTaxi" checked>
+                               <span class="fa fa-check-square-o" aria-hidden="true"></span> 
+                               <span class="fa fa-square-o" aria-hidden="true"></span> 
+                               Не используется как такси
+                            </label>
+                            <button type="submit" href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_usefuls b-propos__btn_change">
+                                <span class="b-text_btn">Узнать стоимость ОСАГО</span>
+                            </button>
+                        </form>
+                        
                     </div>
                     <aside class="b-article__aside">
                         <div class="b-aboutOh s-highlited">
@@ -268,12 +347,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </div>
             </article>
             
-            <div class="">
-                <p class="b-review_blog">В данной статье мы расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов, расписали стоимость разных медицинских затрат в популярных для отдыха странах среди туристов.</p>
-                    <a href="#" class="b-btn_blog b-btn_wArrow b-btn_wShadow b-btn_noBorder b-btn_black b-btn_right b-blog__bg_usefuls">
-                        <span class="b-text_btn">Узнать стоимость ОСАГО</span>
-                    </a>
-            </div>
         </section>
     </div>
     

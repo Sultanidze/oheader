@@ -675,14 +675,251 @@ $(document).ready(function(){
 		return obj;
 	})();
 
+	// osago calculator block functionality
+	var osagoCalcBlock =(function(){
+		var obj ={};
+
+		var 
+			 $vehicleSelect = $("#vehicle")
+			,$vehicleForm = $("#vehicleForm")
+			,$cityName = $vehicleForm.find("#regCity")
+			,$cityId = $vehicleForm.find("#cityId")
+			,$cityZone = $vehicleForm.find("#zoneId")
+			,$vehicleParameters = $vehicleForm.find(".js-vehicle__block")	// блоки з параметрами ТЗ
+			,$vehicleParamSelects = $vehicleParameters.find(".js-selectric")	// селекти параметрів ТЗ
+			,$carParameters = $vehicleParameters.filter(".js-car")
+			,$carParamSelect = $vehicleParamSelects.filter(".js-selectric_car")
+			,$trailerParameters = $vehicleParameters.filter(".js-trailer")
+			,$trailerParamSelect = $vehicleParamSelects.filter(".js-selectric_trailer")
+			,$busParameters = $vehicleParameters.filter(".js-bus")
+			,$busParamSelect = $vehicleParamSelects.filter(".js-selectric_bus")
+			,$motoParameters = $vehicleParameters.filter(".js-moto")
+			,$motoParamSelect = $vehicleParamSelects.filter(".js-selectric_moto")
+			;
+
+		// precomplete при введенні від 0 до 1 символа (до відпрацювання автокомпліта)
+		// $field - field with autocomplete and hidden field after
+		// clickCallbackFn - callback fn
+		obj.precomplete = function(iSymbols, $field, clickCallbackFn){
+			// var  $field = $(context)
+			var  $idField = $field.next()
+				,$zoneIdField
+				,$dropMenu = $idField.siblings(".js-precomplete")
+				,$menuItems = $dropMenu.children()
+				,fieldValue
+				,currentValue
+				;
+
+			$field.keyup(function(){
+				currentValue = $(this).val();
+				if ($field.val().length<=iSymbols){
+					$dropMenu.show();
+				} else{
+					$dropMenu.hide();
+				}
+			})
+			$field.on("focus", function(){
+				if ($field.val().length<=iSymbols){
+					$dropMenu.stop().show();
+				}
+			});
+			$field.on("blur",function(){
+				$dropMenu.fadeOut();
+			});
+			$menuItems.click(function(event){
+				var  
+					 selectedItem = $(this).text()
+					,selectedID = $(this).attr("data-id")
+					,selectedZoneID = $(this).attr("data-zone")
+					;
+
+				$field.val(selectedItem);
+				$field.attr("data-item", selectedItem);
+				$idField.val(selectedID);
+				if (selectedZoneID){	// перевіряємо чи є додатковий id який треба зберегти
+					$idField.next().val(selectedZoneID)
+				};
+				// $dropMenu.hide();
+				$field.blur();
+				$field.parents(".b-form__cell").removeClass("b-cell_error");
+				$field.parents(".b-form__cell").addClass("b-cell_valid");
+				if (clickCallbackFn){
+					clickCallbackFn();
+				}
+			});
+		};
+
+		// autocomplete function 
+		// (enter string, shows items, select item -> send item id)
+		// note: under autocompleted field must be placed hidden input with name attr, to return item id
+		obj.fieldAutocomplete = function(iMinChars, $objToComplete, jsonAddr, $dataIdtoSend, callbackFn){
+			var  oJS		//відповідний JSоб'єкт до JSON об'єкту AJAX відповіді
+				,items = []		// масив елементів
+				,propertiesLength	// зберігаємо тут к-ть властивостей item-а
+				,bLength3
+			    ,itemIds = []	// масив id елементів
+			    ,itemOtherIds = []	// масив додаткових id елементів
+			    ,criteria = null
+			    ,itemIndex
+			    ,currentId
+			    ,currentOtherId
+				;
+
+			$objToComplete.each(function(index){
+				var t = this;
+				$(t).autoComplete({
+					minChars: iMinChars,
+				    source: function(term, response){
+
+						if ($dataIdtoSend instanceof jQuery){
+							criteria = $dataIdtoSend.val();
+						}
+
+				        $.ajax({
+			            	type: "get",
+			            	data: {item: term, criteria: criteria},
+			            	url : jsonAddr,
+			            	error : function(){
+			            	    alert('error');
+			            	},
+				        	success: function(data){
+					        	items = []; // масив елементів
+					    		itemIds = [];	// масив id елементів
+					    		itemOtherIds = [];	// масив додаткових id елементів
+					        	oJS = data;	//відповідний JSоб'єкт до JSON об'єкту AJAX відповіді
+					        	propertiesLength = 0;
+					        	var i;
+					        	for (i in oJS.items[0]) {
+					        		if (oJS.items[0].hasOwnProperty(i)) {
+					        			++propertiesLength;
+					        		}
+					        	}
+					        	bLength3 = (propertiesLength == 3);	// маємо додатковий Id (zoneId), треба створити їх масив itemOtherIds
+					        	if (oJS.length != 0){	// перевіряємо чи не відсутні співпадіння (чи відповідь не пустий масив)
+					        		for (var i = 0; i < oJS.items.length; ++i) {	// наповнимо масив елементів і їхніх id
+					        			items.push(oJS.items[i].name);
+					        			itemIds.push(oJS.items[i].id);
+					        			if (bLength3) {itemOtherIds.push(oJS.items[i].zone_id)};
+					        		};
+					        		response(items);
+					        	}
+					        }
+				        });
+				    },
+				    onSelect: function (event, term, item) {
+				    	itemIndex = items.indexOf(String(term));	// індекс елемента в масиві (обов'язково type String)
+				    	currentId = itemIds[itemIndex];		// id обраного елемента
+
+			    		if (bLength3){currentOtherId = itemOtherIds[itemIndex]}	// зберігаємо обраний zone_id (якщо такі є)
+				    	$objToComplete.each(function(){	// заповнимо решту однакових полів однаковими значеннями
+				    		if($(this) != $(t)){	// значення в полі на якому ми вибрали значення автокомпліта
+				    			$(this).val(term);
+				    		};
+				    		$(this).attr("data-item", term);	// додаємо атрибут в якому зберігатиметься вибраний item
+				    		$(this).next().val(currentId);	// повертаємо id елемента прихованому елементу форми
+				    		if (bLength3){$(this).next().next().val(currentOtherId)}	// присвоюємо zone_id 2му прихованому полю
+				    	});
+
+						$objToComplete.parent(".b-form__cell").removeClass("b-cell_error").addClass("b-cell_valid");	// позначаємо валідним поле
+
+						if (callbackFn){	// перевіряємо чи існує колбек ф-я в параметрах, щоб уникнути помилки
+							callbackFn();
+						}
+				    }
+				});
+			});
+			$objToComplete.blur(function(){	// при втраті фокуса, якщо ми змінили значення, але не обрали з меню автокомпліта, то повернемо раніше обране значення полю
+				var  dataItem = $(this).attr("data-item")	// раніше обране значення, збережене в атрибуті "data-item"
+					,fieldValue = $(this).val()	// поточне значення
+					;
+				if (dataItem && (fieldValue != dataItem)){	// перевірка чи є попередньо обране значення (якщо)
+					$(this).val(dataItem);	// як є то запишемо вибране раніше значення
+				}
+			})
+		};
+
+		obj.cityFieldInit = function(){
+			// додамо до поля міста реєстрації статичну випадашку при введенні від 0 до 1 символа (до відпрацювання автокомпліта)
+			obj.precomplete(2, $("#regCity"));
+
+			//ajax registration city autocomplete
+			obj.fieldAutocomplete(3, $("#regCity"), "./ajax/cityRegion.json");	// EWA віддає результат, починаючи з 3х символів
+
+			// якщо ми змінили значення міста реєстрації, але не обрали з меню автокомпліта, то повернемо раніше обране значення
+			$cityName.blur(function(){
+				var  dataItem = $(this).attr("data-item")	// раніше обране значення, збережене в атрибуті "data-item"
+					,fieldValue = $(this).val()	// поточне значення
+					;
+				if (dataItem && (fieldValue != dataItem)){	// перевірка чи є попередньо обране значення (якщо)
+					$(this).val(dataItem);	// як є то запишемо вибране раніше значення
+				}
+			})
+		};
+
+		obj.vehicleChange = function(t){
+			var sVehicle = $(t).val();
+			switch (sVehicle) {
+				case "car":	// авто
+					$vehicleParameters.css("display", "none");	// ховаємо всі блоки з параметрами ТЗ
+					$vehicleParamSelects.prop("disabled", true);// відключаємо поля параметрів
+
+					$carParameters.show(0);		// показуємо блок параметрів легкового авто
+					$carParamSelect.prop("disabled", false);	// вмикаємо поля параметрів легкового авто
+					break;
+				case "trailer":	// вантажівка
+					$vehicleParameters.css("display", "none");	// ховаємо всі блоки з параметрами ТЗ
+					$vehicleParamSelects.prop("disabled", true);// відключаємо поля параметрів
+
+					$trailerParameters.show(0);
+					$trailerParamSelect.prop("disabled", false);
+					break;
+				case "bus":	// автобус
+					$vehicleParameters.css("display", "none");	// ховаємо всі блоки з параметрами ТЗ
+					$vehicleParamSelects.prop("disabled", true);// відключаємо поля параметрів
+
+					$busParameters.show(0);
+					$busParamSelect.prop("disabled", false);
+					break;
+				case "moto": //мотоцикл
+					$vehicleParameters.css("display", "none");	// ховаємо всі блоки з параметрами ТЗ
+					$vehicleParamSelects.prop("disabled", true);// відключаємо поля параметрів
+
+					$motoParameters.show(0);
+					$motoParamSelect.prop("disabled", false);
+					break;
+			}
+
+		};
+
+		obj.selectsInit = function(){	// ф-я ініціалізації js-функціоналу на підвантаженому блоці пропозицій
+
+			$vehicleSelect.selectric({	//селект вибора ТЗ
+				onInit: function() {
+					// vehicleChange.call(this);
+					obj.vehicleChange(this);
+				},
+				onChange: function(element) {	// element==this - це наш select, він лишається тим самим об'єктом і після ініціалізації selectric
+					// vehicleChange.call(this);
+					obj.vehicleChange(this);
+					$(element).change();	// fired by default
+				}
+			});
+		
+		}
+
+		obj.init = function(){
+			// obj.fillAllStars(".js-company__rating");
+			obj.selectsInit();
+			obj.cityFieldInit();
+		}
+
+		return obj;
+	})();
+
 	// executable part
 	stars.init();	// rating stars filling
 	
-	$('.tooltip').tooltipster({
-		theme: 'tooltipster-light',
-		position: 'bottom',
-		zIndex: 1
-	});	// enable tooltips
+	$(".js-selectric").selectric();	// selects stylization
 
 	header.init();	// header module init
 	indexContents.linkInit();	// content links functionality
@@ -692,4 +929,12 @@ $(document).ready(function(){
 	footer.init();	// footer module init
 
 	seoMap.init();	// seoMap module init
+
+	$('.tooltip').tooltipster({
+		theme: 'tooltipster-light',
+		position: 'bottom',
+		zIndex: 1
+	});	// enable tooltips
+
+	osagoCalcBlock.init();	// OSAGO calc block initialization (hiding vehicles selects, city precomplete and autocomplete)
 });

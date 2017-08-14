@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto+Condensed:300,400,700|Roboto:300,400,500,700|Bad+Script&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto+Condensed:300,400,700|Roboto:300,300i,400,500,700|Bad+Script&subset=cyrillic');
 /*
 font-family: 'Roboto', sans-serif;
 font-family: 'Roboto Condensed', sans-serif;
@@ -269,6 +269,369 @@ a, button, input[type="button"], input[type="submit"], input[type="color"], inpu
 }
 /* === PREVIOUS STYLES OVERRIDES END === */
 
+/*======= Plugins =======*/
+/*!
+ *  SimpleBar.js - v2.4.3
+ *  Scrollbars, simpler.      
+ */
+[data-simplebar] {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch
+}
+[data-simplebar=init] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+.simplebar-scroll-content {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-width: 100%;
+    box-sizing: content-box
+}
+
+/*bug - part of default scroll is visible*/
+.simplebar-scroll-content::-webkit-scrollbar{
+    width: 15px
+}
+
+.simplebar-content {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    min-height: 100%
+}
+.simplebar-track {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 11px
+}
+.simplebar-scrollbar {
+    position: absolute;
+    right: 2px;
+    border-radius: 7px;
+    min-height: 10px;
+    width: 7px;
+    opacity: 0;
+    -webkit-transition: opacity .2s linear;
+    transition: opacity .2s linear;
+    background: #000;
+    background-clip: padding-box
+}
+.simplebar-track:hover .simplebar-scrollbar {
+    opacity: .5;
+    -webkit-transition: opacity 0 linear;
+    transition: opacity 0 linear
+}
+.simplebar-track .simplebar-scrollbar.visible {
+    opacity: .5
+}
+.simplebar-track.horizontal {
+    left: 0;
+    width: auto;
+    height: 11px
+}
+.simplebar-track.vertical {
+    top: 0
+}
+.horizontal.simplebar-track .simplebar-scrollbar {
+    right: auto;
+    top: 2px;
+    height: 7px;
+    min-height: 0;
+    min-width: 10px;
+    width: auto
+}
+
+.tooltipster-light {
+    max-width: 147px;
+	border-radius: 3px; 
+	border: 1px solid #d4d4d4;
+	background: #fff;
+	color: #666666;
+    z-index: 1;
+}
+.tooltipster-light .tooltipster-content {
+	padding: 5px 8px;
+	line-height: 16px;
+	font-size: 12px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    color: #75489c;
+}
+
+/*
+    jQuery autocomplete
+*/
+.autocomplete-suggestions {
+    text-align: left; cursor: default; border: 1px solid #ccc; border-top: 0; background: #fff; box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+
+    /* core styles should not be changed */
+    position: absolute; display: none; z-index: 9999; max-height: 254px; overflow: hidden; overflow-y: auto; box-sizing: border-box;
+}
+.autocomplete-suggestion { position: relative; padding: 0 .6em; line-height: 23px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 1.02em; color: #333; }
+.autocomplete-suggestion b { font-weight: normal; color: #6f37a1; }
+.autocomplete-suggestion.selected { background: #f0f0f0; }
+
+/* 
+    Selectric 
+*/
+.selectric-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.selectric-wrapper *{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.selectric-responsive {
+  width: 100%;
+}
+
+.selectric {
+  border: 1px solid #ADADAD;
+  background: #fff;
+  position: relative;
+  border-radius: 0px;
+}
+
+.selectric .label {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 29px 0 10px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #444444;
+    font-weight: 700;
+  height: 29px;
+}
+
+.selectric .button {
+  background: #F2C916;
+  border-radius: 0px;
+    border: none;
+  display: block;
+  position: absolute;
+  right: -1px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+    padding: 0;
+  width: 31px;
+  height: 31px;
+  color: #231F20;
+  text-align: center;
+  font: 0/0 a;
+  *font: 31px/31px Lucida Sans Unicode, Arial Unicode MS, Arial;
+}
+
+.selectric .button:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+  border-top-color: #231F20;
+  border-bottom: none;
+}
+
+.selectric-focus .selectric {
+  border-color: #AAA;
+}
+
+.selectric-hover .selectric {
+  border-color: #949494;
+}
+
+.selectric-hover .selectric .button {
+  color: #949494;
+}
+
+.selectric-hover .selectric .button:after {
+  border-top-color: #949494;
+}
+
+.selectric-open {
+  z-index: 9999;
+}
+
+.selectric-open .selectric {
+  border-color: #949494;
+  background: #e6e6e6;
+}
+
+.selectric-open .selectric-items {
+  display: block;
+}
+
+.selectric-disabled {
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.selectric-hide-select {
+  position: relative;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+
+.selectric-hide-select select {
+  position: absolute;
+  left: -100%;
+}
+
+.selectric-hide-select.selectric-is-native {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.selectric-hide-select.selectric-is-native select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  z-index: 1;
+  box-sizing: border-box;
+  opacity: 0;
+}
+
+.selectric-input {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  outline: none !important;
+  border: none !important;
+  *font: 0/0 a !important;
+  background: none !important;
+}
+
+.selectric-temp-show {
+  position: absolute !important;
+  visibility: hidden !important;
+  display: block !important;
+}
+
+/* Items box */
+.selectric-items {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #F8F8F8;
+  border: 1px solid #C4C4C4;
+  z-index: -1;
+  box-shadow: 0 0 10px -6px;
+}
+
+.selectric-items .selectric-scroll {
+  height: 100%;
+  overflow: auto;
+}
+
+.selectric-above .selectric-items {
+  top: auto;
+  bottom: 100%;
+}
+
+.selectric-items ul, .selectric-items li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+    font-weight: 700;
+  line-height: 30px;
+  min-height: 30px;
+}
+
+.selectric-items li {
+  display: block;
+  padding-left: 10px;
+  border-top: 1px solid #FFF;
+  border-bottom: 1px solid #EEE;
+  color: #666;
+  cursor: pointer;
+}
+
+.selectric-items li.selected {
+  background: #EFEFEF;
+  color: #444;
+}
+
+.selectric-items li.highlighted {
+  background: #D0D0D0;
+  color: #444;
+}
+
+.selectric-items li:hover {
+  background: #F0F0F0;
+  color: #444;
+}
+
+.selectric-items .disabled {
+  filter: alpha(opacity=50);
+  opacity: 0.5;
+  cursor: default !important;
+  background: none !important;
+  color: #666 !important;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.selectric-items .selectric-group .selectric-group-label {
+  font-weight: bold;
+  padding-left: 10px;
+  cursor: default;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: none;
+  color: #444;
+}
+
+.selectric-items .selectric-group.disabled li {
+  filter: alpha(opacity=100);
+  opacity: 1;
+}
+
+.selectric-items .selectric-group li {
+  padding-left: 25px;
+}
+/*======= Plugins END =======*/
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -374,6 +737,21 @@ body{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a3db0', endColorstr='#653294',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     color: #fff;
 }
+
+/*======= SVG =======*/
+.svg-stage{
+    fill: #000;
+}
+.svg-filesbox{
+    fill: #5f308c;
+}
+.svg-criterion{
+    fill: #6a349a;
+}
+.svg-arrow_wavy{
+    fill: #75499d;
+}
+/*======= SVG END =======*/
 
 /*======= HEADER =======*/
 #headerWrapper{
@@ -3419,7 +3797,7 @@ a.b-callback_footer:hover{
 }
 
 .b-article__aside{
-    margin-left: 70px;
+    margin-left: 60px;
     width: 247px;
     flex-shrink: 0;
 }
@@ -3451,120 +3829,119 @@ a.b-callback_footer:hover{
     white-space: nowrap;
 /*    display: inline-block;*/
 }
-/*======= BLOG ARTICLE END =======*/
-
-/*======= SVG =======*/
-.svg-stage{
-    fill: #000;
-}
-.svg-filesbox{
-    fill: #5f308c;
-}
-.svg-criterion{
-    fill: #6a349a;
-}
-.svg-arrow_wavy{
-    fill: #75499d;
-}
-/*======= SVG END =======*/
-
-/*======= Plugins =======*/
-/*!
- * 
- *  SimpleBar.js - v2.4.3
- *  Scrollbars, simpler.
- *         
- */
-[data-simplebar] {
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
-    -webkit-overflow-scrolling: touch
-}
-[data-simplebar=init] {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex
-}
-.simplebar-scroll-content {
-    overflow-x: hidden;
-    overflow-y: scroll;
-    min-width: 100%;
-    box-sizing: content-box
-}
-
-/*bug - part of default scroll is visible*/
-.simplebar-scroll-content::-webkit-scrollbar{
-    width: 15px
-}
-
-.simplebar-content {
-    overflow-x: scroll;
-    overflow-y: hidden;
-    box-sizing: border-box;
-    min-height: 100%
-}
-.simplebar-track {
-    z-index: 1;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 11px
-}
-.simplebar-scrollbar {
-    position: absolute;
-    right: 2px;
-    border-radius: 7px;
-    min-height: 10px;
-    width: 7px;
-    opacity: 0;
-    -webkit-transition: opacity .2s linear;
-    transition: opacity .2s linear;
-    background: #000;
-    background-clip: padding-box
-}
-.simplebar-track:hover .simplebar-scrollbar {
-    opacity: .5;
-    -webkit-transition: opacity 0 linear;
-    transition: opacity 0 linear
-}
-.simplebar-track .simplebar-scrollbar.visible {
-    opacity: .5
-}
-.simplebar-track.horizontal {
-    left: 0;
-    width: auto;
-    height: 11px
-}
-.simplebar-track.vertical {
-    top: 0
-}
-.horizontal.simplebar-track .simplebar-scrollbar {
-    right: auto;
-    top: 2px;
-    height: 7px;
-    min-height: 0;
-    min-width: 10px;
-    width: auto
-}
-
-.tooltipster-light {
-    max-width: 147px;
-	border-radius: 3px; 
-	border: 1px solid #d4d4d4;
-	background: #fff;
-	color: #666666;
-    z-index: 1;
-}
-.tooltipster-light .tooltipster-content {
-	padding: 5px 8px;
-	line-height: 16px;
-	font-size: 12px;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 300;
+.b-link_blog, .b-link_blog:hover{
     color: #75489c;
 }
-/*======= Plugins END =======*/
+.b-video_blog{
+    margin-right: 25px;
+    margin-bottom: 1em;
+    float: left;
+}
+
+.b-blog__calc{
+    margin-bottom: 40px;
+}
+.b-blog__heading_calc{
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.b-label_taxi{
+    float: left;
+    clear: both;
+    font-style: italic;
+}
+.b-block_checkbox{
+/*    display: block;*/
+    float: left;
+    clear: both;
+/*    display: inline-block;*/
+    vertical-align: top;
+    margin-top: 10px;
+    position: relative;
+    padding-left: 17px;
+    cursor: pointer;
+}
+.b-block_checkbox span.fa{
+    position: absolute;
+    left: 0;
+    color: #f2c916;
+/*    color: #743aa7;*/
+}
+#notTaxi:not(:checked) + span.fa-check-square-o{
+    display: none;
+}
+
+.b-select__container_propos{
+    position: relative;
+    float: left;
+/*    display: inline-block;*/
+    margin-right: 60px;
+    margin-bottom: 10px;
+    vertical-align: top;
+}
+.b-select__container_propos:last-of-type{
+    clear: left;
+    margin-right: 0;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: 540px;
+}
+.b-select__container_propos:last-of-type .b-autocomplete{
+    width: 100%;
+}
+.b-propos__recalc label{
+    font-size: 14px;
+    font-weight: 300;
+    color: #4b4b4b;
+}
+.b-propos__recalc .b-label_registration{
+    margin-bottom: 3px;
+}
+.b-propos__recalc select{
+    display: none;
+}
+.b-propos__recalc .selectric{
+    min-width: 240px;
+}
+.b-propos__recalc .selectric .label{
+    font-size: 14px;
+    margin-right: 40px;
+}
+.b-propos__recalc .selectric-items li{
+    font-size: 14px;
+}
+input.b-autocomplete{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 30px;
+    color: #444444;
+    font-weight: 700;
+    height: 31px;
+}
+input.b-autocomplete:focus,
+input.b-autocomplete:hover{
+    border-color: #ADADAD;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.b-propos__recalc .b-autocomplete{
+    font-size: 14px;
+}
+.b-propos__btn_change{
+    float: left;
+    clear: both;
+    margin-top: 25px;
+}
+/*======= BLOG ARTICLE END =======*/
 
 /*======= MEDIA QUERIES =======*/
 @media (min-width: 1200px){
