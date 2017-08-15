@@ -675,6 +675,17 @@ $(document).ready(function(){
 		return obj;
 	})();
 
+	// makes whole div clickable
+	var anchorParent = function(){
+		$(".js-linked").css("cursor", "pointer").on("click", function(e){
+			var link = $(this).find(".js-linked__target")[0];
+			link.onclick = function(e){
+				e.stopPropagation();
+			};
+			link.click();
+		});
+	};
+
 	// osago calculator block functionality
 	var osagoCalcBlock =(function(){
 		var obj ={};
@@ -917,6 +928,7 @@ $(document).ready(function(){
 	})();
 
 	// executable part
+	anchorParent();	// make all divs clickable
 	stars.init();	// rating stars filling
 	
 	$(".js-selectric").selectric();	// selects stylization
