@@ -2116,7 +2116,7 @@ a.b-submenu__link_more:hover{
 .b-slide__content{
     height: 198px;
     height: 211px;
-    overflow: auto;
+/*    overflow: auto;*/
     font-family: 'Roboto Condensed', sans-serif;
     
 /*    overflow: -moz-scrollbars-none;*/
