@@ -2526,8 +2526,8 @@ a.b-submenu__link_more:hover{
 }
 .b-slide__paragraph_special{
 /*    margin: auto 0;*/
-    max-width: 200px;
-    
+/*    max-width: 200px;*/
+    max-width: 60%;
 }
 .b-slide__img_bg{
     position: absolute;
@@ -3776,7 +3776,7 @@ a.b-callback_footer:hover{
     line-height: 1.2;
     text-align: left;
 }
-.b-blog__article_full .b-blog__bg{
+.b-blog__article_full>.b-blog__article .b-blog__bg{
     top: 10px;
     left: -10px;
 }
@@ -3790,6 +3790,7 @@ a.b-callback_footer:hover{
 }
 .b-article__content{
 /*    flex-basis: 730px;*/
+    max-width: 723px;
 }
 .b-content__paragraph{
     line-height: 1.5;
@@ -3941,8 +3942,11 @@ input.b-autocomplete:hover{
     clear: both;
     margin-top: 25px;
 }
+
 .b-blog__block_social{
-    margin-bottom: 100px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #f5f5f5;
+/*    margin-bottom: 100px;*/
 }
 .b-btn_social,
 .b-btn_social *{
@@ -4006,7 +4010,44 @@ input.b-autocomplete:hover{
 }
 .b-btn_gplus:hover{
     color: #231f20;
-    
+}
+
+.b-blog__block_slider{
+    margin-bottom: 45px;
+/*    padding: 40px 50px 0;*/
+    padding: 0 15px;
+}
+.b-container__slider_blog{
+    max-width: 100%;
+    width: initial;
+}
+.b-string__slide_blog,
+.b-string__slide_blog:hover{
+    margin: 0 20px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    height: initial;
+    padding: 40px 0 0;
+}
+
+.b-string__slide_blog>.b-blog__article{
+    margin-bottom: 0;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+}
+.b-blog__block_slider .b-slider__control{
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+}
+.b-blog__block_slider .b-slider__control_left{
+    left: -10px;
+}
+.b-blog__block_slider .b-slider__control_right{
+    right: -10px;
 }
 /*======= BLOG ARTICLE END =======*/
 
@@ -4400,6 +4441,9 @@ input.b-autocomplete:hover{
     
     .b-string__slide_specials{
         margin: 0;
+    }
+    .b-slide__heading_specials{
+        font-size: 18px;
     }
     
     .b-footer{

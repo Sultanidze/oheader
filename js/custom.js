@@ -241,8 +241,8 @@ $(document).ready(function(){
 
 		obj.blogArticle = {};
 		obj.blogArticle.settings = {
-			centerMode: true,
-			centerPadding: '60px',
+			// centerMode: true,
+			// centerPadding: '60px',
 			arrows: true,
 			infinite: true,
 			speed: 400,
