@@ -2376,12 +2376,21 @@ a.b-submenu__link_more:hover{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 /*    padding: 40px 30px;*/
-    padding: 5% 4%;
+/*    padding: 5% 4%;*/
+    padding: 0 4%;
+}
+.b-priceAgregator .b-messaging__paragraph:before,
+.b-priceAgregator .b-messaging__paragraph:after{
+    content: '';
+    display: table;
+    width: 100%;
+    padding-top: 9%;
 }
 .b-priceAgregator .b-decoration{
     top: 0;
     bottom: 0;
     width: 2000px;
+    height: 100%;
 }
 /*======= PRICE END=======*/
 
