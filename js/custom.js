@@ -947,6 +947,8 @@ $(document).ready(function(){
 		position: 'bottom',
 		zIndex: 1
 	});	// enable tooltips
+	
+	$(".js-scrollbar").slimScroll();
 
 	osagoCalcBlock.init();	// OSAGO calc block initialization (hiding vehicles selects, city precomplete and autocomplete)
 });
