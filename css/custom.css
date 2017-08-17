@@ -4141,6 +4141,9 @@ input.b-autocomplete:hover{
     .b-slide__img_bg{
         display: none;
     }
+    .b-slide__paragraph_special{
+        max-width: 100%;
+    }
     
     .b-footer__part_left{
         padding-top: 24px;
@@ -4327,7 +4330,8 @@ input.b-autocomplete:hover{
     }
     .b-links_stages,
     .b-section_seo,
-    .b-section_messaging    {
+    .b-section_messaging,
+    .b-section_price{
         display: none;
     }
     
