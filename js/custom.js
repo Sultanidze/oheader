@@ -207,7 +207,12 @@ $(document).ready(function(){
 		// init slider function
 		function init(oSlider){
 			oSlider.$slider.each(function(){
-				$(this).slick(addBtnsSettings.call(this, oSlider))
+				// var t1 = this;
+				$(this).slick(addBtnsSettings.call(this, oSlider));
+				// $(window).on("resize", function(){
+					// $(t1).slick('resize');
+					// console.log("resizee");
+				// });
 			});
 		};
 		// init rating slider function
@@ -239,23 +244,19 @@ $(document).ready(function(){
 			init(obj.specials);
 		};
 
+		// slider in blog article
 		obj.blogArticle = {};
 		obj.blogArticle.settings = {
-			// centerMode: true,
-			// centerPadding: '60px',
 			arrows: true,
-			infinite: true,
+			infinite: false,
 			speed: 400,
 			slidesToShow: 2,
 			slidesToScroll: 1,
-			autoplay: true,
-			autoplaySpeed: 4400,
 			responsive: [
 				{
 					breakpoint: 767,
 					settings: {
 						slidesToShow: 1,
-						centerPadding: '40px',
 				  }
 				}
 			]
@@ -263,7 +264,12 @@ $(document).ready(function(){
 		obj.blogArticle.$section = $("#blogArticle");	
 		obj.blogArticle.$slider = obj.blogArticle.$section.find(".js-slider__string");
 		obj.blogArticle.init = function(){
+			var  slides = obj.blogArticle.$slider.children()
+				,slide = slides.filter(".js-centerSlide")	// desired first left visible slide
+				,slideIndex = slides.index(slide);	// index of desired first left visible slide among the siblings
+				
 			init(obj.blogArticle);
+			obj.blogArticle.$slider.slick('slickGoTo', slideIndex, true);	// make desired first left slide active
 		};
 
 		obj.init = function(){
@@ -926,6 +932,39 @@ $(document).ready(function(){
 
 		return obj;
 	})();
+	
+	// adaptive iframe video
+	var iframeAspectRatio = (function(){
+		var obj = {};
+		
+		obj.iframesAll = $("iframe");
+		
+		obj.calcHeight = function($el){
+			$(window).on("resize", function(){
+				$el.height($el.width() * $el.attr("data-ratio"))
+			}).resize();
+		};
+		
+		obj.aspectRatio = function($el, FcallBack){
+			// save aspect ratio
+			$el.attr("data-ratio", $el.attr('height') / $el.attr('width'))
+			// and remove the hard coded width/height
+			.removeAttr('height')
+			.removeAttr('width');
+			if (typeof(FcallBack) == "function"){
+				FcallBack(arguments[0]);
+			}
+		};
+
+		obj.init = function(sSelector){
+			obj.iframesAll.filter(sSelector).each(function(){
+				var $this = $(this);
+				obj.aspectRatio($this, obj.calcHeight);
+			});
+		}
+		
+		return obj;
+	})();
 
 	// executable part
 	anchorParent();	// make all divs clickable
@@ -951,4 +990,6 @@ $(document).ready(function(){
 	$(".js-scrollbar").slimScroll();
 
 	osagoCalcBlock.init();	// OSAGO calc block initialization (hiding vehicles selects, city precomplete and autocomplete)
+	
+	iframeAspectRatio.init(".js-preserveAspectRatio");	// make iframe with desired selector height depending on the aspect ratio (width from css)
 });
