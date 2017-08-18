@@ -588,6 +588,12 @@ a, button, input[type="button"], input[type="submit"], input[type="color"], inpu
 .s-center{
     text-align: center;
 }
+.s-textTransform_none{
+    text-transform: none!important;
+}
+.s-textTransform_uppercase{
+    text-transform: uppercase!important;
+}
 /*
 .s-color_light{
     color: #fff;
