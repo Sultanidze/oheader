@@ -1807,7 +1807,9 @@ a.b-submenu__link_more:hover{
     flex-wrap: wrap;
     justify-content: center;
 }
-.b-tile_buy{
+.b-tile_buy,
+a.b-tile_buy{
+    position: static;
     margin-right: 20px;
     margin-bottom: 20px;
     border: 1px solid #743aa7;
@@ -1828,6 +1830,7 @@ a.b-submenu__link_more:hover{
     -o-flex-direction: column;
     flex-direction: column;
     text-align: center;
+    font-size: 14px;
     text-decoration: none;
     cursor: pointer;
 /*
