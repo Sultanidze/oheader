@@ -688,7 +688,7 @@ body{
 }
 #headerWrapper.is_stuck{
     background-color: #f7f7f7;
-    z-index: 100;
+    z-index: 1000;
 }
 .b-header{
     position: relative;
