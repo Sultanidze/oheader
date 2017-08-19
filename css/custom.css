@@ -557,6 +557,18 @@ a, button, input[type="button"], input[type="submit"], input[type="color"], inpu
 .selectric-items .selectric-group li {
   padding-left: 25px;
 }
+
+/*
+ * stacktable.js
+ */
+/*
+.stacktable { width: 100%; }
+.st-head-row { padding-top: 1em; }
+.st-head-row.st-head-row-main { font-size: 1.5em; padding-top: 0; }
+.st-key { width: 49%; text-align: right; padding-right: 1%; }
+.st-val { width: 49%; padding-left: 1%; }
+*/
+
 /*======= Plugins END =======*/
 
 .sr-only {
@@ -581,6 +593,9 @@ a, button, input[type="button"], input[type="submit"], input[type="color"], inpu
     content: '';
     clear: both;
     display: table;
+}
+.s-light{
+    font-weight: 300!important;
 }
 .s-bold{
     font-weight: 700!important;
@@ -3383,7 +3398,8 @@ a.b-callback_footer:hover{
 }
 .b-crumbs{
 /*    display: none;*/
-    margin: 0;
+/*    margin: 0;*/
+    margin: auto;
     padding: 20px 15px 10px;
 }
 .b-crumbs__item{
@@ -4021,6 +4037,142 @@ input.b-autocomplete:hover{
     right: -10px;
 }
 /*======= BLOG ARTICLE END =======*/
+
+/*======= RATING PAGE =======*/
+.b-section_ratingFinance{
+    position: relative;
+/*    margin-bottom: 50px;*/
+    max-width: 740px;
+}
+.b-section_ratingFinance .b-section__heading{
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+.b-section__heading_rating{
+    font-size: 34px;
+    text-transform: none;
+}
+.b-section_ratingFinance .b-specials__btns{
+/*    max-width: 785px;*/
+    margin: 0 -11px 30px;
+    justify-content: space-between;
+}
+
+.b-table_ratingFinance{
+    position: relative;
+    z-index: 0;
+    margin-bottom: 30px;
+    width: 92.5%;
+    font-size: 16px;
+    vertical-align: middle;
+}
+.b-table_ratingFinance thead{
+    font-size: 1.125em;
+}
+.b-table_ratingFinance th,
+.b-table_ratingFinance td{
+    position: relative;
+    text-align: center;
+    height: 53px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 15px 25px;
+}
+.b-table_ratingFinance th{
+    font-size: 1.125em;
+}
+.b-table_ratingFinance th:nth-child(2){
+    width: 25%;
+}
+.b-table_ratingFinance th:nth-child(n+3){
+    width: 20%;
+}
+.b-table_ratingFinance tbody:before{
+    content: '';
+    display: block;
+    height: 9px;
+    background-color: transparent;
+}
+.b-table_ratingFinance td{
+    border-top: 1px solid #b7b7b7;
+/*    border-bottom: 1px solid transparent;*/
+    border-bottom: none;
+    background-color: #fff;
+/*    z-index: -1;*/
+}
+.b-table_ratingFinance tbody tr{
+/*    background-color: #fff;*/
+}
+.b-table_ratingFinance tbody tr:first-child td{
+    border-top: none;
+}
+.b-table_ratingFinance img{
+    max-width: 100%;
+    max-height: 75%;
+}
+.b-table_ratingFinance td:first-child{
+    text-align: left;
+    border-top: 1px solid #FFF;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.b-table_ratingFinance td:first-child:before{
+    content: attr(data-num);
+    position: absolute;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    text-align: center;
+    width: 65px;
+    line-height: 53px;
+    font-size: 1.5em;
+    color: #753aa9;
+    font-weight: 700;
+}
+.b-table_ratingFinance td:last-child:after{
+    content: "О компании";
+    position: absolute;
+    top: 0;
+    left: calc(100% - 113px);
+/*    right: 0;*/
+    bottom: 0;
+    z-index: -1;
+    width: 113px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 17px;
+    line-height: 53px;
+    font-weight: 700;
+    background-color: #f2c90c;
+    white-space: nowrap;
+    font-family: 'Roboto Condensed', sans-serif;
+    -webkit-transition: left 300ms;
+    -o-transition: prop time;
+    transition: prop time;
+}
+
+.b-table_ratingFinance tbody tr:hover{
+    webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+.b-table_ratingFinance tr{
+    position: relative;
+}
+.b-table_ratingFinance tr:hover td{
+    border-top: 1px solid #fff;
+/*    z-index: 0;*/
+}
+.b-table_ratingFinance tr:hover+tr>td{
+    border-top: 1px solid #fff;
+}
+.b-table_ratingFinance tr:hover td:last-child:after{
+    left: 100%;
+}
+/*======= RATING PAGE END =======*/
 
 /*======= MEDIA QUERIES =======*/
 @media (min-width: 1200px){
