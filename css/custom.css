@@ -3599,6 +3599,8 @@ a.b-callback_footer:hover{
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+    -ms-align-items: center;
+    align-items: center;
 }
 .b-blog__article:last-of-type{
     margin-bottom: 60px;   
@@ -3610,7 +3612,6 @@ a.b-callback_footer:hover{
 /*    overflow: hidden;*/
     text-align: center;
     -ms-align-self: center;
-    align-self: center;
 }
 .b-blog__bg{
     position: absolute;
@@ -3623,6 +3624,7 @@ a.b-callback_footer:hover{
     -o-transition: top 100ms, left 100ms;
     transition: top 100ms, left 100ms;
 }
+
 .b-blog__bg_usefuls{
     background-color: #f2c916;
 }
@@ -3708,8 +3710,25 @@ a.b-callback_footer:hover{
     font-weight: 300;
 }
 .b-btn_blog{
-    margin-top: auto;
+/*    margin-top: auto;*/
     min-width: 150px;
+}
+#blog .b-blog__articles_news .b-btn_blog:hover,
+#blog .b-blog__articles_promotes .b-btn_blog:hover{
+    color: #fff;
+}
+#blog .b-btn_blog:hover .b-text_btn{
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
+#blog .b-btn_blog:hover:after{
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+}
+#blog .b-btn_blog:not(:hover){
+    background-color: transparent;
 }
 .b-btn_blog .b-text_btn{
     padding-left: 20px;
@@ -4043,7 +4062,10 @@ input.b-autocomplete:hover{
 .b-section_ratingFinance{
     position: relative;
 /*    margin-bottom: 50px;*/
-    max-width: 740px;
+/*    max-width: 740px;*/
+    max-width: 918px;
+    padding-left: 65px;
+    padding-right: 113px;
 }
 .b-section_ratingFinance .b-section__heading{
     padding-top: 10px;
@@ -4705,6 +4727,93 @@ input.b-autocomplete:hover{
     .b-filter_aside{
         clear: none;
     }
+    
+    .b-section_ratingFinance{
+        max-width: 740px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .b-section_ratingFinance .b-specials__btns{
+        margin: 0 auto 15px;
+    }
+    .b-table_ratingFinance{
+        width: 100%;
+    }
+    .b-table_ratingFinance thead{
+        display: block;
+    }
+    .b-table_ratingFinance th,
+    .b-table_ratingFinance td{
+        float: left;
+        width: 33.33333%;
+        border: none;
+/*        font-size: 1em;*/
+    }
+    .b-table_ratingFinance td{
+        padding-top: 0;
+        padding-bottom: 0;
+        line-height: 53px;
+    }
+    .b-table_ratingFinance th:first-child{
+        display: none;
+    }
+    .b-table_ratingFinance th:nth-child(n){
+        height: auto;
+        padding-right: 2%;
+        padding-left: 2%;
+    }
+    .b-table_ratingFinance th:nth-child(n),
+    .b-table_ratingFinance td:nth-child(n){
+        width: 33.33333%;
+    }
+    .b-table_ratingFinance th>.s-bold{
+        
+    }
+    .b-table_ratingFinance tr{
+        display: block;
+    }
+    .b-table_ratingFinance tr:after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+    .b-table_ratingFinance tbody{
+        display: block;
+    }
+    .b-table_ratingFinance tbody tr{
+        border-top: 1px solid #b7b7b7;
+    }
+    .b-table_ratingFinance tbody tr:first-child,
+    .b-table_ratingFinance tbody tr:first-child:hover{
+        border-top: none
+    }
+    .b-table_ratingFinance tbody tr:hover,
+    .b-table_ratingFinance tbody tr:hover+tr{
+        border-top: 1px solid transparent;
+    }
+    .b-table_ratingFinance tr>td{
+        border-top: none!important;
+    }
+    .b-table_ratingFinance td:first-child{
+        display: block;
+        width: 100%;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+    .b-table_ratingFinance td:first-child:before{
+        position: static;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .b-table_ratingFinance td:last-child:after{
+        top: auto;
+        bottom: 100%;
+        visibility: visible;
+    }
+    .b-table_ratingFinance tr:hover td:last-child:after{
+        right: 0;
+        z-index: 1;
+    }
 }
 @media (max-width: 655px){
     .b-section_map{
@@ -5006,7 +5115,7 @@ input.b-autocomplete:hover{
         -ms-align-items: center;
         align-items: center;
     }
-    .b-tile_buy{
+    .b-tile_buy, a.b-tile_buy{
         margin-right: 0;
     }
     
