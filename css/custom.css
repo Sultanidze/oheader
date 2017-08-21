@@ -3802,6 +3802,7 @@ a.b-callback_footer:hover{
     color: #75489c;
 }
 .b-video_blog{
+    position: relative;
     width: 352px;
     margin-right: 25px;
     margin-bottom: 1em;
@@ -4083,10 +4084,15 @@ input.b-autocomplete:hover{
     font-size: 1.125em;
 }
 .b-table_ratingFinance th:nth-child(2){
-    width: 25%;
+    width: 23%;
 }
-.b-table_ratingFinance th:nth-child(n+3){
-    width: 20%;
+.b-table_ratingFinance th:nth-child(3){
+    width: 23%;
+    padding: 15px 20px;
+}
+.b-table_ratingFinance th:last-child{
+    width: 27%;
+    padding: 15px 30px;
 }
 .b-table_ratingFinance tbody:before{
     content: '';
@@ -4099,10 +4105,7 @@ input.b-autocomplete:hover{
 /*    border-bottom: 1px solid transparent;*/
     border-bottom: none;
     background-color: #fff;
-/*    z-index: -1;*/
-}
-.b-table_ratingFinance tbody tr{
-/*    background-color: #fff;*/
+    z-index: -1;
 }
 .b-table_ratingFinance tbody tr:first-child td{
     border-top: none;
@@ -4130,12 +4133,18 @@ input.b-autocomplete:hover{
     color: #753aa9;
     font-weight: 700;
 }
+.b-table_ratingFinance td:last-child .b-about{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 .b-table_ratingFinance td:last-child:after{
     content: "О компании";
     position: absolute;
     top: 0;
-    left: calc(100% - 113px);
-/*    right: 0;*/
+    right: 0;
     bottom: 0;
     z-index: -1;
     width: 113px;
@@ -4149,28 +4158,51 @@ input.b-autocomplete:hover{
     background-color: #f2c90c;
     white-space: nowrap;
     font-family: 'Roboto Condensed', sans-serif;
-    -webkit-transition: left 300ms;
-    -o-transition: prop time;
-    transition: prop time;
+    -webkit-transition: right 300ms;
+    -o-transition: right 300ms;
+    transition: right 300ms;
+    visibility: hidden
 }
 
+.b-table_ratingFinance thead,
 .b-table_ratingFinance tbody tr:hover{
     webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.3);
     box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.3);
-    z-index: 10;
-}
-.b-table_ratingFinance tr{
-    position: relative;
 }
 .b-table_ratingFinance tr:hover td{
     border-top: 1px solid #fff;
-/*    z-index: 0;*/
+/*    z-index: -1;*/
+    z-index: initial
 }
 .b-table_ratingFinance tr:hover+tr>td{
     border-top: 1px solid #fff;
 }
 .b-table_ratingFinance tr:hover td:last-child:after{
-    left: 100%;
+/*    left: 100%;*/
+    right: -113px;
+    visibility: visible;
+}
+
+.b-reasons__text{
+    position: relative;
+    margin-bottom: 60px;
+    padding-left: 14px;
+    max-width: 690px;
+    font-weight: 300;
+    line-height: 21px;
+/*    border-left: 1px solid #f2c90c;*/
+}
+.b-reasons__text:before{
+    content: '';
+    position: absolute;
+    top: 2%;
+    left: 0;
+    width: 1px;
+    height: 94%;
+    background-color: #f2c90c;
+}
+.b-reasons__text .b-highlighted{
+    font-size: 18px;
 }
 /*======= RATING PAGE END =======*/
 

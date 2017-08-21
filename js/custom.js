@@ -281,33 +281,38 @@ $(document).ready(function(){
 		return obj;	// return object with menu methods and buttons
 	})();
 
-	// tabs module (in Rating, Specials, Blog)
-	var tabs = (function(){
-		// tabs init function
-		function init(oTabbed){
-			var sActiveTabClass = "b-btn_active js-tab_active";
-			oTabbed.$contents.each(function(){
+	// tabs module (in Rating, Specials, Blog, Blog article)
+	// tabs init function, sSelector - tabs and content parent selector
+	var tabs = function (sSelector){
+			var  sActiveTabClass = "b-btn_active js-tab_active"
+				,$parent = $(sSelector)
+				,$tabsBlock = $parent.find(".js-tabsBlock")
+				,$tabs = $tabsBlock.find(".js-tab")
+				,$contentsBlock = $parent.find(".js-tabContentsBlock")
+				,$contents = $parent.find(".js-content")
+				;
+			$contents.each(function(){
 				if (!$(this).hasClass("js-content_active")){
 					
 					$(this).css("display", "none").removeClass("hidden");
 				}
 			});
-			oTabbed.$tabs.on("click", function(){
+			$tabs.on("click", function(){
 				if ($(this).hasClass("js-tab_active")){
 					return false	// if active tab clicked do nothing
 				};
 				
-				if (!oTabbed.$contents.is(":animated")){
-					var index = oTabbed.$tabs.index(this);	// index of clicked tab
+				if (!$contents.is(":animated")){
+					var index = $tabs.index(this);	// index of clicked tab
 
-					oTabbed.$tabs.removeClass(sActiveTabClass);
+					$tabs.removeClass(sActiveTabClass);
 					$(this).addClass(sActiveTabClass);
 
-					oTabbed.$contents.filter(".js-content_active").fadeOut(400).promise().done(function(){
-						var $slider = oTabbed.$contents.eq(index).find(".js-slider__string");	// slider inside
+					$contents.filter(".js-content_active").fadeOut(400).promise().done(function(){
+						var $slider = $contents.eq(index).find(".js-slider__string");	// slider inside
 
 						if ($slider){
-							oTabbed.$contents.eq(index).addClass("js-content_active").fadeIn({
+							$contents.eq(index).addClass("js-content_active").fadeIn({
 								duration: 400,
 								progress: function(){
 									if ($slider.length){
@@ -320,48 +325,6 @@ $(document).ready(function(){
 				}
 			});
 		}
-		
-		var obj = {};
-
-		obj.rating = {};
-		obj.rating.$section = sliders.rating.$section;
-		obj.rating.$tabsBlock = obj.rating.$section.find(".js-tabsBlock");
-		obj.rating.$tabs = obj.rating.$tabsBlock.find(".js-tab");
-		obj.rating.$contentsBlock = obj.rating.$section.find(".js-tabContentsBlock");
-		obj.rating.$contents = obj.rating.$section.find(".js-content");
-		obj.rating.init = function(){
-			init(obj.rating);
-		};
-
-		obj.specials = {};
-		obj.specials.$section = sliders.specials.$section;
-		obj.specials.$tabsBlock = obj.specials.$section.find(".js-tabsBlock");
-		obj.specials.$tabs = obj.specials.$tabsBlock.find(".js-tab");
-		obj.specials.$contentsBlock = obj.specials.$section.find(".js-tabContentsBlock");
-		obj.specials.$contents = obj.specials.$section.find(".js-content");
-		obj.specials.init = function(){
-			init(obj.specials);
-		};
-
-		obj.blog = {};
-		obj.blog.$section = $("#blog");
-		obj.blog.$tabsBlock = obj.blog.$section.find(".js-tabsBlock");
-		obj.blog.$tabs = obj.blog.$tabsBlock.find(".js-tab");
-		obj.blog.$contentsBlock = obj.blog.$section.find(".js-tabContentsBlock");
-		obj.blog.$contents = obj.blog.$section.find(".js-content");
-		obj.blog.init = function(){
-			init(obj.blog);
-		};
-
-		obj.init = function(){
-			obj.rating.init();	// rating tabs init
-			obj.specials.init();// specials tabs init
-
-			obj.blog.init();// blog tabs init
-		}
-
-		return obj;
-	})();
 
 	// seoMap module
 	var seoMap = (function(){
@@ -975,7 +938,7 @@ $(document).ready(function(){
 	header.init();	// header module init
 	indexContents.linkInit();	// content links functionality
 	sliders.init();	// sliders module init
-	tabs.init();	// tabs init
+	tabs(".js-tabbed");	// tabs init
 	responces.init();	// responses slider init
 	footer.init();	// footer module init
 
