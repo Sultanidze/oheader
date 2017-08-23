@@ -199,8 +199,8 @@ $(document).ready(function(){
 				,settings = {}
 				;
 
-			settings.prevArrow = $(t).parent().siblings(".js-slider_left");
-			settings.nextArrow = $(t).parent().siblings(".js-slider_right");
+			settings.prevArrow = $(t).parent().parent().find(".js-slider_left");
+			settings.nextArrow = $(t).parent().parent().find(".js-slider_right");
 
 			return	jQuery.extend(settings, oSlider.settings);
 		};
@@ -244,6 +244,33 @@ $(document).ready(function(){
 			init(obj.specials);
 		};
 
+		// test universal slider init
+		obj.slider = {};
+		obj.slider.settings = {
+			arrows: true,
+			infinite: false,
+			speed: 400,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: false,
+			autoplaySpeed: 4400,
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 1
+				  }
+				}
+			]
+		};
+		obj.slider.$section = $(".js-slider");
+		console.log(obj.slider.$section);
+		obj.slider.$slider = obj.slider.$section.find(".js-slider__string");
+		console.log(obj.slider.$slider);
+		obj.slider.init = function(){
+			init(obj.slider);
+		};
+
 		// slider in blog article
 		obj.blogArticle = {};
 		obj.blogArticle.settings = {
@@ -276,6 +303,8 @@ $(document).ready(function(){
 			obj.rating.init();
 			obj.specials.init();
 			obj.blogArticle.init();
+
+			obj.slider.init();	// test
 		}
 
 		return obj;	// return object with menu methods and buttons
@@ -950,7 +979,7 @@ $(document).ready(function(){
 		zIndex: 1
 	});	// enable tooltips
 	
-	$(".js-scrollbar").slimScroll();
+	$(".js-scrollbar").slimScroll();	//custom scrollbars
 
 	osagoCalcBlock.init();	// OSAGO calc block initialization (hiding vehicles selects, city precomplete and autocomplete)
 	

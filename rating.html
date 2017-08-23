@@ -204,17 +204,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <div class="b-container b-container_mid s-highlited">
         <div class="b-container b-container_crumbs b-section_crumbs">
-        <ol class="b-crumbs">
-            <li class="b-crumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                <a href="#" class="b-crumbs__link">
-                    Главная
-                </a>
-            </li>
-            <li class="b-crumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                <span>Рейтинг компаний</span>
-            </li>
-        </ol>
-    </div>
+            <ol class="b-crumbs">
+                <li class="b-crumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <a href="#" class="b-crumbs__link">
+                        Главная
+                    </a>
+                </li>
+                <li class="b-crumbs__item" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span>Рейтинг компаний</span>
+                </li>
+            </ol>
+        </div>
         <section class="b-container b-section_ratingFinance clearfix js-tabbed">
             <div class="b-section__heading b-section__heading_rating">
                 Финансовый рейтинг страховых компаний
@@ -584,7 +584,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </section>
     </div>
     <div class="b-container b-container_mid">
-        <section class="b-section_buy b-container b-container_narrow" id="buy">
+        <section class="b-section_buy b-section_buyRating b-container b-container_narrow">
             <div class="b-section__heading b-section__heading_rating">
                 Сравнить цены на страховки
             </div>
@@ -639,10 +639,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <section class="b-section_rating b-section_ratingClients">
 	        <div class="b-section__heading b-section__heading_rating">Рейтинг клиентов <a data-href="#" class="">Oh.ua</a> по ОСАГО</div>
             <div class="b-rating__wrapper_clients">
-                <div class="b-rating__slider">
-                    <div class="b-slider__string_rating">
+                <div class="b-rating__slider js-slider">
+                    <div class="b-slider__string_rating js-slider__string">
                         <div class="b-rating__slide">
-                            <div class="b-rating__company_clients">
+                            <div class="b-rating__company_clients js-linked">
                                 <span class="b-rating__num">01</span>
                                 <div class="b-rating__content">
                                     <div class="b-rating__description_clients">
@@ -654,6 +654,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
+                                                <span class="b-stars__num">6 из 5</span>
                                             </span>
                                         </div>
                                         <p class="b-company__about">Работаем на украинском страховом рынке с 2015 года, помогли сэкономить деньги </p>
@@ -672,9 +673,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             Прямое урегулирование
                                         </span>
                                     </div>
+                                    <a href="#" class="b-ratink__link_company js-linked__target">
+                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="b-rating__company_clients">
+                            <div class="b-rating__company_clients js-linked">
                                 <span class="b-rating__num">02</span>
                                 <div class="b-rating__content">
                                     <div class="b-rating__description_clients">
@@ -686,6 +690,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
+                                                <span class="b-stars__num">6 из 5</span>
                                             </span>
                                         </div>
                                         <p class="b-company__about">Работаем на украинском страховом рынке с 2015 года, помогли сэкономить деньги </p>
@@ -704,9 +709,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             Прямое урегулирование
                                         </span>
                                     </div>
+                                    <a href="#" class="b-ratink__link_company js-linked__target">
+                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="b-rating__company_clients">
+                            <div class="b-rating__company_clients js-linked">
                                 <span class="b-rating__num">03</span>
                                 <div class="b-rating__content">
                                     <div class="b-rating__description_clients">
@@ -718,6 +726,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
+                                                <span class="b-stars__num">6 из 5</span>
                                             </span>
                                         </div>
                                         <p class="b-company__about">Работаем на украинском страховом рынке с 2015 года, помогли сэкономить деньги </p>
@@ -736,9 +745,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             Прямое урегулирование
                                         </span>
                                     </div>
+                                    <a href="#" class="b-ratink__link_company js-linked__target">
+                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="b-rating__company_clients">
+                            <div class="b-rating__company_clients js-linked">
                                 <span class="b-rating__num">04</span>
                                 <div class="b-rating__content">
                                     <div class="b-rating__description_clients">
@@ -750,6 +762,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
+                                                <span class="b-stars__num">6 из 5</span>
                                             </span>
                                         </div>
                                         <p class="b-company__about">Работаем на украинском страховом рынке с 2015 года, помогли сэкономить деньги </p>
@@ -768,9 +781,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             Прямое урегулирование
                                         </span>
                                     </div>
+                                    <a href="#" class="b-ratink__link_company js-linked__target">
+                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="b-rating__company_clients">
+                            <div class="b-rating__company_clients js-linked">
                                 <span class="b-rating__num">05</span>
                                 <div class="b-rating__content">
                                     <div class="b-rating__description_clients">
@@ -782,6 +798,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
+                                                <span class="b-stars__num">6 из 5</span>
                                             </span>
                                         </div>
                                         <p class="b-company__about">Работаем на украинском страховом рынке с 2015 года, помогли сэкономить деньги </p>
@@ -800,9 +817,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             Прямое урегулирование
                                         </span>
                                     </div>
+                                    <a href="#" class="b-ratink__link_company js-linked__target">
+                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="b-rating__company_clients">
+                            <div class="b-rating__company_clients js-linked">
                                 <span class="b-rating__num">06</span>
                                 <div class="b-rating__content">
                                     <div class="b-rating__description_clients">
@@ -814,6 +834,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
+                                                <span class="b-stars__num">6 из 5</span>
                                             </span>
                                         </div>
                                         <p class="b-company__about">Работаем на украинском страховом рынке с 2015 года, помогли сэкономить деньги </p>
@@ -832,11 +853,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             Прямое урегулирование
                                         </span>
                                     </div>
+                                    <a href="#" class="b-ratink__link_company js-linked__target">
+                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                         <div class="b-rating__slide">
-                            <div class="b-rating__company_clients">
+                            <div class="b-rating__company_clients js-linked">
                                 <span class="b-rating__num">07</span>
                                 <div class="b-rating__content">
                                     <div class="b-rating__description_clients">
@@ -848,6 +872,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
+                                                <span class="b-stars__num">6 из 5</span>
                                             </span>
                                         </div>
                                         <p class="b-company__about">Работаем на украинском страховом рынке с 2015 года, помогли сэкономить деньги </p>
@@ -866,9 +891,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             Прямое урегулирование
                                         </span>
                                     </div>
+                                    <a href="#" class="b-ratink__link_company js-linked__target">
+                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="b-rating__company_clients">
+                            <div class="b-rating__company_clients js-linked">
                                 <span class="b-rating__num">08</span>
                                 <div class="b-rating__content">
                                     <div class="b-rating__description_clients">
@@ -880,6 +908,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
+                                                <span class="b-stars__num">6 из 5</span>
                                             </span>
                                         </div>
                                         <p class="b-company__about">Работаем на украинском страховом рынке с 2015 года, помогли сэкономить деньги </p>
@@ -898,9 +927,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             Прямое урегулирование
                                         </span>
                                     </div>
+                                    <a href="#" class="b-ratink__link_company js-linked__target">
+                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="b-rating__company_clients">
+                            <div class="b-rating__company_clients js-linked">
                                 <span class="b-rating__num">09</span>
                                 <div class="b-rating__content">
                                     <div class="b-rating__description_clients">
@@ -912,6 +944,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
+                                                <span class="b-stars__num">6 из 5</span>
                                             </span>
                                         </div>
                                         <p class="b-company__about">Работаем на украинском страховом рынке с 2015 года, помогли сэкономить деньги </p>
@@ -930,9 +963,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             Прямое урегулирование
                                         </span>
                                     </div>
+                                    <a href="#" class="b-ratink__link_company js-linked__target">
+                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="b-rating__company_clients">
+                            <div class="b-rating__company_clients js-linked">
                                 <span class="b-rating__num">10</span>
                                 <div class="b-rating__content">
                                     <div class="b-rating__description_clients">
@@ -944,6 +980,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
+                                                <span class="b-stars__num">6 из 5</span>
                                             </span>
                                         </div>
                                         <p class="b-company__about">Работаем на украинском страховом рынке с 2015 года, помогли сэкономить деньги </p>
@@ -962,9 +999,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             Прямое урегулирование
                                         </span>
                                     </div>
+                                    <a href="#" class="b-ratink__link_company js-linked__target">
+                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="b-rating__company_clients">
+                            <div class="b-rating__company_clients js-linked">
                                 <span class="b-rating__num">11</span>
                                 <div class="b-rating__content">
                                     <div class="b-rating__description_clients">
@@ -976,6 +1016,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
+                                                <span class="b-stars__num">6 из 5</span>
                                             </span>
                                         </div>
                                         <p class="b-company__about">Работаем на украинском страховом рынке с 2015 года, помогли сэкономить деньги </p>
@@ -994,9 +1035,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             Прямое урегулирование
                                         </span>
                                     </div>
+                                    <a href="#" class="b-ratink__link_company js-linked__target">
+                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                    </a>
                                 </div>
                             </div>
-                            <div class="b-rating__company_clients">
+                            <div class="b-rating__company_clients js-linked">
                                 <span class="b-rating__num">12</span>
                                 <div class="b-rating__content">
                                     <div class="b-rating__description_clients">
@@ -1008,6 +1052,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
                                                 <span class="fa fa-star-o" aria-hidden="true"></span>
+                                                <span class="b-stars__num">6 из 5</span>
                                             </span>
                                         </div>
                                         <p class="b-company__about">Работаем на украинском страховом рынке с 2015 года, помогли сэкономить деньги </p>
@@ -1026,14 +1071,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                             Прямое урегулирование
                                         </span>
                                     </div>
+                                    <a href="#" class="b-ratink__link_company js-linked__target">
+                                        <span class="fa fa-angle-right" aria-hidden="true"></span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="b-slider__buttons_rating">
-                        <button class="b-slider__control b-slider__control_rating b-slider__control_left"><span class="fa fa-angle-double-left" aria-hidden="true"></span></button>
-                        <button class="b-slider__control b-slider__control_rating b-slider__control_right"><span class="fa fa-angle-double-right" aria-hidden="true"></span></button>
-                    </div>
+                </div>
+                <div class="b-slider__buttons_rating">
+                    <button class="b-slider__control b-slider__control_rating b-slider__control_left js-slider_left"><span class="fa fa-angle-double-left" aria-hidden="true"></span></button>
+                    <button class="b-slider__control b-slider__control_rating b-slider__control_right js-slider_right"><span class="fa fa-angle-double-right" aria-hidden="true"></span></button>
                 </div>
             </div>
         </section>
