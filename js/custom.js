@@ -253,7 +253,7 @@ $(document).ready(function(){
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			autoplay: false,
-			autoplaySpeed: 4400,
+			// autoplaySpeed: 4400,
 			responsive: [
 				{
 					breakpoint: 767,
@@ -264,9 +264,9 @@ $(document).ready(function(){
 			]
 		};
 		obj.slider.$section = $(".js-slider");
-		console.log(obj.slider.$section);
+		// console.log(obj.slider.$section);
 		obj.slider.$slider = obj.slider.$section.find(".js-slider__string");
-		console.log(obj.slider.$slider);
+		// console.log(obj.slider.$slider);
 		obj.slider.init = function(){
 			init(obj.slider);
 		};
@@ -957,6 +957,51 @@ $(document).ready(function(){
 		
 		return obj;
 	})();
+
+	// Blog article description text hover truncate
+	var parentHoverTextTruncate = function(sParentSelector, sTextSelector, iLines){
+		var
+			 $parent = $(sParentSelector)
+			,$texts = $(sTextSelector).dotdotdot()
+			,height
+			;
+		// $Texts.css("height, )
+
+		$parent.hover(
+			function(){
+				
+				// var content = $(this).find(sTextSelector).trigger("originalContent");
+				// console.log(content);
+				// console.log(content.text());
+				// $(this).find(sTextSelector).css("height", "inherit").append(content);
+				$(this).find(sTextSelector).trigger("destroy");
+				$(this).find(sTextSelector).css("height", "inherit");
+				
+				// $(this).find(sTextSelector).trigger("update");
+			},
+			function(){
+				$(this).find(sTextSelector).height(height).dotdotdot();
+			}
+		);
+
+		$window.on("resize", function(){
+			$texts.triggerHandler("originalContent");
+
+			var  element = $texts.children(".g-inline")[0]
+				,textRectangles = element.getClientRects()
+				,container = element.getBoundingClientRect()
+				;
+
+			console.log(container.height);
+			console.log(textRectangles.length);
+	
+			height = iLines*container.height / textRectangles.length + iLines;
+			$texts.height(height).trigger("update");
+			// $texts.trigger("update");
+		}).trigger("resize");
+	};
+
+	parentHoverTextTruncate(".b-blog__article", ".b-review_blog", 2);
 
 	// executable part
 	anchorParent();	// make all divs clickable

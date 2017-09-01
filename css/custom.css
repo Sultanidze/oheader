@@ -594,6 +594,9 @@ a, button, input[type="button"], input[type="submit"], input[type="color"], inpu
     clear: both;
     display: table;
 }
+.g-inline{
+    display: inline!important;
+}
 .s-light{
     font-weight: 300!important;
 }
@@ -3606,7 +3609,7 @@ a.b-callback_footer:hover{
     margin-bottom: 60px;   
 }
 .b-blog__block_img{
-    max-width: 352px;
+    width: 352px;
 /*    height: 204px;*/
     position: relative;
 /*    overflow: hidden;*/
@@ -3713,21 +3716,21 @@ a.b-callback_footer:hover{
 /*    margin-top: auto;*/
     min-width: 150px;
 }
-#blog .b-blog__articles_news .b-btn_blog:hover,
-#blog .b-blog__articles_promotes .b-btn_blog:hover{
+.b-blog__article .b-blog__articles_news .b-btn_blog:hover,
+.b-blog__article .b-blog__articles_promotes .b-btn_blog:hover{
     color: #fff;
 }
-#blog .b-btn_blog:hover .b-text_btn{
+.b-blog__article:hover .b-btn_blog .b-text_btn{
     border-top-color: transparent;
     border-bottom-color: transparent;
     border-left-color: transparent;
 }
-#blog .b-btn_blog:hover:after{
+.b-blog__article:hover .b-btn_blog:after{
     border-top-color: transparent;
     border-bottom-color: transparent;
     border-right-color: transparent;
 }
-#blog .b-btn_blog:not(:hover){
+.b-blog__article:not(:hover) .b-btn_blog{
     background-color: transparent;
 }
 .b-btn_blog .b-text_btn{
@@ -3804,7 +3807,7 @@ a.b-callback_footer:hover{
     text-decoration: none;
 }
 .b-text_aboutOh{
-    margin-bottom: 0;
+/*    margin-bottom: 0;*/
     line-height: 18px;
     font-weight: 300;
 }
@@ -3812,6 +3815,7 @@ a.b-callback_footer:hover{
     text-align: left;
 }
 .b-filter_aside{
+    margin-bottom: 15px;
     float: left;
     clear: left;
     white-space: nowrap;
@@ -3880,6 +3884,7 @@ a.b-callback_footer:hover{
 }
 .b-select__container_propos:last-of-type .b-autocomplete{
     width: 100%;
+/*    max-width: 240px;*/
 }
 .b-propos__recalc label{
     font-size: 14px;
@@ -3971,7 +3976,7 @@ input.b-autocomplete:hover{
 }
 .b-btn_social span{
     float: left;
-    width: 90px;
+    width: 89px;
     padding-right: 10px;
     padding-left: 10px;
     background-color: transparent;
@@ -4988,6 +4993,8 @@ input.b-autocomplete:hover{
         flex-direction: column;
     }
     .b-blog__block_img{
+        max-width: 100%;
+        width: 410px;
         margin-bottom: 25px;
     }
     .b-blog__block_review{
