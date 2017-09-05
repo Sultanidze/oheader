@@ -962,20 +962,21 @@ $(document).ready(function(){
 	var parentHoverTextTruncate = function(sParentSelector, sTextSelector, iLines){
 		var
 			 $parent = $(sParentSelector)
-			,$texts = $(sTextSelector).dotdotdot()
+			,$texts = $parent.find(sTextSelector)//.dotdotdot()	
 			,height
 			;
 		// $Texts.css("height, )
 
 		$parent.hover(
 			function(){
-				
 				// var content = $(this).find(sTextSelector).trigger("originalContent");
 				// console.log(content);
 				// console.log(content.text());
 				// $(this).find(sTextSelector).css("height", "inherit").append(content);
-				$(this).find(sTextSelector).trigger("destroy");
-				$(this).find(sTextSelector).css("height", "inherit");
+				var $thisText = $(this).find(sTextSelector);
+				
+					$thisText.trigger("destroy");
+					$thisText.css("height", "inherit");
 				
 				// $(this).find(sTextSelector).trigger("update");
 			},
@@ -985,23 +986,29 @@ $(document).ready(function(){
 		);
 
 		$window.on("resize", function(){
-			$texts.triggerHandler("originalContent");
+			if ($texts.length){	// if truncated texts exist (error preventing)
 
-			var  element = $texts.children(".g-inline")[0]
-				,textRectangles = element.getClientRects()
-				,container = element.getBoundingClientRect()
-				;
+				// $texts.triggerHandler("originalContent");	// show original text content
+				//$texts.dotdotdot();	// activate dotdotdot plugin on texts
 
-			console.log(container.height);
-			console.log(textRectangles.length);
-	
-			height = iLines*container.height / textRectangles.length + iLines;
-			$texts.height(height).trigger("update");
-			// $texts.trigger("update");
-		}).trigger("resize");
+				var  element = $texts.children(".g-inline")[0]
+					,textRectangles = element.getClientRects()		// each text line objects
+					,container = element.getBoundingClientRect()	// object with element parent position and sizes
+					;
+
+				//console.log(container);
+				// console.log(container.height);
+				// console.log(textRectangles.length);
+		
+				height = iLines*container.height / textRectangles.length + iLines;
+				// $texts.height(height).trigger("update");
+				$texts.height(height).dotdotdot();
+				// $texts.trigger("update");
+			}
+		}).triggerHandler("resize");
 	};
 
-	parentHoverTextTruncate(".b-blog__article", ".b-review_blog", 2);
+	parentHoverTextTruncate(".js-parent_descrTrunc", ".js-descrTrunc", 2);
 
 	// executable part
 	anchorParent();	// make all divs clickable
