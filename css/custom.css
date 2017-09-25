@@ -3610,6 +3610,7 @@ a.b-callback_footer:hover{
 }
 .b-blog__block_img{
     width: 352px;
+    min-height: 28px;
 /*    height: 204px;*/
     position: relative;
 /*    overflow: hidden;*/
