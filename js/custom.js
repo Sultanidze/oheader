@@ -338,6 +338,9 @@ $(document).ready(function(){
 					$(this).addClass(sActiveTabClass);
 
 					$contents.filter(".js-content_active").fadeOut(400).promise().done(function(){
+						// $(window).trigger("resize");
+						// console.log("resize")
+
 						var $slider = $contents.eq(index).find(".js-slider__string");	// slider inside
 
 						if ($slider){
@@ -347,6 +350,9 @@ $(document).ready(function(){
 									if ($slider.length){
 										$slider.slick('setPosition'); // prevent hidden slider broken sizes when visible
 									}
+								},
+								done: function(){
+									$(window).trigger("resize");
 								}
 							});
 						}
@@ -962,7 +968,7 @@ $(document).ready(function(){
 	var parentHoverTextTruncate = function(sParentSelector, sTextSelector, iLines){
 		var
 			 $parent = $(sParentSelector)
-			,$texts = $parent.find(sTextSelector)//.dotdotdot()	
+			,$texts = $parent.find(sTextSelector)//.dotdotdot()
 			,height
 			;
 		// $Texts.css("height, )
@@ -991,7 +997,7 @@ $(document).ready(function(){
 				// $texts.triggerHandler("originalContent");	// show original text content
 				//$texts.dotdotdot();	// activate dotdotdot plugin on texts
 
-				var  element = $texts.children(".g-inline")[0]
+				var  element = $texts.children(".g-inline").filter(":visible")[0]
 					,textRectangles = element.getClientRects()		// each text line objects
 					,container = element.getBoundingClientRect()	// object with element parent position and sizes
 					;
@@ -1001,6 +1007,7 @@ $(document).ready(function(){
 				// console.log(textRectangles.length);
 		
 				height = iLines*container.height / textRectangles.length + iLines;
+				console.log(height);
 				// $texts.height(height).trigger("update");
 				$texts.height(height).dotdotdot();
 				// $texts.trigger("update");
