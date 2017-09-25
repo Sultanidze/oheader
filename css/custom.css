@@ -3713,6 +3713,7 @@ a.b-callback_footer:hover{
 }
 .b-review_blog{
     margin-top: 15px;
+    min-height: 35px;
     font-weight: 300;
 }
 .b-btn_blog{
