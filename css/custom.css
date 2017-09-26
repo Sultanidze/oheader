@@ -2495,7 +2495,9 @@ a.b-tile_buy{
 .b-slide__paragraph_special{
 /*    margin: auto 0;*/
 /*    max-width: 200px;*/
+    overflow: hidden;
     max-width: 60%;
+    max-height: 119px;
 }
 .b-slide__img_bg{
     position: absolute;
