@@ -332,7 +332,8 @@ $(document).ready(function(){
 				};
 				
 				if (!$contents.is(":animated")){
-					var index = $tabs.index(this);	// index of clicked tab
+					var index = $tabs.index(this) + 1;	// index of clicked tab (starts from 1)
+                    console.log(index);
 
 					$tabs.removeClass(sActiveTabClass);
 					$(this).addClass(sActiveTabClass);
