@@ -312,7 +312,7 @@ $(document).ready(function(){
 
 	// tabs module (in Rating, Specials, Blog, Blog article)
 	// tabs init function, sSelector - tabs and content parent selector
-	var tabs = function (sSelector){
+	var tabs = function (sSelector){	// this module has bug  "dont use more than 1 sSelector on 1 page"
 			var  sActiveTabClass = "b-btn_active js-tab_active"
 				,$parent = $(sSelector)
 				,$tabsBlock = $parent.find(".js-tabsBlock")
@@ -332,7 +332,7 @@ $(document).ready(function(){
 				};
 				
 				if (!$contents.is(":animated")){
-					var index = $tabs.index(this) + 1;	// index of clicked tab (starts from 1)
+					var index = $tabs.index(this);	// index of clicked tab 
                     console.log(index);
 
 					$tabs.removeClass(sActiveTabClass);
