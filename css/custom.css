@@ -4028,6 +4028,15 @@ input.b-autocomplete:hover{
 /*    max-width: 100%;*/
     width: initial;
 }
+.b-container__slider_blog .slick-track{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+}
 .b-string__slide_blog,
 .b-string__slide_blog:hover{
     margin: 0 20px;
@@ -4054,7 +4063,11 @@ input.b-autocomplete:hover{
     max-width: unset;
 }
 .b-string__slide_blog .b-blog__img{
-    width: 100%;
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+    max-height: 203px;
+/*    min-height: 203px;*/
 }
 
 .b-blog__block_slider .b-slider__control{
