@@ -2344,7 +2344,7 @@ a.b-tile_buy{
 }
 .b-paragraph__price{
     margin: 0 auto 30px;
-    max-width: 7 00px;
+/*    max-width: 700px;*/
     font-size: 14px;
     font-weight: 300;
     color: #000;
@@ -4723,6 +4723,14 @@ input.b-autocomplete:hover{
     background-color: #f2c90c;
 }
 .b-section__reasons{}
+.b-section__reasons .b-section__heading{
+    padding-top: 0;
+    text-align: left;
+}
+.b-section__reasons .b-section__heading .c-num_heading{
+    -webkit-transform: scale(1.1, 1) translateY(-0.1241em);
+    transform: scale(1.1, 1) translateY(-0.1241em);
+}
 .b-list_reasons{
     margin-bottom: 0;
     display: -webkit-flex;
@@ -4743,8 +4751,184 @@ input.b-autocomplete:hover{
     color: red;
 }
 */
+.b-page_company .b-section_responses .b-section__heading{
+    
+}
+.b-page_company .b-responses__container_slider{
+    margin-bottom: 100px;
+}
+.b-section_delivery{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 50px 90px;
+}
+.b-section_delivery .b-section__inner{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+}
+.b-section_delivery .b-section__heading{
+    margin-bottom: 45px;
+    padding-top: 0;
+}
+.b-delivery, .b-pay{
+    list-style: none;
+}
+.b-delivery{
+    
+}
+.b-delivery__area{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    margin-bottom: 60px;
+}
+.b-delivery__area:last-child{
+    margin-bottom: 30px;
+}
+.b-area{}
+.b-area__visual{
+    position: relative;
+    width: 300px;
+    text-align: center;
+}
+.b-area__visual img{
+    -webkit-filter: drop-shadow(0 0 5px #bbb);
+    -o-filter: drop-shadow(0 0 5px #bbb);
+    filter: drop-shadow(0 0 5px #bbb);
+}
+.b-area__visual_region img{
+    width: 172px;
+}
+.b-area__visual_country img{
+    width: 270px;
+}
+.b-area__visual span{
+    position: absolute;
+/*    top: 0;*/
+    right: 0;
+/*    bottom: 0;*/
+    left: 0;
+    margin: auto;
+    font-size: 24px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: default;
+}
+.b-area__visual_region span{
+    top: 100px;
+}
+.b-area__visual_country span{
+    top: 55px;
+}
+.b-area__descr{
+    margin-left: 25px;
+    line-height: 21px;
+}
+.b-area__descr .b-howItWorks__heading{
+    margin-bottom: 10px;
+/*    line-height: 21px;*/
+}
+.b-area__descr p:last-child{
+    margin-bottom: 0;
+}
 
+.b-heading_delivery{
+    margin-bottom: 10px;
+    line-height: 21px;
+    font-size: 18px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+}
 
+.b-pay{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 365px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 50px 20px 40px 0;
+}
+.b-pay_method{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    margin-bottom: 0;
+}
+.b-pay_method img{
+    width: 65px;
+    padding: 0 24px;
+}
+.b-pay_method p{
+    margin-bottom: 0;
+}
+.b-pay_method .b-area__descr{
+    margin-left: 0;
+}
+.b-pay .b-howItWorks__heading{
+/*    line-height: normal;*/
+/*    font-size: 22px;*/
+}
+.b-subtext{
+    display: inline-block;
+    line-height: normal;
+    font-size: .857em;
+}
+.b-section_delivery .b-btn_right{
+    margin: 0 auto;
+    min-width: 190px;
+}
+
+.b-map_company{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    -ms-align-items: center;
+    align-items: center;
+    min-height: 454px;
+    padding: 0 40px;
+}
+.b-map_company .b-card{
+    padding: 0;
+}
+.b-map_company .b-card_contacts{
+    flex-basis: 135px;
+    padding: 0;
+}
+.b-map_company .b-card_map{
+    position: static;
+    width: 625px;
+}
 /*======= COMPANY PAGE END =======*/
 
 /*======= MEDIA QUERIES =======*/
