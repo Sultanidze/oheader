@@ -4722,9 +4722,46 @@ input.b-autocomplete:hover{
     height: 100%;
     background-color: #f2c90c;
 }
+
+.b-section_leeds{
+    position: relative;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1040px;
+    min-height: 584px;
+}
+.b-section_leeds .b-links_stages{
+    bottom: 0;
+    flex-basis: 280px;
+    -ms-align-self: center;
+    align-self: center;
+    padding: 0 45px;
+}
+.b-section_leeds .b-link_stage{
+    width: 195px;
+    padding: 0 5px;
+    color: #fff;
+}
+.b-section_leeds .b-link_stage:hover{
+    color: #f2c916;
+    border-color: currentColor;
+}
+.b-section_leeds .b-decoration{
+    width: 2000px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    height: 100%;
+}
+
 .b-section__reasons{}
 .b-section__reasons .b-section__heading{
-    padding-top: 0;
+    padding-top: 50px;
     text-align: left;
 }
 .b-section__reasons .b-section__heading .c-num_heading{
