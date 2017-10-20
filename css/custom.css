@@ -4741,8 +4741,10 @@ input.b-autocomplete:hover{
     flex-basis: 280px;
     -ms-align-self: center;
     align-self: center;
-/*    mr*/
-    padding: 0 45px;
+    padding: 10px 45px 15px;
+}
+.b-section_leeds .b-links_stages li{
+    margin: 40px 0;
 }
 .b-section_leeds .b-link_stage{
     width: 195px;
@@ -4766,9 +4768,38 @@ input.b-autocomplete:hover{
 */
 /*    flex-grow: 1;*/
 /*    background-color: #fff;*/
-    padding: 50px 120px;
+    padding: 50px 120px 65px;
 }
 
+.b-leed__heading{
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+.b-form_leed label{
+    display: inline-block;
+    width: 80px;
+    white-space: nowrap;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: inherit;
+}
+.b-form_leed .b-form__cell{
+   margin-bottom: 10px;
+}
+.b-form_leed .b-form__cell:last-of-type{
+   margin-bottom: 0;
+}
+.b-form_leed input{
+    font-size: 16px;
+    font-weight: 700;
+}
+.b-form_leed button{
+    margin-top: 25px;
+    min-width: 190px;
+}
 .b-section_leeds .b-decoration{
     width: 2000px;
     top: 0;
