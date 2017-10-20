@@ -4730,6 +4730,8 @@ input.b-autocomplete:hover{
     display: -ms-flex;
     display: -o-flex;
     display: flex;
+    -ms-align-items: center;
+    align-items: center;
     margin: 0 auto;
     max-width: 1040px;
     min-height: 584px;
@@ -4739,6 +4741,7 @@ input.b-autocomplete:hover{
     flex-basis: 280px;
     -ms-align-self: center;
     align-self: center;
+/*    mr*/
     padding: 0 45px;
 }
 .b-section_leeds .b-link_stage{
@@ -4750,6 +4753,22 @@ input.b-autocomplete:hover{
     color: #f2c916;
     border-color: currentColor;
 }
+
+.b-forms_leeds{
+/*
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+*/
+/*    flex-grow: 1;*/
+/*    background-color: #fff;*/
+    padding: 50px 120px;
+}
+
 .b-section_leeds .b-decoration{
     width: 2000px;
     top: 0;
@@ -5611,7 +5630,7 @@ input.b-autocomplete:hover{
         -o-flex-direction: column;
         flex-direction: column;
         -ms-align-items: flex-start;
-        align-items: flex-start;
+        align-items: flex-end;
     }
 }
 @media (max-width: 639px){

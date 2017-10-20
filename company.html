@@ -277,23 +277,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
     
     <section class="b-container b-section_leeds">
-        <ol class="b-links_stages s-corporate_dark s-shadow" id="leedsContents">
+        <ul class="b-links_stages s-corporate_dark s-shadow" id="leedsContents">
             <li>
-                <a href="#whatIsOh" class="b-link_stage">ОСАГО</a>
+                <a href="#osagoLeed" class="b-link_stage">ОСАГО</a>
             </li>
             <li>
-                <a href="#rating" class="b-link_stage">КАСКО</a>
+                <a href="#kaskoLeed" class="b-link_stage">КАСКО</a>
             </li>
             <li>
-                <a href="#responses" class="b-link_stage ">Зеленая карта</a>
+                <a href="#greenLeed" class="b-link_stage ">Зеленая карта</a>
             </li>
             <li>
-                <a href="#specials" class="b-link_stage">Для туристов</a>
+                <a href="#touristsLeed" class="b-link_stage">Для туристов</a>
             </li>
-        </ol>
-        <div class="b-decoration s-highlited_light">
-            
+        </ul>
+        <div class="b-forms_leeds">
+            <form action="" class="b-form_leed" id="osagoLeed">
+                <div class="b-leed__heading">Полис ОСАГО от Uniqa<br>по лучшей цене за 3 минуты</div>
+                <p> выгодный тариф<br>оплата на сайте или при получении<br>бесплатная доставка по Киеву</p>
+                <div class="b-form__cell">
+                    <label for="first-name_insured" class="b-label_leed">Фамилия 
+<!--
+                        <span class="fa_ok fa fa-check-circle" aria-hidden="true"></span>
+                        <span class="fa_error fa fa-times" aria-hidden="true"></span>
+-->
+                    </label>
+                    <input type="text" name="firstName" id="first-name_leed">
+                </div>
+                <div class="b-form__cell">
+                    <label for="phone_insured" class="b-label_leed">Телефон
+<!--
+                        <span class="fa_ok fa fa-check-circle" aria-hidden="true"></span>
+                        <span class="fa_error fa fa-times" aria-hidden="true"></span>
+-->
+                    </label>
+                    <input type="tel" name="phone" id="phone_leed" title="введите номер украинского оператора связи">
+                </div>
+                <div class="b-form__cell">
+                    <label for="email_insured" class="b-label_leed">E-mail
+<!--
+                        <span class="fa_ok fa fa-check-circle" aria-hidden="true"></span>
+                        <span class="fa_error fa fa-times" aria-hidden="true"></span>
+-->
+                    </label>
+                    <input type="email" name="email" id="email_insured">
+                </div>
+            </form>
         </div>
+        <div class="b-decoration s-highlited_light"></div>
     </section>
     
     <section class="b-container b-container_narrow b-container_company b-section__reasons">
