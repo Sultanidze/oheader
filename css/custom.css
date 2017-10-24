@@ -3431,6 +3431,8 @@ a.b-callback_footer:hover{
 }
 .b-crumbs__item+.b-crumbs__item:before{
     content: "\f061";
+    display: inline-block;
+    margin-right: 3px;
     font-family: FontAwesome;
 }
 .b-crumbs__link{
