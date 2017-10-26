@@ -1040,6 +1040,6 @@ $(document).ready(function(){
 	$(".js-scrollbar").slimScroll();	//custom scrollbars
 
 	osagoCalcBlock.init();	// OSAGO calc block initialization (hiding vehicles selects, city precomplete and autocomplete)
-	
+	$(".js-leeds").easytabs();
 	iframeAspectRatio.init(".js-preserveAspectRatio");	// make iframe with desired selector height depending on the aspect ratio (width from css)
 });
