@@ -1530,8 +1530,8 @@ a.b-submenu__link_more:hover{
     -ms-flex-direction: column;
     -o-flex-direction: column;
     flex-direction: column;
-/*    color: #fff;*/
     justify-content: center;
+/*    color: #fff;*/
 }
 .b-map__header{
     margin-bottom: 40px;
@@ -5932,6 +5932,7 @@ input.b-autocomplete:hover{
 /*        left: 0;*/
     }
     .b-map_iframe{
+        display: block;
         width: 100%;
     }
     
@@ -6209,6 +6210,7 @@ input.b-autocomplete:hover{
         -o-transition: border 200ms;
         transition: border 200ms;
     }
+    
     .b-map__header{
         font-size: 28px;
         margin-bottom: 30px;

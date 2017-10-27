@@ -402,7 +402,7 @@ $(document).ready(function(){
 		obj.$slider = obj.$section.find(".b-slider_responses");
 
 		var  $slideResp = obj.$slider.find(".b-slide_responses")
-			,$respFedbBtn = obj.$section.children(".js-btns_category")
+			,$respFedbBtn = obj.$section.find(".js-btns_category")
 			,$responsesBtn = $respFedbBtn.children(".js-btn_responses")
 			,$feedbackBtn = $respFedbBtn.children(".js-btn_feedback")
 			,$sliderRespControlBtn = obj.$slider.find(".b-slider__control_responses")
@@ -606,16 +606,24 @@ $(document).ready(function(){
 
 		obj.sliderInit = function(){
 			$responsesBtn.click(function(){
-				$feedbackBtn.toggleClass("b-btn_active");
-				$responsesBtn.toggleClass("b-btn_active");
-				$activeSlide.toggleClass("b-slide_rotated");	// rotate back if rotated
+				if (!$activeSlide.is(":animated")) {
+
+					if ($activeSlide.hasClass("b-slide_rotated")){
+						$feedbackBtn.toggleClass("b-btn_active");
+						$responsesBtn.toggleClass("b-btn_active");
+					}
+
+					$activeSlide = $slideResp.filter(".b-slide_active");
+					$activeSlide.removeClass("b-slide_rotated");	// rotate back if rotated
+				}
 			});
 			$feedbackBtn.click(function(){
-				$feedbackBtn.toggleClass("b-btn_active");
-				$responsesBtn.toggleClass("b-btn_active");
-				$activeSlide = $slideResp.filter(".b-slide_active");
 				if (!$activeSlide.is(":animated")) {
-					$activeSlide.toggleClass("b-slide_rotated");
+					$feedbackBtn.toggleClass("b-btn_active");
+					$responsesBtn.toggleClass("b-btn_active");
+					
+					$activeSlide = $slideResp.filter(".b-slide_active");
+					$activeSlide.toggleClass("b-slide_rotated");		// rotate back if rotated
 				}
 			});
 
