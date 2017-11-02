@@ -4628,6 +4628,13 @@ input.b-autocomplete:hover{
 .b-logo_company .b-company__link_contact + .b-company__link_contact{
     margin-left: 15px;
 }
+.b-logo_company p{
+    display: none;
+    margin: 20px 0 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+}
 .b-companyCard__top .s-corporate_dark{
     position: absolute;
     top: -50px;
@@ -5034,6 +5041,9 @@ input.b-autocomplete:hover{
 .b-map_company .b-card_contacts:last-child{
    display: none;
 }
+.b-map_company .b-map__header{
+    text-transform: none;
+}
 .b-map_company .b-card_map{
     position: static;
 /*    width: 625px;*/
@@ -5042,7 +5052,14 @@ input.b-autocomplete:hover{
 .b-map_company .b-card_map .b-map_iframe{
     width: 100%;
 }
+.b-page_company .b-section_specials{
+    margin-bottom: 50px;   
+}
 /*======= COMPANY PAGE END =======*/
+
+/*======= PAY AND DELIVERY  =======*/
+.b-section__heading_deliv{}
+/*======= PAY AND DELIVERY END =======*/
 
 /*======= MEDIA QUERIES =======*/
 @media (min-width: 1200px){
@@ -5107,13 +5124,6 @@ input.b-autocomplete:hover{
     .b-logo_company .b-company__link_contact,
     .b-logo_company p{
        font-family: 'Roboto Condensed', sans-serif;
-    }
-    .b-logo_company p{
-        display: none;
-        margin: 20px 0 10px;
-        text-align: center;
-        font-size: 16px;
-        font-weight: 700;
     }
     .b-companyCard__top>div{
         width: auto;
@@ -5988,7 +5998,9 @@ input.b-autocomplete:hover{
         margin-bottom: 0;
     }
 
-
+    .b-section__descr_company {
+        padding-top: 35px;
+    }
     .b-company__descr_sertificate{
         margin-right: 0;
     }
@@ -6480,7 +6492,7 @@ input.b-autocomplete:hover{
     .b-rating__content{
         flex-basis: auto;
     }
-    .b-rating__description_clients {
+    .b-rating__description_clients{
         flex-basis: 216px;
     }
     
@@ -6498,11 +6510,14 @@ input.b-autocomplete:hover{
         display: block;
     }
     .b-section_delivery {
-        padding: 0 50px 55px;
+        padding: 0 35px 55px;
     }
     .b-descrCompany_short .b-map__header{
         margin: 0 0 25px;
         text-align: center;
+    }
+    .b-page_company .b-responses__container_slider{
+        margin-bottom: 30px;
     }
     .b-map_company .b-card_map{
         height: 272px;
@@ -6514,7 +6529,12 @@ input.b-autocomplete:hover{
         display: none;
     }
     .b-page_company .b-section__heading{
+        padding-top: 15px;
+/*        margin-bottom: 3px;*/
+    }
+    .b-page_company .b-section__heading_deliv{
         padding-top: 30px;
+        margin-bottom: 3px;
     }
 }
 @media (max-width: 430px){

@@ -1024,6 +1024,33 @@ $(document).ready(function(){
 
 	parentHoverTextTruncate(".js-parent_descrTrunc", ".js-descrTrunc", 2);
 
+	// scrolled links
+	var scrolledLinks = (function(){
+		var obj = {};
+
+		obj.init = function(sSelector, iTopShift, sTargetSelector){
+			sSelector =sSelector || ".js-scrolledLink";	// default selector
+			iTopShift = iTopShift || 90;	// висота хедера
+			// sTargetSelector = sTargetSelector || "#leedForms"
+
+			$(sSelector).on("click", function(e){
+				event.preventDefault();
+
+				var  
+					 hrefID = (sTargetSelector)?sTargetSelector:$(this).attr("href")
+					,$anchor = $(hrefID)
+					,offsetAnchor = $anchor.offset().top - iTopShift;
+					;
+
+					console.log($anchor);
+				$('html, body').animate({ scrollTop: offsetAnchor}, 400);
+				return false;
+			})
+		}
+
+		return obj;
+	})();
+
 	// executable part
 	anchorParent();	// make all divs clickable
 	stars.init();	// rating stars filling
@@ -1049,5 +1076,7 @@ $(document).ready(function(){
 
 	osagoCalcBlock.init();	// OSAGO calc block initialization (hiding vehicles selects, city precomplete and autocomplete)
 	$(".js-leeds").easytabs();
+	scrolledLinks.init();	// scroll to anchors on click
+	scrolledLinks.init("#leedsContents a", 90, "#leedForms");	// scroll to leedForms anchor
 	iframeAspectRatio.init(".js-preserveAspectRatio");	// make iframe with desired selector height depending on the aspect ratio (width from css)
 });
