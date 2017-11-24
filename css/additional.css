@@ -1,4 +1,13 @@
 /* Base */
+.b-btn_wArrow.b-btn_wide:after{
+	padding-left: 16px;
+	padding-right: 16px;
+}
+.b-btn_wide .b-text_btn{
+	min-width: 115px;
+	padding-left: 15px;
+	padding-right: 19px;
+}
 .b-text_btn.is--wide{
 	padding-left: 30px;
 	padding-right: 30px;
@@ -217,6 +226,10 @@
 	display: block;
 	margin-bottom: 18px;
 }
+.list__item.last,
+.list__item:last-child{
+	margin-bottom: 0;
+}
 /* Map */
 .map{
 	width: 100%;
@@ -327,6 +340,10 @@
 	bottom: -9px; right: -9px;
 }
 
+.b-footer.is--fixed{
+	position: fixed;
+	left: 0; right: 0; bottom: 0;
+}
 @media screen and (max-width: 992px){
 	.info,
 	.partner-steps{
@@ -379,6 +396,7 @@
     transform: rotate(-66deg);
 	}
 }
+
 @media screen and (max-width: 768px){
 	.is--two-col .form__field{
 		display: block;
@@ -499,5 +517,29 @@
 	.text--medium{
 		font-size: 13px;
     line-height: 16px;
+	}
+}
+
+
+.b-tile__heading_buy.is--uppercase{
+	font-size: 30px;
+	text-transform: uppercase;
+}
+@media (max-width: 480px){
+	.b-footer.is--fixed{
+		position: static;
+		left: 0; right: 0; bottom: 0;
+	}
+}
+@media (max-width: 430px){
+	.b-404__buy .b-tile_buy {
+			border-width: 1px 0 0 1px;
+	}
+	.b-404__buy .b-tile_buy:nth-child(2n) {
+			border-right-width: 1px;
+	}
+	.b-404__buy .b-tile_buy:nth-child(3),
+	.b-404__buy .b-tile_buy:nth-child(4) {
+			border-bottom-width: 1px;
 	}
 }
