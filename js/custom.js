@@ -393,6 +393,27 @@ $(document).ready(function(){
 		return obj;	// return module object
 	})();
 
+	// why-we slider
+	var whyWe = (function(){
+		var obj ={};
+
+		obj.$section = $("#why-we");
+		obj.$slider = obj.$section.find(".js-why-we-slider");
+		obj.init = function(){
+			obj.$slider.slick({
+				dots: false,
+				arrows: true,
+				infinite: false,
+				speed: 300,
+				slidesToShow: 1,
+				nextArrow: $('.js-why-we-slider-next'),
+				prevArrow: $('.js-why-we-slider-prev')
+			});
+		};
+
+		return obj;
+	})();
+
 	// responces slider
 	var responces = (function(){
 		var obj = {};
@@ -1062,6 +1083,7 @@ $(document).ready(function(){
 	sliders.init();	// sliders module init
 	tabs(".js-tabbed");	// tabs init
 	responces.init();	// responses slider init
+	whyWe.init();	// why-we slider init
 	footer.init();	// footer module init
 
 	seoMap.init();	// seoMap module init
