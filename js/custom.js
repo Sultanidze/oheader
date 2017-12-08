@@ -1088,6 +1088,18 @@ $(document).ready(function(){
 
 	seoMap.init();	// seoMap module init
 
+	// press articles
+	var $pressArticles = $('.js-press-articles');
+	var visiblePressArticlesHeight = $pressArticles.find('.press:nth-child(5)').position().top - $pressArticles.position().top;
+	$pressArticles.height(visiblePressArticlesHeight);
+	// show/hide articles
+	$('.js-more-articles').on('click', function(e){
+		e.preventDefault();
+		$(this).find('.b-btn').toggleClass('is--hidden');
+		$(this).find('.fa').toggleClass('fa-angle-down fa-angle-up');
+		$pressArticles.toggleClass('is--opened');
+	});
+
 	$('.tooltip').tooltipster({
 		theme: 'tooltipster-light',
 		position: 'bottom',
