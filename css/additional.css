@@ -641,10 +641,11 @@
 	overflow: hidden;
 	position: relative;
 	width: 514px;
-	height: 343px;
 	padding-bottom: 80px;
 }
-.why-we__slider-inner{}
+.why-we__slider img{
+	max-width: 100%;
+}
 .why-we__slide{
 	float: left;
 }
@@ -725,6 +726,9 @@
 }
 
 /* press */
+.b-section_press{
+	padding-bottom: 25px;
+}
 .press-articles{
 	overflow: hidden;
 }
@@ -1131,7 +1135,7 @@
 		font-size: 13px;
     line-height: 16px;
 	}
-	
+
 /* Documents */
 .documents__wrapper{
 	display: block;
@@ -1317,7 +1321,10 @@
 		font-size: 24px;
 		text-align: center;
 	}
-
+	/* partners rating */
+	.page--about-us .b-block_rating{
+		padding: 0 20px;
+	}
 	/* customers saved */
 	.customers-saved__text strong{
 		font-size: 16px;
@@ -1354,7 +1361,7 @@
 	}
 
 	/* why we */
-	.b-section__heading.is--half-width.is--text-right{
+	.why-we .b-section__heading.is--half-width.is--text-right{
 		width: 100%;
 		padding: 0 0 0 10px;
 		margin: 0 0 10px;
@@ -1364,6 +1371,9 @@
 	.why-we__text{
 		float: none;
 		width: auto;
+	}
+	.why-we__text{
+		padding: 0;
 	}
 	.why-we__slider{
 		margin-right: 20px;
@@ -1380,7 +1390,7 @@
 		overflow: hidden;
 	}
 	.why-we__text-item{
-		width: 75%;
+		width: 76%;
 		margin-left: 20px;
 		margin-bottom: 10px;
 	}
@@ -1393,9 +1403,13 @@
 		left: auto;
 	}
 	.why-we__text-desc{
-		padding-left: 19px;
-		padding-right: 25px;
+		padding: 10px 25px 10px 19px;
 		margin: 0;
+		font-size: 14px;
+		font-weight: 300;
+	}
+	.why-we__text-desc strong{
+		font-size: 16px;
 	}
 
 	/* testimonials */
@@ -1412,6 +1426,7 @@
 	.press{
 		position: relative;
 		width: 100%;
+		padding: 0;
 	}
 	.press__logo{
 		float: none;
@@ -1440,6 +1455,10 @@
 
 }
 @media (max-width: 430px){
+	.page--about-us .b-container_mid {
+    padding-left: 10px;
+    padding-right: 10px;
+	}
 	.b-404__buy .b-tile_buy {
 			border-width: 1px 0 0 1px;
 	}
