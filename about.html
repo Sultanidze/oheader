@@ -36,7 +36,7 @@
     </script>
 </head>
 
-<body class="css-custom no-padding b-page_company">
+<body class="css-custom no-padding b-page_company page--about-us">
     <!--Site Preloader Start-->
     <!--[if !IE 8]><!-->
     <script src="https://oh.ua/project/templates/oh.ua/js/vendor/queryloader2.min.js"></script>
@@ -477,7 +477,7 @@
                 </h2>
                 <div class="documents">
                     <div class="documents__wrapper">
-                        <div class="documents__item">
+                        <div class="documents__item is--active">
                             <img src="images/documents/d-1.jpg" alt="">
                         </div>
                         <div class="documents__item">
@@ -497,6 +497,15 @@
                         </div>
                         <div class="documents__item">
                             <img src="images/documents/d-4.jpg" alt="">
+                        </div>
+
+                        <div class="documents__pagination">
+                            <a href="" class="documents__pagination-item is--active" data-index="1">1</a>
+                            <a href="" class="documents__pagination-item" data-index="2">2</a>
+                            <a href="" class="documents__pagination-item" data-index="3">3</a>
+                            <a href="" class="documents__pagination-item" data-index="4">4</a>
+                            <a href="" class="documents__pagination-item" data-index="5">5</a>
+                            <a href="" class="documents__pagination-item" data-index="6">6</a>
                         </div>
                     </div>
                     <div class="documents__garantee">
@@ -601,7 +610,7 @@
                     Отзывы клиентов
                 </h2>
                 <div class="b-rating__block_btns b-responses__block_btns g-clearfix js-btns_category">
-                    <button class="b-btn_rating b-btn_active b-btn_responses js-btn_responses">Отзывы от клиентов Oh.ua</button>
+                    <button class="b-btn_rating b-btn_active b-btn_responses js-btn_responses">Отзывы <span class="is--mobile-hidden">от клиентов Oh.ua</span></button>
                     <button class="b-btn_rating b-btn_feedback js-btn_feedback">Оставить отзыв</button>
                 </div>
                 <div class="b-responses__container_slider">
@@ -833,8 +842,8 @@
                 </h2>
                 <div class="b-block_buy">
                     <div class="b-buy_single">
-                        <a data-href="#" class="b-tile_buy b-tile_active">
-                            <div class="b-tile__heading_buy s-bold">ОСАГО</div>
+                        <a data-href="#" class="b-tile_buy b-tile_active is--mobile-hidden">
+                            <div class="b-tile__heading_buy s-bold is--big">ОСАГО</div>
                             <p>
                                 <span class="s-bold">19</span> компаний
                                 <br> от
@@ -851,11 +860,19 @@
                     </div>
                     <div class="b-buy_multi">
                         <a data-href="#" class="b-tile_buy">
-                            <div class="b-tile__heading_buy s-bold">КАСКО</div>
+                            <div class="b-tile__heading_buy s-bold is--big">КАСКО</div>
                             <p>
                                 <span class="s-bold">6</span> компаний
                                 <br> от
                                 <span class="s-bold">6000</span> грн
+                            </p>
+                        </a>
+                        <a data-href="#" class="b-tile_buy is--mobile-visible">
+                            <div class="b-tile__heading_buy s-bold is--big">ОСАГО</div>
+                            <p>
+                                <span class="s-bold">19</span> компаний
+                                <br> от
+                                <span class="s-bold">816</span> грн
                             </p>
                         </a>
                         <a data-href="#" class="b-tile_buy">
@@ -874,7 +891,7 @@
                                 <span class="s-bold">816</span> грн
                             </p>
                         </a>
-                        <a class="b-tile_buy js-btn_callback callback">
+                        <a class="b-tile_buy is--mobile-hidden">
                             <div class="b-tile__heading_buy s-bold">ДГО</div>
                             <p>
                                 <span class="s-bold">19</span> компаний
