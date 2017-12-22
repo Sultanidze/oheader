@@ -1072,6 +1072,36 @@ $(document).ready(function(){
 		return obj;
 	})();
 
+	// documents pagnation
+	var docPagination = (function(){
+		var obj = {};
+		
+		obj.pagination = function(){
+			var $pagination = $('.documents__pagination');
+
+			if ( $pagination.length ){
+				var $documents = $(".documents__item");
+
+				$pagination.on('click','a',function(e){
+					e.preventDefault();
+
+					var index = $(this).data("index") - 1;
+					$documents.removeClass('is--active');
+					$documents.eq(index).addClass('is--active');
+
+					$pagination.find("a").removeClass('is--active');
+					$(this).addClass('is--active');
+				});
+			}
+		}
+
+		obj.init = function(){
+			obj.pagination();
+		}
+
+		return obj;
+	})();
+
 	// executable part
 	anchorParent();	// make all divs clickable
 	stars.init();	// rating stars filling
@@ -1107,7 +1137,7 @@ $(document).ready(function(){
 	});	// enable tooltips
 	
 	$(".js-scrollbar").slimScroll();	//custom scrollbars
-
+	docPagination.init();
 	osagoCalcBlock.init();	// OSAGO calc block initialization (hiding vehicles selects, city precomplete and autocomplete)
 	$(".js-leeds").easytabs();
 	scrolledLinks.init();	// scroll to anchors on click
