@@ -1915,6 +1915,7 @@
 /* ----- NEW FOOTER ----- */
 .g-pos_relative {
 	position: relative;
+	max-width: 1280px;
 }
 .b-footer__toTop{
     position: absolute;
