@@ -1211,4 +1211,12 @@ $(document).ready(function(){
 		});
 
 	})();
+
+	(function(){
+		// scroll to top
+		$("#toTop").click(function(event){
+			event.preventDefault();
+			$('html, body').animate({ scrollTop: 0}, 400);
+		});
+	})();
 });
