@@ -338,7 +338,7 @@
 }
 /* STATISTICS */
 .statistics{
-	max-width: 830px;
+	max-width: 834px;
 	margin: 0 auto;
 }
 .statistics__header{
@@ -365,7 +365,7 @@
 	position: relative;
 	width: 233px;
 	margin: 0 auto;
-	padding: 50px 0 35px;
+	padding: 35px 0 35px;
 	background-color: #ffffff;
 	box-shadow: 0 0 17px 3px rgba(0, 0, 0, 0.02);
 	border-top: 1px solid #743aa7;
@@ -383,9 +383,13 @@
 	font-family: "Roboto Condensed", sans-serif;
 	font-size: 33px;
 	font-weight: 300;
-	line-height: 24px;
+	line-height: 60px;
 	text-align: center;
 	color: #231f20;
+}
+.statistics__title span{
+	display: inline-block;
+	line-height: 24px;
 }
 .statistics__text{
 	font-family: "Roboto Condensed", sans-serif;
@@ -484,6 +488,9 @@
 }
 .about-company__title span{
 	color: #714397;
+}
+.about-company__title .is--mobile-hidden{
+	color: #231f20;
 }
 .about-company__text{
 	margin: 0 0 20px;
@@ -635,6 +642,7 @@
 /* WHY WE */
 .b-section__heading.is--half-width.is--text-right{
 	width: 50%;
+	padding-left: 60px;
 	padding-right: 35px;
 	text-align: right;
 	box-sizing: border-box;
@@ -910,6 +918,9 @@
 
 .page--about-us .b-tile_buy.is--mobile-visible{
 	display: none;
+}
+.page--about-us .b-block_buy{
+	justify-content: center;
 }
 
 .b-footer.is--fixed{
@@ -1200,6 +1211,7 @@
 		letter-spacing: 0.16px;
 	}
 	.statistics__header{
+		margin-bottom: 13px;
 		font-family: "Roboto Condensed", sans-serif;
 		font-size: 18px;
 		font-weight: 700;
@@ -1216,6 +1228,9 @@
 		font-weight: 300;
 		text-transform: uppercase;
 		color: #231f20;
+	}
+	.statistics__title span{
+		line-height: initial;
 	}
 	.statistics__item:last-child .statistics__title{
 		font-size: 16px;
@@ -1335,7 +1350,13 @@
 		padding: 0 20px;
 	}
 	/* customers saved */
+	.customers-saved__text{
+		min-height: 54px;
+		margin-bottom: -20px;
+	}
 	.customers-saved__text strong{
+		display: block;
+		padding-right: 60px;
 		font-size: 16px;
 		font-weight: 700;
 		color: #231f20;
@@ -1399,7 +1420,7 @@
 		overflow: hidden;
 	}
 	.why-we__text-item{
-		width: 76%;
+		width: 68%;
 		margin-left: 20px;
 		margin-bottom: 10px;
 	}
