@@ -1138,10 +1138,14 @@ $(document).ready(function(){
 		zIndex: 1
 	});	// enable tooltips
 	
-	$(".js-scrollbar").slimScroll();	//custom scrollbars
+	if ( $(".js-scrollbar").length ){
+		$(".js-scrollbar").slimScroll();	//custom scrollbars
+	}
 	docPagination.init();
 	osagoCalcBlock.init();	// OSAGO calc block initialization (hiding vehicles selects, city precomplete and autocomplete)
-	$(".js-leeds").easytabs();
+	if ( $(".js-leeds").length ){
+		$(".js-leeds").easytabs();
+	}
 	scrolledLinks.init();	// scroll to anchors on click
 	scrolledLinks.init("#leedsContents a", 90, "#leedForms");	// scroll to leedForms anchor
 	iframeAspectRatio.init(".js-preserveAspectRatio");	// make iframe with desired selector height depending on the aspect ratio (width from css)
