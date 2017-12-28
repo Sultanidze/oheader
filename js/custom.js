@@ -1120,15 +1120,17 @@ $(document).ready(function(){
 
 	// press articles
 	var $pressArticles = $('.js-press-articles');
-	var visiblePressArticlesHeight = $pressArticles.find('.press:nth-child(5)').position().top - $pressArticles.position().top;
-	$pressArticles.height(visiblePressArticlesHeight);
-	// show/hide articles
-	$('.js-more-articles').on('click', function(e){
-		e.preventDefault();
-		$(this).find('.b-btn').toggleClass('is--hidden');
-		$(this).find('.fa').toggleClass('fa-angle-down fa-angle-up');
-		$pressArticles.toggleClass('is--opened');
-	});
+	if ( $pressArticles.length ){
+		var visiblePressArticlesHeight = $pressArticles.find('.press:nth-child(5)').position().top - $pressArticles.position().top;
+		$pressArticles.height(visiblePressArticlesHeight);
+		// show/hide articles
+		$('.js-more-articles').on('click', function(e){
+			e.preventDefault();
+			$(this).find('.b-btn').toggleClass('is--hidden');
+			$(this).find('.fa').toggleClass('fa-angle-down fa-angle-up');
+			$pressArticles.toggleClass('is--opened');
+		});
+	}
 
 	$('.tooltip').tooltipster({
 		theme: 'tooltipster-light',
@@ -1143,4 +1145,66 @@ $(document).ready(function(){
 	scrolledLinks.init();	// scroll to anchors on click
 	scrolledLinks.init("#leedsContents a", 90, "#leedForms");	// scroll to leedForms anchor
 	iframeAspectRatio.init(".js-preserveAspectRatio");	// make iframe with desired selector height depending on the aspect ratio (width from css)
+
+	
+	// popup on site leave
+	(function(){
+		var $leavePopup = $("#exitPopup");
+		var $leaveForm = $(".js-form_exitCallback");
+		var $modalError = $(".b-modal_error");
+		var $modalExitCallbackSuccess = $("#exitPopupSuccess");
+		var exitPopupFirstTimeShow = 15000;
+		var exitPopupNextTimeShow = 90000;
+		var exitPopupShowFirstTime = false;
+		var exitPopupShowNextTime = false;
+		var isExitPopupSent = false;
+	
+		setTimeout(function(){
+			exitPopupShowFirstTime = true;
+			console.log('Time 1s');
+		}, exitPopupFirstTimeShow);
+
+		$(document).mouseleave(function (e) {
+			if ( e.clientY <= 0 && exitPopupShowFirstTime || e.clientY <= 0 && exitPopupShowNextTime && !isExitPopupSent ){
+				
+				$leavePopup.arcticmodal();
+
+				exitPopupShowFirstTime = false;
+				exitPopupShowNextTime = false
+
+				setTimeout(function(){
+					exitPopupShowNextTime = true;
+				}, exitPopupNextTimeShow);
+			}
+		});
+
+		// leave form submission
+		$leaveForm.submit(function(event){
+			event.preventDefault();
+			var data = $(this).serialize();
+
+			$.ajax({
+					type : 'get',
+					url: './ajax/create-callback.json',
+					data : data,
+					cache : false,
+					success : function(response){
+							if (response.status == true) {
+									// in a case of Ajax success:
+									$leavePopup.arcticmodal('close');
+									isExitPopupSent = true;
+									$modalExitCallbackSuccess.arcticmodal();
+									
+							} else {
+								$.arcticmodal('close');
+								$modalError.arcticmodal();	// show error modal
+							}
+					},
+					error: function(){
+							alert('There is an error!');
+					}
+			});
+		});
+
+	})();
 });

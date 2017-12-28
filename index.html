@@ -1061,6 +1061,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div class="gui-message">&nbsp;</div>
             </form>
         </div>
+
+        <!-- exit popup modal -->
+        <div class="b-modal box-modal b-modal_exitPopup" id="exitPopup">
+            <div class="b-modal__btn_transparent box-modal_close arcticmodal-close">
+                <span class="fa fa-times" aria-hidden="true"></span>
+            </div>
+            <div class="b-exitPopup__content">
+                <div class="b-modal__heading b-modal__heading_popup">Oh, nooo!
+                    <br>
+                    <span class="b-modal__subheading b-modal__subheading_popup">Уже уходите?</span>
+                </div>
+                <p class="b-modal__text">Получите предложение, которого нет на сайте.</p>
+            </div>
+            <form action="" class="b-modal__form_exitCallback b-modal__form_callback b-form_feedback js-form_exitCallback b-gradient_bg">
+                <label for="exitPopupTel">Ваш телефон</label>
+                <input type="tel" name="phone" required pattern="[0-9()\s+-]{19}" id="exitPopupTel">
+                <button type="submit" class="b-form__submit_feedback">
+                    Перезвонить
+                    <span class="fa fa-angle-right" aria-hidden="true"></span>
+                </button>
+                <span class="b-modal__btn_exit arcticmodal-close">Спасибо, не нужно</button>
+            </form>
+        </div>
+        <!-- /exit popup modal -->
+        <!-- exit modal success -->
+        <div class="b-modal box-modal b-modal_exitCallbackSuccess s-corporate_dark" id="exitPopupSuccess">
+            <div class="b-modal__btn_close arcticmodal-close">
+                <span class="fa fa-times" aria-hidden="true"></span>
+            </div>
+            <div class="b-modal__heading">Спасибо, мы перезвоним вам на протяжении 5 минут.</div>
+        </div>
+        <!-- /exit modal success -->
+        <!-- modal error -->
+		<div class="b-modal b-modal_error s-corporate_dark">
+			<div class="b-modal__btn_close">
+				<span class="fa fa-times" aria-hidden="true"></span>
+			</div>
+			<div class="b-modal__heading">Ошибка, попробуйте еще раз.</div>
+		</div>
+        <!-- /modal error -->
     </div>
 
     <footer class="b-footer">
