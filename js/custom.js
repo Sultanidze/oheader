@@ -1218,5 +1218,29 @@ $(document).ready(function(){
 			event.preventDefault();
 			$('html, body').animate({ scrollTop: 0}, 400);
 		});
+
+		// scroll to feedback
+		var $scrollToFeedback = $('.js-scrollto-feedback');
+		if ( $scrollToFeedback.length ) {
+			$scrollToFeedback.click(function(event){
+				event.preventDefault();
+				var position = $('.feedback').position().top - $('.b-header').height();
+				$('html, body').animate({ scrollTop: position}, 400);
+			});
+		}
+	})();
+
+	(function(){
+		$('.js-testimonials-slider').slick({
+			arrows: true,
+			infinite: true,
+			speed: 400,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 4400,
+			nextArrow: $('.js-testimonials-slider-next'),
+			prevArrow: $('.js-testimonials-slider-prev')
+		});
 	})();
 });
