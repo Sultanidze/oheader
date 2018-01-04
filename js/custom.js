@@ -1238,6 +1238,7 @@ $(document).ready(function(){
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			autoplay: true,
+			adaptiveHeight: true,
 			autoplaySpeed: 4400,
 			nextArrow: $('.js-testimonials-slider-next'),
 			prevArrow: $('.js-testimonials-slider-prev')

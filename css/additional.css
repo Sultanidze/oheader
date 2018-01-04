@@ -2166,20 +2166,41 @@
 	margin-bottom: 40px;
 	z-index: 10;
 }
-.testimonials-slider:after{
+.testimonials-slider__inner{
+	overflow: hidden;
+}
+.testimonials-slider__inner .slick-list{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.testimonials-slider__item{
+	position: relative;
+	padding-bottom: 20px;
+	float: left;
+	height: 100%;
+	display: block;
+	min-height: 1px;
+}
+.testimonials-slider:before{
 	content: '';
 	position: absolute;
-	bottom: -20px; right: -9px;
+	bottom: 0; right: -9px;
 	width: 92%;
 	height: 92%;
 	background-color: #f2c90c;
 	z-index: -1;
 }
-.testimonials-slider__inner{
-	overflow: hidden;
-}
-.testimonials-slider__item{
-	float: left;
+.slick-active.testimonials-slider__item:after{
+	content: '';
+	position: absolute;
+	bottom: -20px; right: 0;
+	width: 92%;
+	height: 92%;
+	background-color: #f2c90c;
+	z-index: -1;
 }
 .testimonials-slider__item-inner{
 	padding: 24px 50px;
