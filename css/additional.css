@@ -1740,9 +1740,9 @@
 .testimonial__author-photo{
 	display: block;
 	margin: 0 auto 17px;
-	width: 127px;
-	height: 127px;
-	border-radius: 50%;
+	max-width: 127px;
+	max-height: 127px;
+	border-radius: 65px;
 	overflow: hidden;
 }
 .testimonial__author-name{
@@ -1815,7 +1815,6 @@
 	color: #000000;
 }
 .testimonial__desc{
-	margin-bottom: 50px;
 	font-family: "Roboto Condensed", sans-serif;
 	font-size: 13px;
 	font-weight: 300;
@@ -1841,6 +1840,7 @@
 }
 .testimonial__action{
 	display: inline-block;
+	margin-top: 50px;
 	text-decoration: none;
 	border: 1px solid;
 	color: #ffffff;
@@ -1885,6 +1885,9 @@
 	width: 330px;
 	vertical-align: top;
 	margin-right: -0.25em;
+}
+.testimonial__photo img{
+	max-width: 100%;
 }
 .is--alt .testimonial__author{
 	float: right;
