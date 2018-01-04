@@ -2215,6 +2215,10 @@
 	text-decoration: underline;
 	color: #ffffff;
 }
+.testimonials-slider__item-link:hover{
+	text-decoration: none;
+	color: #fff;
+}
 .testimonials-slider__item-link i{
 	margin-left: 3px;
 	font-size: 16px;
