@@ -2324,6 +2324,10 @@ a.b-tile_buy{
     margin-bottom: 26px;
     font-weight: 300;
 }
+.b-advantages_online .b-btn--yellow:hover{
+    background: #e9c72f;
+    color: #231f20;
+}
 .b-messaging__paragraph{
     flex-basis: 490px;
     margin-bottom: 0;
