@@ -371,11 +371,6 @@
 	border-top: 1px solid #743aa7;
 	text-align: center;
 	transition: all 300ms linear;
-	cursor: pointer;
-}
-.statistics__item-inner:hover{
-	box-shadow: 0 0 26px 9px rgba(0, 0, 0, 0.18);
-	border-top: 1px solid #f2c916;
 }
 .statistics__title{
 	height: 50px;
